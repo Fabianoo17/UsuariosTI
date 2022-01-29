@@ -1,0 +1,119 @@
+﻿@model UsuariosTi.Business.ViewModels.Home.Corrossel.CarrosselViewModel
+@{
+    var user = this.GetUserCustom();
+    var primeiroNome = user.Nome.ToLower().Split(" ");
+    var nome = !String.IsNullOrEmpty(user.Nome) ? primeiroNome[0].Substring(0, 1).ToUpper() + primeiroNome[0].Substring(1) : "";
+    //Model.ListaT073_CARROSSEL = Model.ListaT073_CARROSSEL.Where(x => x.NU_ORDENACAO == 1);
+
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="~/css/Paginas/Home.css" rel="stylesheet" asp-append-version="true" />
+
+@await Html.PartialAsync("_MenuPage")
+
+<span style="display: none;">
+    <input type="hidden" id="txtUnidadeCodigo" value="@user.UnidadeCodigo" />
+</span>
+<section id="pag-home" class="home section-bg pb-0 pt-0">
+    <div class="row">
+        <div class="col-12">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    @{ var indicadoresLoop = 0;}
+                    @foreach (var item in Model.ListaT073_CARROSSEL.OrderBy(x => x.NU_ORDENACAO))
+                    {
+                        var classe = indicadoresLoop == 1 ? "class=\"active\"" : "";
+                        <li data-target="#myCarousel" data-slide-to="@Html.Raw(indicadoresLoop)" @Html.Raw(classe)></li>
+                        indicadoresLoop++;
+
+                    }
+                </ol>
+                <div class="carousel-inner">
+                    @{ var vLoop = 0;}
+                    @foreach (var item in Model.ListaT073_CARROSSEL.OrderBy(x => x.NU_ORDENACAO))
+                    {
+                        var classe = vLoop == 1 ? "active" : "";
+                        vLoop++;
+                        <div class="item @Html.Raw(classe)">
+                            <img class="w-100 imgs-somos-caixa" style="height:102vh !important;" src="data:image/png;base64, @Convert.ToBase64String(item.IMAGEM)" />
+                            @if (item.NU_ORDENACAO == 1)
+                            {
+                                <span class="texto-formatacao-carousel" style="margin-left: 170px !important; top: 23%; font-family: 'futurabt-medium'; font-size: 24pt">Olá @nome.ToUpper(),</span>
+                            }
+
+                            <span class="texto-formatacao-carousel" style="margin-left: 170px; top: 31%; text-align:justify; font-size: 24pt !important; font-family: 'futurabt-medium'">
+                                @Html.Raw(item.TEXTO)
+                                <p>
+                                    @if (item.BOTAO == true)
+                                    {
+                                        @if (item.TIPO_BOTAO == "TODOS")
+                                        {
+
+                                            <a href="@item.LINK"  class="btn mt-2 btn-home-acesse-dicas" style=" background-color: #079e81 !important; font-family: 'Tw Cen MT'; font-size: 20px !important; margin-top:10px; width: auto;">@item.TEXTO_BOTAO</a>
+                                        }
+                                        else
+                                        {
+                                            <input type="hidden" value="@item.NU_CARROSSEL" id="nuCarousel" />
+                                            <a href="@item.LINK"  class="btn mt-2 btn-home-acesse-dicas" id="btnAcessarAgora_@item.NU_CARROSSEL" style=" background-color: #079e81 !important; font-family: 'Tw Cen MT'; font-size: 20px !important; margin-top: 10px; width: auto;">@item.TEXTO_BOTAO</a>
+                                        }
+                                    }
+                                </p>
+                            </span>
+
+
+                        </div>
+
+                    }
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class=""></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class=""></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+
+    </div>
+
+</section>
+
+<script>
+    $("#btnAcessarAgora_" + $("#nuCarousel").val()).click(function () {
+
+        var unidadeCodigo = $("#txtUnidadeCodigo").val();
+
+        if (unidadeCodigo == 7562 || unidadeCodigo == 5356) {
+            //$(this).attr('href', "/Home/Ferramentas");
+            //$(this).attr('target', "_blank");
+        } else {
+
+            Swal.fire({
+                title: 'Acesso não autorizado!',
+                html: '',
+                type: 'warning',
+                timer: 3000,
+                showCancelButton: false,
+                showConfirmButton: false,
+                focusCancel: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Sim',
+                cancelButtonText: 'Cancelar'
+            }).then(function (result) {
+
+            });
+        }
+
+    });
+</script>

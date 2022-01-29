@@ -1,0 +1,47 @@
+﻿<div style="margin-top: 10px;">
+    <form id="formUltimasAcoes" asp-action="SalvarUltimasAcoes" asp-controller="Home" method="Post" enctype="multipart/form-data">
+        <input type="hidden" id="txtIDUltimasAcoes" />
+        <input type="hidden" id="txtCaminhoUltimasAcoes" />
+        <input type="hidden" id="txtPositivoUltimasAcoes" />
+        <input type="hidden" id="txtNegativoUltimasAcoes" />
+        <input type="hidden" id="txtVisualizacaoUltimasAcoes" />
+        <input type="hidden" id="txtNoImagem" />
+        <input type="hidden" id="txtEditarUA" />
+
+        <div class="form-group">
+            <label>Título</label><small class="caracteresAcoes" style="margin-left: 20px;"></small>
+            <input class="form-control" name="TituloUltimasAcoes" id="txtTituloUltimasAcoes" />
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label>Inserir</label>
+                    <select class="form-control" id="selInseriUltimasAcoes">
+                        <option value="false">Imagem</option>
+                        <option value="true">Vídeo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="form-group">
+                    <label id="lblInserir">Inserir imagem</label><small id="AnexoDescricao"> - Dimensão: 670x385 pixels | Formato: *.PNG/*.JPG | Tamanho: 1mb</small>
+                    @*<label for="File">
+                        <span type="button" class="btn btn-default">Procurar</span> Nenhum arquivo selecionado
+                    </label>*@
+                    <input type="file" class="form-control-file" id="File" accept="image/png, image/jpeg" data-max-size="1000000">
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Resumo</label><small class="caracteres" style="margin-left: 20px;"></small>
+            <textarea class="form-control" id="txtResumoUltimasAcoes" name="ResumoUltimasAcoes" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Texto</label><small class="caracteresTexto" style="margin-left: 20px;"></small>
+            <textarea class="form-control" name="TextoUltimasAcoes" id="txtTextoUltimasAcoes" rows="8"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-success" id="btnSalvarUltimasAcoes">Salvar <i class="fa fa-check"></i> </button>
+        </div>
+    </form>
+</div>

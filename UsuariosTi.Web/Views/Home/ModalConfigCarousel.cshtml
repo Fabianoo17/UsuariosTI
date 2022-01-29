@@ -1,0 +1,431 @@
+﻿
+@{
+    Layout = null;
+    var user = this.GetUserCustom();
+}
+
+<style>
+
+    #modalConfigCarousel .modal-content {
+        background: #ededed;
+        min-width: 60%;
+        min-height: 500px;
+        width: 1000px;
+    }
+
+    .icones {
+        color: #ff9000;
+        font-size: 3rem;
+    }
+
+    .boxcontato {
+        padding-top: 20px;
+        border-right: 2px solid #808080;
+    }
+
+    .boxespaco {
+        margin-top: 20px;
+    }
+
+    .textoContato {
+        font-size: 1.5rem;
+        color: #808080;
+        padding-left: 30px;
+        margin-top: 8px;
+    }
+
+        .textoContato a {
+            color: #ff9000 !important;
+        }
+
+    .textoForm {
+        font-size: 1.5rem;
+        color: #808080;
+        margin-top: 8px;
+    }
+</style>
+<div class="modal fade" id="modalConfigCarousel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Configurações do Carrossel</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="dvListCarousel">
+                    <div class="col-12">
+                        <button class="btn btn-success" id="btnAddCarousel">Adicionar <i class="fa fa-plus"></i></button>
+                    </div>
+                    <div class="col-12">
+                        @await Html.PartialAsync("_ListCarousel")
+                    </div>
+                </div>
+
+                <div class="dvDadosCarousel" style="display: none;">
+                    <div class="col-12">
+                        <button class="btn btn-default" id="btnVoltarCarousel"><i class="fa fa-arrow-left"></i> Voltar</button>
+                    </div>
+                    <div class="col-12">
+                        @await Html.PartialAsync("_FormCarousel")
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/dataTables/datatables.min.js"></script>
+<script>
+
+    function ListarCarousel() {
+
+        $("#tableCarousel tbody").empty();
+        //$("#tableUltimasAcoes").DataTable().clear();
+        $("#tableCarousel").DataTable().destroy();
+
+        $.ajax({
+            url: "/Home/ListarCarousel",
+            type: 'POST',
+            beforeSend: function () {
+                //blockUI('');
+            }
+        }).done(function (data) {
+            console.log(data);
+
+            var cols = "";
+
+            if (data.length == 0) {
+                cols += "<tr>";
+                cols += "<td colspan=5 style='text-align: center; font-weight: bold;font-size:16px;'>Nenhum Registro Encontrado</td>";
+                cols += "</tr>";
+                $("#tableCarousel tbody").empty();
+                $("#tableCarousel tbody").append(cols);
+            } else {
+
+                var tabela = $("#tableCarousel").DataTable(
+                    {
+                        paging: true,
+                        ordering: false,
+                        searching: true,
+                        lengthChange: false,
+                        fnInitComplete: function () {
+                            $('#tableCarousel').show();
+                            $('.overlay').hide();
+                        },
+                        columnDefs: [
+                            { "width": "30px", "targets": 0 },
+                            { "width": "30px", "targets": 1 },
+                            { "width": "80px", "targets": 2 },
+                            { "width": "200px", "targets": 3 },
+                            { "width": "200px", "targets": 4 },
+                            { "width": "25px", "targets": 5 },
+                            { "width": "25px", "targets": 6 },
+                        ],
+                        language: {
+                            "sEmptyTable": "Nenhum registro encontrado",
+                            "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                            "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                            "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                            "sInfoPostFix": "",
+                            "sInfoThousands": ".",
+                            "sLengthMenu": "_MENU_ resultados por página",
+                            "sLoadingRecords": "Carregando...",
+                            "sProcessing": "Processando...",
+                            "sZeroRecords": "Nenhum registro encontrado",
+                            "sSearch": "Pesquisar",
+                            "oPaginate": {
+                                "sNext": "Próximo",
+                                "sPrevious": "Anterior",
+                                "sFirst": "Primeiro",
+                                "sLast": "Último"
+                            },
+                            "oAria": {
+                                "sSortAscending": ": Ordenar colunas de forma ascendente",
+                                "sSortDescending": ": Ordenar colunas de forma descendente"
+                            }
+                        }
+                    }
+                );
+                tabela.clear().draw();
+
+                for (var i = 0; i < data.length; i++) {
+
+                    var botaoEditar = "<center><a class='btn bg-primary btn-sm' data-toggle='tooltip' data-id=" + data[i].nU_CARROSSEL + " title='Editar' onclick='editarCarousel(this);'><i class='fas fa-edit' style='color: #ffffff;'></i></a></center>";
+                    var botaoExcluir = "<center><a class='btn bg-danger btn-sm' data-toggle='tooltip' data-id=" + data[i].nU_CARROSSEL + " title='Excluir' onclick='excluirCarousel(this);'><i class='fas fa-trash' style='color: #ffffff;'></i></a></center>";
+
+                    var status = "";
+                    if (data[i].iC_ATIVO) {
+                        status = "Ativo";
+                    } else {
+                        status = "Inativo";
+                    }
+
+                    var dvStatus = "<div style='margin-top: 5px;'>" + status + "</div>";
+                    var dvOrdem = "<div style='margin-top: 5px;'>" + data[i].nU_ORDENACAO + "</div>";
+                    var dvArquivo = "<div style='margin-top: 5px;'>" + data[i].nO_IMAGEM + "</div>";
+                    var dvTitulo = "<div style='margin-top: 5px;'>" + data[i].texto + "</div>";
+                    var dvUsuario = "<div style='margin-top: 5px;'></div>";
+
+                    if (data[i].matricula !== null && data[i].nome !== null) {
+                        dvUsuario = "<div style='margin-top: 5px;'>" + data[i].matricula + "/" + data[i].nome + "</div>";
+                    }
+
+                    tabela.row.add([dvStatus, dvOrdem, dvArquivo, dvTitulo, dvUsuario, botaoEditar, botaoExcluir]).draw(false);
+                }
+            }
+
+
+        }).fail(function (error) {
+            //erroAjax(error, function () { });
+        });
+    }
+
+    function salvarCarousel() {
+
+        if ($("#txtOrdemCarousel").val() === '0' || $("#txtOrdemCarousel").val() === '') {
+            fnMensagem('Informe a ordem no carrossel.', 'warning');
+            return;
+        }
+
+        if ($("#selBotaoCarousel").val() == 'true') {
+            if ($("#txtTextoBotaoCarousel").val() === '') {
+                fnMensagem('Digite o texto do botão', 'warning');
+                return;
+            }
+
+            if ($("#txtLinkBotaoCarousel").val() === '') {
+                fnMensagem('Digite o link do botão', 'warning');
+                return;
+            }
+        }
+
+        if ($("#txtEditar").val() === 'salvar') {
+            if ($("#FileCarousel").val() === '') {
+                fnMensagem('Selecione uma imagem, campo obrigatório.', 'warning');
+                return;
+            }
+        }
+
+
+        if (tamanhoArquivo() != true) {
+            fnMensagem('Tamanho do arquivo maior do que o esperado', 'warning');
+            return;
+        }
+        //btnSalvarHistorico.attr('disabled', 'disabled');
+
+        var $form = $('#formCarousel');
+        var fdata = new FormData();
+
+        var fileInput = $('#FileCarousel')[0];
+        var file = fileInput.files[0];
+        fdata.append("NU_CARROSSEL", $("#txtNuCarousel").val());
+        fdata.append("NU_ORDENACAO", $("#txtOrdemCarousel").val());
+        fdata.append("IC_ATIVO", $("#selAtivoCarousel").val());
+        fdata.append("BOTAO", $("#selBotaoCarousel").val());
+        fdata.append("TEXTO_BOTAO", $("#txtTextoBotaoCarousel").val());
+        fdata.append("TIPO_BOTAO", $("#selTipoBotaoCarousel").val());
+        fdata.append("TEXTO", $("#txtTextoCarousel").val());
+        fdata.append("LINK", $("#txtLinkBotaoCarousel").val());
+        fdata.append("File", file);
+
+        $.ajax({
+            url: $form.attr('action'),
+            type: 'POST',
+            data: fdata,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                //console.log(data);
+
+                fnMensagem('Operação realizada com sucesso!', 'success');
+
+                ListarCarousel();
+                $(".dvListCarousel").show();
+                $(".dvDadosCarousel").hide();
+            }
+        });
+
+    }
+
+    function editarCarousel(el) {
+        var $elemento = $(el);
+        var dID = $elemento.attr('data-id');
+        //console.log(dID);
+
+        $("#FileCarousel").val('');
+
+        $.ajax({
+            url: "/Home/EditarCarousel",
+            type: 'POST',
+            data: { id: dID },
+            success: function (data) {
+                //console.log(data);
+
+                $(".dvListCarousel").hide();
+                $(".dvDadosCarousel").show();
+
+                $("#txtEditar").val('editar');
+                $("#txtNuCarousel").val(data.nU_CARROSSEL);
+                $("#txtOrdemCarousel").val(data.nU_ORDENACAO);
+
+                if (data.iC_ATIVO == true) {
+                    $("#selAtivoCarousel").val("true");
+                } else {
+                    $("#selAtivoCarousel").val("false");
+                }
+
+                if (data.botao == true) {
+                    $("#selBotaoCarousel").val("true");
+                } else {
+                    $("#selBotaoCarousel").val("false");
+                }
+
+                $("#txtTextoBotaoCarousel").val(data.textO_BOTAO);
+                $("#selTipoBotaoCarousel").val(data.tipO_BOTAO);
+                $("#txtLinkBotaoCarousel").val(data.link);
+                $("#txtTextoCarousel").val(data.texto);
+            }
+        });
+
+    }
+
+    function excluirCarousel(el) {
+        var $elemento = $(el),
+            dID = $elemento.attr('data-id');
+
+        var texto = "Essa operação não poderá ser desfeita.";
+
+        Swal.fire({
+            title: 'Deseja realmente excluir?',
+            html: texto,
+            type: 'warning',
+            showCancelButton: true,
+            showConfirmButton: true,
+            focusCancel: true,
+            confirmButtonColor: '#dc3545',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Sim, excluir',
+            cancelButtonText: 'Cancelar'
+        }).then(function (result) {
+            if (result.value) {
+                $.ajax({
+                    dataType: 'json',
+                    type: 'DELETE',
+                    url: "/Home/DeletarCarousel",
+                    data: { id: dID },
+                    beforeSend: function () {
+                        //blockUI('');
+                    }
+                }).done(function (data) {
+
+                    fnMensagem('Operação realizada com sucesso!', 'success');
+
+                    ListarCarousel();
+                    $(".dvListCarousel").show();
+                    $(".dvDadosCarousel").hide();
+
+                }).fail(function (error) {
+                    //erroAjax(error, function () { });
+                });
+            }
+        });
+    }
+
+    function fnMensagem(texto, icon) {
+        Swal.fire({
+            title: texto,
+            html: '',
+            type: icon,
+            timer: 3000,
+            showCancelButton: false,
+            showConfirmButton: false,
+            focusCancel: true,
+            confirmButtonColor: '#dc3545',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Sim',
+            cancelButtonText: 'Cancelar'
+        }).then(function (result) {
+
+        });
+    }
+
+    function tamanhoArquivo() {
+        var isOk = true;
+        $('input[type=file][data-max-size]').each(function () {
+            if (typeof this.files[0] !== 'undefined') {
+                var fileInput = $('#FileCarousel');
+                var maxSize = fileInput.data('max-size');
+                size = this.files[0].size;
+                isOk = maxSize > size;
+                console.log(maxSize);
+                console.log(size);
+                return isOk;
+            }
+        });
+
+        return isOk;
+    }
+
+    $(function () {
+
+        $(document).on("input", "#txtTextoCarousel", function () {
+            var limite = 300;
+            var informativo = "caracteres restantes.";
+            var caracteresDigitados = $(this).val().length;
+            var caracteresRestantes = limite - caracteresDigitados;
+
+            if (caracteresRestantes <= 0) {
+                var comentario = $("textarea[name=TextoCarousel]").val();
+                $("textarea[name=TextoCarousel]").val(comentario.substr(0, limite));
+                $(".caracteres").text("0 " + informativo);
+            } else {
+                $(".caracteres").text(caracteresRestantes + " " + informativo);
+            }
+        });
+
+        $(document).on("input", "#txtTextoBotaoCarousel", function () {
+            var limiteBotao = 30;
+            var informativoBotao = "caracteres restantes.";
+            var caracteresDigitadosBotao = $(this).val().length;
+            var caracteresRestantesBotao = limiteBotao - caracteresDigitadosBotao;
+
+            if (caracteresRestantesBotao <= 0) {
+                var comentario = $("input[name=TextoBotaoCarousel]").val();
+                $("input[name=TextoBotaoCarousel]").val(comentario.substr(0, limiteBotao));
+                $(".caracteresBotao").text("0 " + informativoBotao);
+            } else {
+                $(".caracteresBotao").text(caracteresRestantesBotao + " " + informativoBotao);
+            }
+        });
+
+        $("#btnSalvarCarousel").click(salvarCarousel);
+
+        $("#btnAddCarousel").click(function () {
+            $(".dvListCarousel").hide();
+            $(".dvDadosCarousel").show();
+
+            $("#txtEditar").val('salvar');
+            $("#txtNuCarousel").val('');
+            $("#txtOrdemCarousel").val('0');
+            $("#selTipoBotaoCarousel").val('TODOS');
+            $("#selAtivoCarousel").val('true');
+            $("#selBotaoCarousel").val('true');
+            $("#txtTextoBotaoCarousel").val('');
+            $("#txtLinkBotaoCarousel").val('');
+            $("#txtTextoCarousel").val('');
+            $("#FileCarousel").val('');
+            $(".caracteresBotao").html('');
+            $(".caracteres").html('');
+        });
+
+        $("#btnVoltarCarousel").click(function () {
+            $(".dvListCarousel").show();
+            $(".dvDadosCarousel").hide();
+        });
+
+    });
+</script>

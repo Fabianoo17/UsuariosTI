@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1193" height="466.5" viewBox="0 0 1193 466.5">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #6f6f6f;
+        opacity: 0.8;
+      }
+
+      .cls-2 {
+        fill: #44beb1;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-12, .cls-3 {
+        font-size: 25px;
+      }
+
+      .cls-3, .cls-5, .cls-8 {
+        font-family: FuturaBT-Medium, Futura;
+        font-weight: 500;
+      }
+
+      .cls-12, .cls-4 {
+        fill: #5d5d5d;
+        font-family: FuturaBT-Book, Futura;
+      }
+
+      .cls-4 {
+        font-size: 18px;
+      }
+
+      .cls-10, .cls-11, .cls-13, .cls-16, .cls-6, .cls-9 {
+        fill: none;
+      }
+
+      .cls-6 {
+        stroke: #148b92;
+        stroke-width: 2px;
+      }
+
+      .cls-7 {
+        fill: #eb822d;
+      }
+
+      .cls-8 {
+        fill: #137d9b;
+        font-size: 35px;
+      }
+
+      .cls-13, .cls-9 {
+        stroke: #eb822d;
+      }
+
+      .cls-9 {
+        stroke-width: 5px;
+      }
+
+      .cls-10 {
+        stroke: #919191;
+      }
+
+      .cls-11 {
+        stroke: #127a9c;
+        stroke-width: 3px;
+      }
+
+      .cls-13 {
+        stroke-width: 4px;
+      }
+
+      .cls-14 {
+        fill: #3da678;
+      }
+
+      .cls-15 {
+        stroke: none;
+      }
+
+      .cls-17 {
+        filter: url(#Retângulo_535);
+      }
+    </style>
+    <filter id="Retângulo_535" x="556" y="65" width="637" height="191" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_1196" data-name="Grupo 1196" transform="translate(9977 -1560)">
+    <g id="Grupo_1194" data-name="Grupo 1194" transform="translate(-10105 538)">
+      <g id="Grupo_595" data-name="Grupo 595">
+        <g id="Grupo_594" data-name="Grupo 594">
+          <g class="cls-17" transform="matrix(1, 0, 0, 1, 128, 1022)">
+            <rect id="Retângulo_535-2" data-name="Retângulo 535" class="cls-1" width="619" height="173" transform="translate(565 71)"/>
+          </g>
+          <rect id="Retângulo_530" data-name="Retângulo 530" class="cls-2" width="10" height="75" transform="translate(693 1093)"/>
+        </g>
+        <text id="Canais_Infraestrutura_de_TI_Telecomunicações_Atendimentos_nas_unidades_CAIXA_e_canais_parceiros_nacionalmente." data-name="Canais, Infraestrutura de TI, Telecomunicações, Atendimentos nas unidades CAIXA e canais parceiros nacionalmente." class="cls-3" transform="translate(732 1137)"><tspan x="0" y="24">Canais, Infraestrutura de TI, Telecomunicações, </tspan><tspan x="0" y="54">Atendimentos nas unidades CAIXA e canais </tspan><tspan x="0" y="84">parceiros nacionalmente.</tspan></text>
+      </g>
+      <text id="É_responsável_pela_gestão_estratégica_da_sustentação_dos_serviços_de:" data-name="É responsável pela gestão estratégica
+da sustentação dos serviços de:" class="cls-4" transform="translate(691 1023)"><tspan x="0" y="17">É responsável pela </tspan><tspan class="cls-5" y="17">gestão estratégica</tspan><tspan class="cls-5"><tspan x="0" y="39">da sustentação dos serviços de:</tspan></tspan></text>
+      <g id="Grupo_1060" data-name="Grupo 1060">
+        <g id="Grupo_687" data-name="Grupo 687" transform="translate(0 18)">
+          <g id="Grupo_521" data-name="Grupo 521" transform="translate(128 1041)">
+            <g id="Elipse_175" data-name="Elipse 175" class="cls-6">
+              <circle class="cls-15" cx="66" cy="66" r="66"/>
+              <circle class="cls-16" cx="66" cy="66" r="65"/>
+            </g>
+            <path id="Caminho_359" data-name="Caminho 359" class="cls-7" d="M53.244,43.365a9.581,9.581,0,0,1,2.467,6.422v7.005a9.59,9.59,0,0,1-9.591,9.591H11.591A9.59,9.59,0,0,1,2,56.793V49.787a9.581,9.581,0,0,1,2.467-6.422H3.918a1.918,1.918,0,1,1,0-3.836h6.376l7.834-4.374A15.345,15.345,0,1,1,44.2,24.183c0,.326-.012.652-.031.974l2.06-2.118a11.509,11.509,0,1,1,18.964,0l.015.015L72.173,30.2a9.581,9.581,0,0,1,2.72,6.691v2.636h1.918a1.918,1.918,0,0,1,0,3.836ZM47.42,39.529H71.057V36.893a5.769,5.769,0,0,0-1.631-4.017L62.521,25.79a11.513,11.513,0,0,1-13.612,0L42,32.876a15.5,15.5,0,0,0-1.128,1.212,2.111,2.111,0,0,0-.506,1.5Zm-2.287,3.119L36.2,37.66a15.371,15.371,0,0,1-14.69,0l-12.726,7.1a5.753,5.753,0,0,0-2.95,5.026v7.005a5.757,5.757,0,0,0,5.755,5.755H46.12a5.757,5.757,0,0,0,5.755-5.755V49.787a5.753,5.753,0,0,0-2.95-5.026L46.4,43.35A1.914,1.914,0,0,1,45.134,42.648ZM28.856,35.692a11.51,11.51,0,1,0-11.51-11.51A11.509,11.509,0,0,0,28.856,35.692Zm26.856-11.51a7.673,7.673,0,1,0-7.673-7.673A7.671,7.671,0,0,0,55.711,24.183Z" transform="translate(26.52 33.75)"/>
+          </g>
+          <g id="Grupo_686" data-name="Grupo 686" transform="translate(0 -12)">
+            <text id="Gerência_Nacional_de_Serviços_de_TI" data-name="Gerência Nacional
+de Serviços de TI" class="cls-8" transform="translate(286 1104)"><tspan x="0" y="0">Gerência Nacional</tspan><tspan x="0" y="39">de Serviços de TI</tspan></text>
+            <line id="Linha_221" data-name="Linha 221" class="cls-9" x2="38.864" transform="translate(548.376 1167.538)"/>
+          </g>
+        </g>
+        <g id="Grupo_596" data-name="Grupo 596">
+          <line id="Linha_229" data-name="Linha 229" class="cls-10" y2="239" transform="translate(631 1027.5)"/>
+          <line id="Linha_230" data-name="Linha 230" class="cls-11" y2="18" transform="translate(633.5 1027.5)"/>
+        </g>
+      </g>
+    </g>
+    <g id="Grupo_1195" data-name="Grupo 1195" transform="translate(-10105 526)">
+      <text id="Todas_as_soluções_são_pontuadas_pela_qualidade_em_processos_e_serviços_respostas_rápidas_às_mudanças_transparência_nas_ações_e_para_atender_com_satisfação_as_unidades_negociais." data-name="Todas as soluções são pontuadas pela qualidade em processos e serviços, respostas rápidas às mudanças, transparência nas ações e para atender com satisfação as unidades negociais." class="cls-12" transform="translate(138 1390)"><tspan x="0" y="24">Todas as soluções são pontuadas pela qualidade em processos e </tspan><tspan x="0" y="54">serviços, respostas rápidas às mudanças, transparência nas </tspan><tspan x="0" y="84">ações e para atender com satisfação as unidades negociais.</tspan></text>
+      <line id="Linha_233" data-name="Linha 233" class="cls-13" x2="33" transform="translate(138.5 1498.5)"/>
+      <g id="_001-bate-papo" data-name="001-bate-papo" transform="translate(138 1313.898)">
+        <path id="Caminho_397" data-name="Caminho 397" class="cls-14" d="M50.881,9.839H2.727A2.73,2.73,0,0,0,0,12.566V44.7A2.73,2.73,0,0,0,2.727,47.43H7.036L3.8,56.382a2.09,2.09,0,0,0,.169,2,1.821,1.821,0,0,0,1.492.768,2.357,2.357,0,0,0,1.33-.453L22.84,47.76a2.675,2.675,0,0,1,1.07-.33H50.881A2.73,2.73,0,0,0,53.608,44.7V12.566A2.73,2.73,0,0,0,50.881,9.839Zm-.545,34.319H23.91a5.785,5.785,0,0,0-2.914.9L8.228,53.762l2.308-6.386a2.348,2.348,0,0,0-2.259-3.218h-5V13.111H50.336Z" transform="translate(0)"/>
+        <path id="Caminho_398" data-name="Caminho 398" class="cls-14" d="M45.9,70.9H69.365a1.636,1.636,0,1,0,0-3.272H45.9a1.636,1.636,0,1,0,0,3.272Z" transform="translate(-34.61 -45.182)"/>
+        <path id="Caminho_399" data-name="Caminho 399" class="cls-14" d="M45.9,119.659H76.334a1.636,1.636,0,0,0,0-3.272H45.9a1.636,1.636,0,1,0,0,3.272Z" transform="translate(-34.61 -83.303)"/>
+      </g>
+    </g>
+  </g>
+</svg>

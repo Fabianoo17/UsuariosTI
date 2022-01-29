@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="231" height="97" viewBox="0 0 231 97">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00b260;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 15px;
+        font-family: Futura Md BT, Futura;
+        font-weight: 500;
+      }
+
+      .cls-3 {
+        filter: url(#Retângulo_4);
+      }
+    </style>
+    <filter id="Retângulo_4" x="0" y="0" width="231" height="97" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-opacity="0.11"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_1345" data-name="Grupo 1345" transform="translate(-423 -3036)">
+    <g id="Grupo_1247" data-name="Grupo 1247" transform="translate(450 3060)">
+      <g class="cls-3" transform="matrix(1, 0, 0, 1, -27, -24)">
+        <rect id="Retângulo_4-2" data-name="Retângulo 4" class="cls-1" width="171" height="37" rx="5" transform="translate(27 24)"/>
+      </g>
+    </g>
+    <text id="Acessar_aqui" data-name="Acessar aqui" class="cls-2" transform="translate(536 3084)"><tspan x="-43.425" y="0">Acessar aqui</tspan></text>
+  </g>
+</svg>

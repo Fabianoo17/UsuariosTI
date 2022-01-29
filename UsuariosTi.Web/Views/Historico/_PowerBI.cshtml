@@ -1,0 +1,113 @@
+﻿@model UsuariosTi.Business.ViewModels.ViewModelHome
+@{ 
+    var percentualPlanejamento = Model.VW002_PERCENTUAL_PROJETOS_ANOs.FirstOrDefault(x => x.CO_TIPO_PROJETO == 1);
+    var percentualProjetos = Model.VW002_PERCENTUAL_PROJETOS_ANOs.FirstOrDefault(x => x.CO_TIPO_PROJETO == 2);
+}
+<section id="pag-power-bi" class="pag-power-bi section-bg" style="padding-bottom: 0px;padding-top: 0px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pag-power-bi-2"></div>
+            <div class="row" style="position: absolute;top: 15%;z-index:20">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12" style="margin-left:10%">
+                            <img src="~/imagens/Power_BI/TEXTO_TITLE.png" style="width: 60%;" />
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:10%;">
+                        <div class="col-md-9" style="margin-left:10%">
+                            <div class="row">
+                                <div class="col-md-12" style="padding-bottom: 8px;padding-left: 0;font-size: 15pt;color: #888888;font-weight: bold;">
+                                    Planejamento
+                                </div>
+                            </div>
+                            <div class="row" style="background: #E0E0E0 0% 0% no-repeat padding-box;box-shadow: 0px 3px 6px;border-radius: 4px;height: 115px;">
+                                <div class="col-md-9" style="padding: 30px 35px;">
+                                    <div class="row">
+                                        <div class="col-md-12" style="font-size: 10pt;color: #505050;margin-bottom:10px;">
+                                            Progresso
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="progress" style="height:18px;position: absolute;width:100%;" >
+                                                <span style="z-index:5;color:red;margin-left:80%">80</span>
+                                                <div class="progress-bar bg-info" role="progressbar" style="position: absolute;z-index: 3;width:@Math.Round(Convert.ToDecimal(percentualPlanejamento.PERCENTUAL), 0)%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" title="Quantidade: @percentualPlanejamento.QTD_PROJETOS"></div>
+                                                <div class="progress-bar" role="progressbar" style="position: absolute;z-index: 4;width: 80%;background-color: rgba(255,255,255,.15)!important;border-right: 3px solid red;height: 18px;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" title="Meta: "></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" style="padding: 18px 3% 0 3%;font-size: 17pt;">
+                                    <div class="box-porcentagem" style="color: #eb822d;">
+                                        <span>
+                                            @string.Format("{0:0.00}", percentualPlanejamento.PERCENTUAL)%
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="margin-left:10%"></div>
+                    </div>
+                    <div class="row" style="margin-top:10%;">
+                        <div class="col-md-9" style="margin-left:10%">
+                            <div class="row">
+                                <div class="col-md-12" style="padding-bottom: 8px;padding-left: 0;font-size: 15pt;color: #888888;font-weight: bold;">
+                                    Projetos
+                                </div>
+                            </div>
+                            <div class="row" style="background: #E0E0E0 0% 0% no-repeat padding-box;box-shadow: 0px 3px 6px;border-radius: 4px;height: 115px;">
+                                <div class="col-md-9" style="padding: 30px 35px;">
+                                    <div class="row">
+                                        <div class="col-md-12" style="font-size: 10pt;color: #505050;margin-bottom:10px;">
+                                            Progresso
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="progress" style="height:18px;position:absolute;width:100%">
+                                                <div class="progress-bar bg-info" role="progressbar" style="position: absolute;z-index: 3; width: @Math.Round(Convert.ToDecimal(percentualProjetos.PERCENTUAL), 0)%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" title="Quantidade: @percentualProjetos.QTD_PROJETOS"></div>
+                                                <div class="progress-bar" role="progressbar" style="position: absolute;z-index: 4;width: 80%;background-color: rgba(255,255,255,.15)!important;border-right: 3px solid red;height: 18px;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" title="Meta: 80%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" style="padding: 18px 3% 0 3%;font-size: 18pt;">
+                                    <div class="box-porcentagem" style="color: #71d4a6;">
+                                        <span>
+                                            @string.Format("{0:0.00}", percentualProjetos.PERCENTUAL)%
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3" style="margin-left:10%"></div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin-left:10%">
+                                <img src="~/imagens/Power_BI/ICONE_POWER_BI.png" style="width: 15%;" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" style="margin: 2% 0 7% 0;margin-left:10%;">
+                                <img src="~/imagens/Power_BI/TEXTO_TITLE_2.png" style="width: 60%;" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: -4%;">
+                            <div class="col-md-12" style="margin-left:10%;">
+                                <span class="botao-acessar-aqui-bi">
+                                    <a href="https://novobi.caixa/ReportsPBI/powerbi/Relat%C3%B3rios%20P%C3%BAblicos/5814%20%E2%80%93%20VITEC/5111%20-%20DETEC/5393%20-%20SUOTI/GERTI/CETEC/Planejamento?rs:embed=true" target="_blank">
+                                        Acessar aqui
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

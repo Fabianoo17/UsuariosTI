@@ -1,0 +1,184 @@
+﻿@using UsuariosTi.App.Helpers;
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="~/Assets/Themes/AdminLTE/img/favicon.ico">
+
+    <!-- Plugins -->
+    <link href="~/Assets/Plugins/bootstrap-4.1.3/css/bootstrap.min.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/lib/dataTables/datatables.css" rel="stylesheet" />
+
+    <link href="~/Assets/Plugins/font-awesome/css/font-awesome.min.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Plugins/ionicons/css/ionicons.min.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Plugins/toastr/toastr.min.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Plugins/bootstrap-daterangepicker/daterangepicker.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Plugins/bootstrap-slider/slider.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Plugins/select2/css/select2.min.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Plugins/Highcharts-8.0.4/css/highcharts.css" asp-append-version="true" rel="stylesheet" />
+    
+    <!-- SWIPER -->
+    <link href="~/lib/swiper/swiper-bundle.min.css" rel="stylesheet" asp-append-version="true" />
+
+    <!-- Google Font -->
+    @await Html.PartialAsync("_Fonts")
+
+    <!-- Theme style -->
+    <link href="~/Assets/Themes/AdminLTE/css/AdminLTE.min.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Themes/AdminLTE/css/skins/skin-blue-caixa.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Themes/AdminLTE/css/skins/skin-blue-light-caixa.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/Assets/Themes/AdminLTE/css/style-custom.css" asp-append-version="true" rel="stylesheet" />
+    @*<link href="~/Content/Menu/Menu.css" rel="stylesheet" />*@
+    <link href="~/Assets/Plugins/font-awesome/css/all.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/css/indicadores.css" asp-append-version="true" rel="stylesheet" />
+    <script src="~/Assets/Plugins/modernizr/modernizr.min.js" asp-append-version="true"></script>
+
+    <link href="~/Assets/Themes/BlizLand/vendo/bootstrap/css/bootstrap.min.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/Assets/Themes/BlizLand/css/style.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/css/site.css" asp-append-version="true" rel="stylesheet" />
+    <link href="~/css/UsuariosTi.css" asp-append-version="true" rel="stylesheet" />
+
+    <link href="~/lib/dataTables/datatables.min.css" rel="stylesheet" />
+
+    <link href="~/Loader/dots.css" rel="stylesheet" />
+    <link href="~/Loader/spinners.css" rel="stylesheet" />
+
+    <style>
+        .modal-backdrop {
+            z-index: 50 !important;
+        }
+
+        html {
+            font-family: 'futurabt-medium' !important;
+        }
+
+        div {
+            font-family: 'futurabt-medium' !important;
+        }
+
+        span {
+            font-family: 'futurabt-medium' !important;
+        }
+    </style>
+    @RenderSection("css", required: false)
+</head>
+
+@await Html.PartialAsync("_Header")
+
+<body class="skin-blue sidebar-mini sidebar-collapse " style="margin-top: -11px; font-family: 'futurabt-medium' !important;">
+
+    <div id="divCarregando" style="z-index:99999;position:absolute;background-color:azure;opacity:0.7;width:100%;height:100%;display:none;">
+        <span class="dots-loader" style="margin-left:47%;margin-top:20%;opacity:1.5 !important;">Loading…</span>
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+    <span id="url-pesquisar-usuarios" style="display: none;" data-url="@Url.Action("PesquisarUsuarios", "Plantonistas", new { Area = "" })"></span>
+    <script src="~/Assets/Plugins/jquery/jquery-2.2.4.min.js" asp-append-version="true"></script>    
+    <script src="~/lib/dataTables/datatables.min.js"></script>
+
+    @*<script src="~/Assets/Plugins/bootstrap_4.0.1/js/bootstrap.js"></script>*@
+    <script src="~/Assets/Plugins/bootstrap-4.1.3/js/bootstrap.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/jquery.blockui/jquery.blockUI.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/jquery.mask/jquery.mask.min.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/momentjs/moment.min.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/momentjs/locale/pt-br.js" asp-append-version="true"></script>
+    @*<script>
+            function Carregando() {
+                $('#divCarregando').css('display', 'block');
+            }
+            function Carregado() {
+                $('#divCarregando').css('display', 'none');
+            }
+
+            var naoCarregar = 0;
+            $(function () {
+                $(window).on('beforeunload', function () {
+                    if (naoCarregar != 1) {
+                        Carregando();
+                    }
+                    naoCarregar = 0;
+                });
+            });
+
+
+        </script>*@
+    <script src="~/Assets/Plugins/toastr/toastr.min.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/jquery.slimscroll/jquery.slimscroll.min.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/bootstrap-daterangepicker/daterangepicker.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/select2/js/select2.full.min.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/select2/js/i18n/pt-BR.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/jquery.autocomplete/jquery.autocomplete.min.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/font-awesome/js/all.js" asp-append-version="true"></script>
+    <script src="~/Assets/Plugins/Highcharts-8.0.4/highcharts.js" asp-append-version="true"></script>
+
+    <!-- Sweet Alert -->
+    <link href="~/Assets/Plugins/sweetalert2/sweetalert2.css" asp-append-version="true" rel="stylesheet" />
+    <script src="~/Assets/Plugins/sweetalert2/sweetalert2.all.js" asp-append-version="true"></script>
+
+    <!-- AdminLTE App -->
+    <script src="~/Assets/Themes/AdminLTE/js/adminlte.min.js" asp-append-version="true"></script>
+
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/Assets/Themes/AdminLTE/js/demo.js" asp-append-version="true"></script>
+
+    <script src="~/Assets/Themes/AdminLTE/js/init-custom.js" asp-append-version="true"></script>
+
+    <script src="~/Assets/Themes/BlizLand/js/main.js" asp-append-version="true"></script>
+
+    @RenderSection("scripts", required: false)
+
+    @*<script src="~/Assets/js/init-default.js"></script>*@
+    <script>
+
+
+        $(function () {
+
+            $('.select2-usuarios-caixa').select2({
+                minimumInputLength: 5,
+                dataType: 'json',
+                ajax: {
+                    url: $('#url-pesquisar-usuarios').data('url'),
+                    type: 'POST',
+                    data: function (params) {
+                        var query = {
+                            matriculaOuNome: params.term
+                        }
+                        return query;
+                    }
+                }
+            });
+
+        });
+
+
+    </script>
+
+
+    <script>
+        var auxbell = 0;
+
+        function BuscarNoticia() {
+            if (auxbell == 0) {
+                $.post('/home/BuscarNoticia', {}, function (retorno) {
+                    $('#noticia').html('');
+                    $('#noticia').html(retorno);
+
+                });
+                auxbell = 1;
+            } else {
+                auxbell = 0;
+            }
+        }
+
+
+    </script>
+</body>
+</html>

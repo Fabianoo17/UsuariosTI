@@ -1,0 +1,94 @@
+﻿@model UsuariosTi.Business.ViewModels.ViewModelHome
+
+@{
+    ViewData["Title"] = "RetratoDaTI";
+}
+
+<div class="row" style="margin-top:75px;padding-left:50px;padding-right:15px;padding-right:50px;">
+    <div class="col-md-10">
+        <label style="color: #565656;font-size: 16pt;font-weight: bold;">Retrato da TI - GN Atendimento Usuários TI</label>
+        <span style="position: absolute;left: 15px;bottom: -20px;font-size: 10pt;color: #777;font-style: italic;">Data da última atualização: @ViewBag.DataAtualizacao</span>
+    </div>
+
+    <div class="col-md-1" style="padding-right: 0px;">
+        <a href="/home/GerarExcelRetratoDaTI" class="btn btn-success" style="color:#fff !important">Excel</a>
+    </div>
+    <div class="col-md-1" style="padding-right: 0px;">
+        <select class="form-control">
+            <option>2021</option>
+        </select>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-10 offset-1" style="">
+        <div class="row">
+            @foreach (var item in Model.VW005_RETRATO_TI_SERVICOS_REGIONAISs.OrderBy(x => x.T049_ORDENACAO).Select(x => x.T048_ID_SERVICO).Distinct())
+            {
+                var headerServico = Model.VW005_RETRATO_TI_SERVICOS_REGIONAISs.OrderByDescending(x => x.ORDENACAO_DATA).Where(x => x.T048_ID_SERVICO == item).Distinct().FirstOrDefault().NO_SERVICO;
+                var imagem = Model.VW005_RETRATO_TI_SERVICOS_REGIONAISs.OrderByDescending(x => x.ORDENACAO_DATA).Where(x => x.T048_ID_SERVICO == item).Distinct().FirstOrDefault().IMAGEM;
+                var bodyServico = Model.VW005_RETRATO_TI_SERVICOS_REGIONAISs.OrderBy(x => x.T049_ORDENACAO).Where(x => x.T048_ID_SERVICO == item).Distinct().Select(x => x.T049_NO_SUBITEM_RETRATO).Distinct();
+                var bodyCompetencia = Model.VW005_RETRATO_TI_SERVICOS_REGIONAISs.Where(x => x.T048_ID_SERVICO == item).OrderByDescending(x => x.ORDENACAO_DATA).Distinct();
+                var nomeOrigem = Model.VW005_RETRATO_TI_SERVICOS_REGIONAISs.OrderByDescending(x => x.ORDENACAO_DATA).Where(x => x.T048_ID_SERVICO == item).Distinct().FirstOrDefault().ORIGEM;
+                var validaUltimaCompetencia = "";
+                var competencias = Model.VW005_RETRATO_TI_SERVICOS_REGIONAISs.OrderByDescending(x => x.ORDENACAO_DATA).Select(x => x.T050_COMPETENCIA).Distinct();
+
+                <div class="col-md-12" style="padding-left: 0px;margin-bottom: 20px;">
+                    <table class="table-bordered" style="color: #565656;" width="100%">
+                        <thead>
+                            <tr style="background-color: #e0e0e0;">
+                                <th style="width:61%; border-right: 15px solid #fff;">
+                                    <a href="">@headerServico - @nomeOrigem</a>
+                                </th>
+                                @foreach (var itemCompetencia in Model.VW005_RETRATO_TI_SERVICOS_REGIONAISs.OrderByDescending(x => x.ORDENACAO_DATA).Select(x => x.T050_COMPETENCIA).Distinct())
+                                {
+                                    <th style="width:13%; text-align:center;border-right: 15px solid #fff;">@itemCompetencia</th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var itemBodyServico in bodyServico.OrderBy(x => true))
+                            {
+                            <tr>
+                                <td data-toggle="tooltip" data-html="true" title="@Model.VW005_RETRATO_TI_SERVICOS_REGIONAISs.FirstOrDefault(x=>x.T049_NO_SUBITEM_RETRATO == itemBodyServico).TITULO_SUBITEM" style="border-right: 15px solid #fff;">@itemBodyServico</td>
+                                @foreach (var itemCompetencia in competencias)
+                                {
+                                    var validaIndice = "---";
+                                    @foreach (var itemBodyCompetencia in bodyCompetencia.Where(x => x.T049_NO_SUBITEM_RETRATO == itemBodyServico && x.T050_COMPETENCIA == itemCompetencia).OrderBy(x => x.T049_NO_SUBITEM_RETRATO))
+                                    {
+                                        if (itemBodyCompetencia.T050_COMPETENCIA == itemCompetencia)
+                                        {
+                                            validaUltimaCompetencia = itemBodyCompetencia.T050_COMPETENCIA;
+
+                                            if (itemBodyCompetencia.T050_INDICE != null)
+                                            {
+                                                if (itemBodyCompetencia.T049_TIPAGEM == "DECIMAL(15,2)" && itemBodyCompetencia.T049_NO_SUBITEM_RETRATO.Contains("%"))
+                                                {
+                                                    validaIndice = String.Format("{0:P2}", itemBodyCompetencia.T050_INDICE) + "%";
+                                                }
+                                                else if (itemBodyCompetencia.T049_TIPAGEM == "MONEY")
+                                                {
+                                                    var money = Convert.ToDecimal(itemBodyCompetencia.T050_INDICE);
+                                                    validaIndice = String.Format("{0:C}", money);
+                                                }
+                                                else
+                                                {
+                                                    validaIndice = String.Format("{0:n0}", Convert.ToDecimal(itemBodyCompetencia.T050_INDICE)).Replace(",", ".");
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                    <td style="text-align:center;border-right: 15px solid #fff;">
+                                        <span style="">@validaIndice</span>
+                                    </td>
+                                }
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </div>
+    </div>
+</div>

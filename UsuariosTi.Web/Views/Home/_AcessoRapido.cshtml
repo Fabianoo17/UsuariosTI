@@ -1,0 +1,144 @@
+﻿<style>
+    @@-moz-document url-prefix() {
+        .acessoRapidoImg {
+            background: url('/imagens/AcessoRapido/acesso-rapidooo.jpg');
+            background-size: 100% 100%;
+            width: 100%;
+            min-height: 750px;
+        }
+
+        .circulo-acesso-rapido {
+            border-radius: 50%;
+            margin-top: 1%;
+            margin-left: 4%;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            z-index: 15;
+        }
+    }
+    .acessoRapidoImg {
+        background: url('/imagens/AcessoRapido/acesso-rapidooo.jpg');
+        background-size: 100% 100%;
+        width: 100%;
+        min-height: 750px;
+    }
+
+    .circulo-acesso-rapido {
+        border-radius: 50%;
+        margin-top: 1%;
+        margin-left: 4%;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        z-index: 15;
+    }
+</style>
+
+<section id="pag-acessoRapido" class="acessoRapidoImg">
+
+
+    <div class="col-12">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="circulo-acesso-rapido" style="margin-top: 237px; margin-left: 47.5%;">
+                        <img src="~/imagens/servicos-caixa.png" width="50" />
+                    </div>
+                    <div style="margin-top: 220px; padding-bottom: 20px;">
+                        <a href="https://servicos.caixa" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido" style="font-family: 'futurabt-medium'; margin-top: 15%; color: white;"> Servicos.caixa</span> </a>
+                    </div>
+                    <div class="circulo-acesso-rapido" style="margin-top: 22px; margin-left: 47.5%;">
+                        <img src="~/imagens/portal-office.png" width="50" />
+                    </div>
+                    <div style="padding-bottom: 20px">
+                        <a href="https://portal.office.com" target="_blank"> <span class=" btn-group-vertical botao-acesso-rapido" style="font-family: 'futurabt-medium'; margin-top: 15%; color: white "> Portal Office 365 </span> </a>
+                    </div>
+                    <div class="circulo-acesso-rapido" style="margin-top: 22px; margin-left: 47.5%;">
+                        <img src="~/imagens/plantonistas.png" width="50" />
+                    </div>
+                    <div style="padding-bottom: 20px">
+                        <a href="http://plantonistas.usuariosti.caixa" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido" style="font-family: 'futurabt-medium'; margin-top: 15%; color: white"> Plantonistas </span> </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="circulo-acesso-rapido" style="margin-top: 237px; padding-left: 52.5%">
+                            <img src="~/imagens/consulta-tecnicos.png" width="50" />
+                        </div>
+                        <div style="margin-top: 220px; padding-bottom: 20px; padding-left: 80px">
+                            <a asp-action="Index" asp-controller="ConsultaTecnicoTI" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido" style="font-family: 'futurabt-medium'; margin-top: 15%; color: white"> Consulta Técnicos de TI </span> </a>
+                        </div>
+                        <div class="circulo-acesso-rapido" style="margin-top: 22px; padding-left: 52.5%">
+                            <img src="~/imagens/portal-ativos.png" width="50" />
+                        </div>
+                        <div style="padding-bottom: 20px; padding-left: 80px">
+                            <a href="http://monitoramentocanais.ceaus.df.caixa/" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido" style=" text-align: center !important;font-family: 'futurabt-medium'; margin-top: 15%; color: white"> Monitoração de Canais </span> </a>
+                        </div>
+                        <div class="circulo-acesso-rapido" style="margin-top:22px; padding-left: 52.5%">
+                            <img src="~/imagens/mais-ferramentas.png" width="50" />
+                        </div>
+                        <div style="padding-bottom: 22px; padding-left: 80px">
+                            <a data-toggle="modal" data-target=".bd-example-modal-lg" href="#exampleModal" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido" style="font-family: 'futurabt-medium'; margin-top: 15%; color:white"> Mais Ferramentas </span> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="max-width: 100%; width: 960px; background-color:#eaeaea; border-radius: 10px;">
+        <div class="modal-content" style="background-color:#d8d5d5">
+            <div class="row">
+
+
+                <h5 class="modal-title" id="exampleModalLabel"> <label style="font-family:'Futurabt-medium'; margin-top:10px; position:absolute;top:0;left:75px; font-size:34px; color:#ff9100;"> <span style="color:#ff9100; border-bottom:2px solid #ff9100">Mais Ferram</span>entas</label> </h5>
+
+
+
+                <div class="col-12">
+                    <div class="row">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+
+                                    <div style=" margin-left: 0px; padding-bottom: 0px; padding-right: 100px; margin-top: 70px;">
+                                        <a href="https://simga.caixa/simga/login.jsf" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido-modal" style="margin-left: 0; font-family: 'futurabt-medium'; margin-top: 15px; color: white; "> SIMGA</span> </a>
+                                    </div>
+                                    <div style="margin-left: 0px; padding-bottom: 0px; padding-right: 100px ">
+                                        <a href="https://simoc.caixa/simoc/" target="_blank"> <span class=" btn-group-vertical botao-acesso-rapido-modal" style=" margin-left: 0; font-family: 'futurabt-medium'; margin-top: 15px; color: white "> SIMOC </span> </a>
+                                    </div>
+
+                                    <div style="padding-bottom: 0px; padding-left: 0px; padding-right: 100px">
+                                        <a href="" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido-modal" style=" margin-left: 0; font-family: 'futurabt-medium'; margin-top: 15px; color: white"> </span> </a>
+                                    </div>
+
+                                    <div style="padding-bottom: 0px; padding-left: 0px; padding-right: 100px">
+                                        <a href="" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido-modal" style=" margin-left: 0; font-family: 'futurabt-medium'; margin-top: 15px; color: white"> </span> </a>
+                                    </div>
+                                </div>
+                                <div class="col ">
+                                    <div style="margin-top: 70px;padding-bottom: 0px; padding-left: 0px; padding-right: 100px ">
+                                        <a href="" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido-modal" style=" margin-left: 0; font-family: 'futurabt-medium'; margin-top: 15px; color: white"> </span> </a>
+                                    </div>
+                                    <div style="padding-bottom: 0px; padding-left: 0px; padding-right: 100px">
+                                        <a href="" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido-modal" style=" margin-left: 0; font-family: 'futurabt-medium'; margin-top: 15px; color: white"> </span> </a>
+                                    </div>
+                                    <div style="padding-bottom: 0px; padding-left: 0px; padding-right: 100px">
+                                        <a href="" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido-modal" style=" margin-left: 0; font-family: 'futurabt-medium'; margin-top: 15px; color: white"> </span> </a>
+                                    </div>
+                                    <div style="padding-bottom: 120px; padding-left: 0px; padding-right: 100px">
+                                        <a href="" target="_blank"> <span class="btn-group-vertical botao-acesso-rapido-modal" style=" margin-left: 0; font-family: 'futurabt-medium'; margin-top: 15px; color: white"> </span> </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

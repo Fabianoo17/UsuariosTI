@@ -1,0 +1,58 @@
+﻿@{
+    var user = this.GetUserCustom();
+}
+
+    <div class="row" style="margin-top:75px;padding-left:50px;padding-right:15px;padding-right:50px;">
+        <div class="col-md-12">
+
+        </div>
+        <div class="col-md-12 card">
+            <div class="card-header row">
+                <div class="col-md-8">
+                    <label style="color: #565656;font-size: 16pt;font-weight: bold;">Consulta de Técnicos TI</label>
+                    @if (user.UnidadeCodigo == "7562" || user.UnidadeCodigo == "5356")
+                    {
+                    <a href="/RelatorioPrestadores/PrestadoresExcel" class="btn btn-success" style="color:#fff !important; margin-left: 640px;">Excel</a>
+                    }
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+
+                        <form id="form-pesquisa" style="width:90%" onsubmit="return false">
+                            <input placeholder="cpf/rg/matrícula/nome" id="pesquisa" name="pesquisa" class="form-control" type="text" />
+                        </form>
+                        <button type="button" onclick="carregaListaPrestadoresSIGOC()" style="" class="btn btn-success ml-1 btn-group-sm"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="corpo" class="col-12">
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    @section scripts{
+        <script>
+
+            function carregaListaPrestadoresSIGOC() {
+
+                $.ajax({
+                    url: "/RelatorioPrestadores/BuscarPrestadores",
+                    type: 'POST',
+                    data: $("#form-pesquisa").serialize(),
+                    success: function (obj) {
+                        $('#corpo').innerHTML = "";
+                        $('#corpo').html(obj);
+                        //$("#filial").val(obj.filial);
+                    }
+                });
+            }
+
+        </script>
+
+    }

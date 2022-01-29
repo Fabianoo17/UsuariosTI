@@ -1,0 +1,154 @@
+﻿
+@{
+    Layout = null;
+    var user = this.GetUserCustom();
+}
+
+<style>
+
+    .modal-content {
+        background: #ededed;
+    }
+
+    .icones {
+        color: #ff9000;
+        font-size: 3rem;
+    }
+
+    .boxcontato{
+        padding-top: 20px;
+        border-right: 2px solid #808080;
+    }
+
+    .boxespaco {
+        margin-top: 20px;
+    }
+
+    .textoContato {
+        font-size: 1.5rem;
+        color: #808080;
+        padding-left: 30px;
+        margin-top: 8px;
+    }
+
+    .textoContato a {
+        color: #ff9000 !important;
+    }
+
+    .textoForm {
+        font-size: 1.5rem;
+        color: #808080;        
+        margin-top: 8px;
+    }
+
+</style>
+<div class="modal fade" id="modalContato" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <div class="col-md-12">
+                    <img src="~/imagens/Contato/titulofaleconosco.png" />
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6 boxcontato">
+                        <div class="row boxespaco">
+                            <div class="col-md-1 icones">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="col-md-11 textoContato">
+                                <span>geaus@caixa.gov.br</span>
+                            </div>
+                        </div>
+                        <div class="row boxespaco">
+                            <div class="col-md-1 icones">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="col-md-11 textoContato">
+                                <span>SAUS QUADRA 3, BL E, 10º Andar - MATRIZ 3 BRASÍLIA/DF</span>
+                            </div>
+                        </div>
+                        <div class="row boxespaco">
+                            <div class="col-md-1 icones">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="col-md-11 textoContato">
+                                <span>SIGSC: </span><a href="https://servicos.caixa" target="_blank">https://servicos.caixa</a>
+                            </div>
+                        </div>
+                        <div class="row boxespaco">
+                            <div class="col-md-1 icones">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="col-md-11 textoContato">
+                                <span>Central de Serviços TI: 0800-721-2222</span>
+                            </div>
+                        </div>
+                        <div class="row boxespaco">
+                            <div class="col-md-1 icones">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div class="col-md-11 textoContato">
+                                <span>CHAT: </span><a href="http://atendimentoonline.caixa/" target="_blank">http://atendimentoonline.caixa</a>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="col-md-6">
+                        <form asp-action="FaleConosco" asp-controller="Home" id="formMensagem" onsubmit="return=false">
+                            <div class="form-group">
+                                <label class="textoForm">Nome do Remetente</label>
+                                <input type="text" class="form-control" id="txtRemetente" value="@user.Nome" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label class="textoForm">Mensagem</label>
+                                <textarea type="text" class="form-control" rows="7" id="txtMensagem" placeholder="Escreva aqui sua mensagem, sugestão ou dúvida"></textarea>
+                            </div>
+                            <div class="form-group" style="text-align: right;">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <button id="btnEnviar" type="button" class="btn btn-info" data-dismiss="modal">Enviar <i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#btnEnviar").click(function () {        
+
+        var dTexto = $("#txtMensagem").val();
+
+        $.ajax({
+            url: "/Home/FaleConosco",
+            type: 'POST',
+            data: { texto: dTexto },
+            beforeSend: function () {
+                //blockUI('');
+            }
+        }).done(function (data) {
+            //console.log(data);
+            $("#txtMensagem").val('');
+
+            Swal.fire({
+                title: 'E-mail enviado com sucesso!',
+                html: '',
+                type: 'success',
+                timer: 3000,
+                showCancelButton: false,
+                showConfirmButton: false,
+                focusCancel: true,
+                confirmButtonColor: '#dc3545',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Sim',
+                cancelButtonText: 'Cancelar'
+            }).then(function (result) {
+
+            });
+
+        }).fail(function (error) {
+            //erroAjax(error, function () { });
+        });
+    });
+</script>

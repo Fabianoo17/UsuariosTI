@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="427.6" height="200.43" viewBox="0 0 427.6 200.43">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: 0.95;
+      }
+
+      .cls-2 {
+        fill: #ff7600;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #dadbe6;
+      }
+
+      .cls-4 {
+        filter: url(#Shape_BG);
+      }
+    </style>
+    <filter id="Shape_BG" x="0" y="0" width="427.6" height="200.43" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#7c8289" flood-opacity="0.122"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_1301" data-name="Grupo 1301" transform="translate(-439 -1746.167)">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 439, 1746.17)">
+      <rect id="Shape_BG-2" data-name="Shape BG" class="cls-1" width="409.6" height="182.43" transform="translate(9 6)"/>
+    </g>
+    <rect id="Retângulo_1655" data-name="Retângulo 1655" class="cls-2" width="2" height="83" transform="translate(448 1802)"/>
+    <line id="Linha_383" data-name="Linha 383" class="cls-3" y2="183.467" transform="translate(636.267 1751.633)"/>
+    <line id="Linha_381" data-name="Linha 381" class="cls-3" x2="145.067" transform="translate(671.467 1845.5)"/>
+  </g>
+</svg>

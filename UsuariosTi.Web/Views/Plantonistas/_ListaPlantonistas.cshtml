@@ -1,0 +1,98 @@
+﻿@model UsuariosTi.Business.ViewModels.ViewModelPlantonistas
+@{
+    Layout = null;
+}
+
+
+<div style=" margin-top:1px;" class="col-12 bg-white">
+    <div class="row" style="padding:80px; padding-top:0px;">
+        <div class="col mt-3">
+            <button data-toggle="modal" data-target="#add-plantonista" class="btn btn-info btn-sm rounded-circle pull-right">
+                <i class="fa fa-plus"></i>
+            </button>
+            @if (Model.ListaPlantonistasCoordenacao.Any())
+            {
+                <h4>Lista de Plantonistas</h4>
+                <table class="table table-striped fonte-futura">
+                    <thead class="thead-light">
+                        <tr>
+                            <th style="width:12%;">Matrícula</th>
+                            <th>Nome de Exibição</th>
+                            <th>Coordenação</th>
+                            <th>Telefone</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ListaPlantonistasCoordenacao.Where(x => x.NOME_EXIBICAO!=null).OrderBy(x => x.NOME_EXIBICAO).Distinct())
+                        {
+                            //var nomeCompleto = item.NOME_EXIBICAO.Split(" ");
+                            //var primeiroNome = nomeCompleto[0];
+                            //var segundoNome = nomeCompleto[nomeCompleto.Length - 1];
+                        <tr>
+
+                            <td>@item.MAT</td>
+                            <td>
+                                <input class="form-control co-plantonista" type="hidden" value="@item.CO_PLANTONISTA" />
+                                @item.NOME_EXIBICAO.ToUpper()
+                            </td>
+
+                            <td>
+                                @item.NOME
+                            </td>
+
+                            <td style="width:17%;">
+                                @item.TEL_PESSOAL
+                            </td>
+
+                            <td>
+                                <button type="button" onclick="excluirPlantonista(@item.CO_PLANTONISTA)" class="btn btn-default"><i class=" fa fa-trash"></i></button>
+                                @*<input onchange="AtualizarPlantonista(this)" class="is-ativo" type="checkbox" @(item.IS_ATIVO ? "checked" : "") />*@
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+
+            }
+            else
+            {
+                <p> Nenhum registro encontrado.</p>
+            }
+        </div>
+    </div>
+</div>
+<script>
+    function excluirPlantonista(id) {
+
+
+        $.ajax({
+            type: 'POST',
+            url: "/Plantonistas/ExcluirPlantonista",
+            data: { id: id },
+
+        }).done(function (data) {
+            
+            toastr.options = {
+                "progressBar": true,
+                "positionClass": "toast-bottom-right"
+
+            }
+            if (data.success) {
+
+                toastr.success("Plantonista Excluído com sucesso!")
+            } else {
+                toastr.error("Ocorreu algum erro!")
+            }
+
+        }).done(function () {
+
+            AtualizarListaPlantonista();
+
+
+        });
+
+
+    }
+
+</script>

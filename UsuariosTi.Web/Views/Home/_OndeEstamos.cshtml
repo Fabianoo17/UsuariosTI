@@ -1,0 +1,433 @@
+﻿
+<style>
+
+    @@-moz-document url-prefix() {
+        .ondeEstamosImg {
+            background: url('/imagens/OndeEstamos/onde-estamos1.jpg');
+            background-size: 100% 100%;
+            width: 100%;
+        }
+
+        #TituloOndeEstamos {
+            position: absolute;
+            font-family: 'futurabt-medium';
+            font-size: 5rem;
+            font-weight: 500;
+            color: #079e81;
+            margin: 180px 0px 0px 220px;
+        }
+
+        #dvBotaoConsUnidade {
+            position: relative;
+            margin: 500px 0px 0px 450px;
+        }
+
+        #imgPino1 {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            top: 36%;
+            left: 30%;
+        }
+
+        #imgPino2 {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            top: 72%;
+            left: 44%;
+        }
+
+        #imgPino3 {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            top: 52%;
+            left: 51%;
+        }
+
+        #imgPino4 {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            top: 33%;
+            left: 50%;
+        }
+
+        #imgPino5 {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            top: 0%;
+            left: 54%;
+        }
+
+        #imgPino6 {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            top: 31%;
+            left: 56%;
+        }
+
+        #imgPino7 {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            top: 32%;
+            left: 61%;
+        }
+
+        #imgPino8 {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            top: 5%;
+            left: 80%;
+        }
+
+        #imgPino9 {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            top: 4%;
+            left: 52%;
+        }
+    }
+
+    .ondeEstamosImg {
+        background: url('/imagens/OndeEstamos/onde-estamos1.jpg');
+        background-size: 100% 100%;
+        width: 100%;
+    }
+
+    #TituloOndeEstamos {
+        position: absolute;
+        font-family: 'futurabt-medium';
+        font-size: 5rem;
+        font-weight: 500;
+        color: #079e81;
+        margin: 180px 0px 0px 220px;
+    }
+
+    #dvBotaoConsUnidade {
+        position: relative;
+        margin: 570px 0px 0px 450px;
+    }
+
+    #imgPino1 {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        top: 30%;
+        left: 27%;
+    }
+
+    #imgPino2 {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        top: 72%;
+        left: 44%;
+    }
+
+    #imgPino3 {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        top: 52%;
+        left: 51%;
+    }
+
+    #imgPino4 {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        top: 33%;
+        left: 50%;
+    }
+
+    #imgPino5 {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        top: 0%;
+        left: 54%;
+    }
+
+    #imgPino6 {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        top: 31%;
+        left: 56%;
+    }
+
+    #imgPino7 {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        top: 32%;
+        left: 61%;
+    }
+
+    #imgPino8 {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        top: 5%;
+        left: 80%;
+    }
+
+    #imgPino9 {
+        position: relative;
+        width: 45px;
+        height: 45px;
+        top: 4%;
+        left: 52%;
+    }
+</style>
+
+<section class="ondeEstamosImg" style="padding-bottom: 0px;padding-top: 0px;">
+    <div class="row">
+        <div class="col-md-12" id="pag-ondeEstamos">
+
+            <div class="col-md-6" style="height:800px">
+                <div style="margin-top: 300px; margin-left: 240px;">
+                    <span class="texto-formatacao" style="
+                                                  color: orange !important;
+                                                  font-size: 18pt;
+                                                  margin-bottom: 10px;
+                                                  text-align: justify;
+                                                   ">
+                        A GEAUS está presente em todas unidades<br />
+                        CAIXA e parceiros lotéricos, por meio de sua<br />
+                        Centralizadora Nacional - CEAUS e suas 8 (oito) <br />
+                        Centralizadoras Regionais - CIAUS.<br />
+
+                        <span class="texto-formatacao" style="
+                                                  color: orange !important;
+                                                  font-size: 18pt;
+                                                  margin-bottom: 10px;
+                                                  margin-top:20px;
+
+
+                                                   ">
+                            Para conhecer um pouco mais as nossas <br />
+                            Centralizadoras, clique diretamente no mapa.
+
+                        </span>
+                    </span>
+                </div>
+                <div id="dvBotaoConsUnidade">
+                    <a asp-action="OndeEstamos" class="btn mt-2 shadow " style=" background-color: #079e81 !important; color: #ffffff !important; font-family: 'Tw Cen MT'; font-size: 20px !important; margin-top:10px; ">Consulte aqui sua unidade<br /> de atendimento</a>
+                </div>
+            </div>
+
+            <div class="col-md-6" style="height:800px">
+                <div id="imgPino1">
+                    <a asp-action="OndeEstamosMapa" asp-route-id="7458" title="CIAUS/MN"><img src="~/imagens/OndeEstamos/pino_preto.png" id="img1" style="width: 70%" /></a>
+                </div>
+                <div id="imgPino2">
+                    <a asp-action="OndeEstamosMapa" asp-route-id="7876" title="CIAUS/PO"><img src="~/imagens/OndeEstamos/pino_preto.png" id="img2" style="width: 70%" /></a>
+                </div>
+
+                <div id="imgPino3">
+                    <a asp-action="OndeEstamosMapa" asp-route-id="7877" title="CIAUS/SP"><img src="~/imagens/OndeEstamos/pino_preto.png" id="img3" style="width: 70%" /></a>
+                </div>
+
+                <div id="imgPino4">
+                    <a asp-action="OndeEstamosMapa" asp-route-id="7875" title="CIAUS/GO"><img src="~/imagens/OndeEstamos/pino_preto.png" id="img4" style="width: 70%" /></a>
+                </div>
+
+
+                <div id="imgPino6">
+                    <a asp-action="OndeEstamosMapa" asp-route-id="7435" title="CIAUS/BH"><img src="~/imagens/OndeEstamos/pino_preto.png" id="img6" style="width: 70%" /></a>
+                </div>
+                <div id="imgPino7">
+                    <a asp-action="OndeEstamosMapa" asp-route-id="7469" title="CIAUS/RJ"><img src="~/imagens/OndeEstamos/pino_preto.png" id="img7" style="width: 70%" /></a>
+                </div>
+                <div id="imgPino8">
+                    <a asp-action="OndeEstamosMapa" asp-route-id="7466" title="CIAUS/RE"><img src="~/imagens/OndeEstamos/pino_preto.png" id="img8" style="width: 70%" /></a>
+                </div>
+
+                <div id="imgPino9">
+                    <a asp-action="OndeEstamosMapa" asp-route-id="7562" title="CEAUS"><img src="~/imagens/OndeEstamos/pino_laranja.png" id="img9" style="width: 90%" /></a>
+                </div>
+                <div id="imgPino5">
+                    <a asp-action="OndeEstamosMapa" asp-route-id="7436" title="CIAUS/BR"><img src="~/imagens/OndeEstamos/pino_preto.png" id="img5" style="width: 70%" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+
+    $("#imgPino1").mouseout(
+        function () {
+            $("#img1").attr('src', '../imagens/OndeEstamos/pino_preto.png');
+            $("#img1").css('width', '70%');
+
+        }
+    )
+
+    $("#imgPino1").mouseover(
+        function () {
+            $("#img1").attr('src', '../imagens/OndeEstamos/pino_cinza.png');
+            $("#img1").css('width', '70%');
+            $("#img1").css('cursor', 'pointer');
+
+
+        }
+    )
+
+    $("#imgPino2").mouseout(
+        function () {
+            $("#img2").attr('src', '../imagens/OndeEstamos/pino_preto.png');
+            $("#img2").css('width', '70%');
+
+        }
+    )
+
+    $("#imgPino2").mouseover(
+        function () {
+            $("#img2").attr('src', '../imagens/OndeEstamos/pino_cinza.png');
+            $("#img2").css('width', '70%');
+            $("#img2").css('cursor', 'pointer');
+
+
+        }
+    )
+
+    $("#imgPino3").mouseout(
+        function () {
+            $("#img3").attr('src', '../imagens/OndeEstamos/pino_preto.png');
+            $("#img3").css('width', '70%');
+
+        }
+    )
+
+    $("#imgPino3").mouseover(
+        function () {
+            $("#img3").attr('src', '../imagens/OndeEstamos/pino_cinza.png');
+            $("#img3").css('width', '70%');
+            $("#img3").css('cursor', 'pointer');
+
+
+        }
+    )
+
+    $("#imgPino4").mouseout(
+        function () {
+            $("#img4").attr('src', '../imagens/OndeEstamos/pino_preto.png');
+            $("#img4").css('width', '70%');
+
+        }
+    )
+
+    $("#imgPino4").mouseover(
+        function () {
+            $("#img4").attr('src', '../imagens/OndeEstamos/pino_cinza.png');
+            $("#img4").css('width', '70%');
+            $("#img4").css('cursor', 'pointer');
+
+
+        }
+    )
+
+    $("#imgPino5").mouseout(
+        function () {
+            $("#img5").attr('src', '../imagens/OndeEstamos/pino_preto.png');
+            $("#img5").css('width', '70%');
+
+        }
+    )
+
+    $("#imgPino5").mouseover(
+        function () {
+            $("#img5").attr('src', '../imagens/OndeEstamos/pino_cinza.png');
+            $("#img5").css('width', '70%');
+            $("#img5").css('cursor', 'pointer');
+
+
+        }
+    )
+
+    $("#imgPino6").mouseout(
+        function () {
+            $("#img6").attr('src', '../imagens/OndeEstamos/pino_preto.png');
+            $("#img6").css('width', '70%');
+
+        }
+    )
+
+    $("#imgPino6").mouseover(
+        function () {
+            $("#img6").attr('src', '../imagens/OndeEstamos/pino_cinza.png');
+            $("#img6").css('width', '70%');
+            $("#img6").css('cursor', 'pointer');
+
+
+        }
+    )
+
+    $("#imgPino7").mouseout(
+        function () {
+            $("#img7").attr('src', '../imagens/OndeEstamos/pino_preto.png');
+            $("#img7").css('width', '70%');
+
+        }
+    )
+
+    $("#imgPino7").mouseover(
+        function () {
+            $("#img7").attr('src', '../imagens/OndeEstamos/pino_cinza.png');
+            $("#img7").css('width', '70%');
+            $("#img7").css('cursor', 'pointer');
+
+
+        }
+    )
+
+    $("#imgPino8").mouseout(
+        function () {
+            $("#img8").attr('src', '../imagens/OndeEstamos/pino_preto.png');
+            $("#img8").css('width', '70%');
+
+        }
+    )
+
+    $("#imgPino8").mouseover(
+        function () {
+            $("#img8").attr('src', '../imagens/OndeEstamos/pino_cinza.png');
+            $("#img8").css('width', '70%');
+            $("#img8").css('cursor', 'pointer');
+
+
+        }
+    )
+
+    $("#imgPino9").mouseout(
+        function () {
+            $("#img9").attr('src', '../imagens/OndeEstamos/pino_laranja.png');
+            $("#img9").css('width', '90%');
+
+        }
+    )
+
+    $("#imgPino9").mouseover(
+        function () {
+            $("#img9").attr('src', '../imagens/OndeEstamos/pino_cinza.png');
+            $("#img9").css('width', '90%');
+            $("#img9").css('cursor', 'pointer');
+
+
+        }
+    )
+
+</script>
+
+
+

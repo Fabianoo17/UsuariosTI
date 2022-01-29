@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="101" height="38.753" viewBox="0 0 101 38.753">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #545871;
+        font-size: 12px;
+        font-family: FuturaBT-Light, Futura;
+        font-weight: 300;
+      }
+
+      .cls-2 {
+        fill: #ff7600;
+        font-size: 17px;
+        font-family: FuturaBT-Medium, Futura;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1324" data-name="Grupo 1324" transform="translate(-1092.333 -1780.247)">
+    <text id="c095204" class="cls-1" transform="translate(1093 1816)"><tspan x="0" y="0">c095204</tspan></text>
+    <text id="Atendimento" class="cls-2" transform="translate(1093.333 1796.247)"><tspan x="0" y="0">Atendimento</tspan></text>
+  </g>
+</svg>

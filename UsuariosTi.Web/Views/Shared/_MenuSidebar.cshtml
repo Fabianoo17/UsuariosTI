@@ -1,0 +1,28 @@
+﻿@using UsuariosTi.App.Helpers;
+
+@{
+    IUser user = this.GetUserCustom();
+
+}
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">NAVEGAÇÃO PRINCIPAL</li>
+
+            <li class="treeview @Url.Action(" Exemplo")">
+                <a href="#">
+                    <i class="fas fa-chart-line"></i> <span>Desempenho</span>
+                    <span class="pull-right-container">
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="@Url.Action(" Index", "Home" )">
+                        <a href="@Url.Action(" Index", "Home" , new { Area="" })">
+                            <i class="fab fa-git-alt"></i> <span>Resultado Desempenho</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</aside>

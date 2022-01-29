@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="537.238" height="650.703" viewBox="0 0 537.238 650.703">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #eb822d;
+      }
+
+      .cls-2 {
+        fill: #00b260;
+      }
+
+      .cls-3 {
+        fill: #127a9c;
+        font-size: 45px;
+      }
+
+      .cls-3, .cls-7 {
+        font-family: Futura-Bold, Futura;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        fill: #3e3e3e;
+      }
+
+      .cls-5 {
+        fill: #919191;
+      }
+
+      .cls-6 {
+        fill: none;
+        stroke: #c3c3c3;
+      }
+
+      .cls-7 {
+        fill: #18d6d4;
+        font-size: 20px;
+      }
+    </style>
+  </defs>
+  <g id="Componente_23_2" data-name="Componente 23 – 2" transform="translate(0.66)">
+    <g id="Grupo_708" data-name="Grupo 708" transform="translate(-775.197 -6857.076)">
+      <g id="Grupo_702" data-name="Grupo 702" transform="translate(226 -435)">
+        <g id="Grupo_701" data-name="Grupo 701">
+          <path id="Caminho_369" data-name="Caminho 369" class="cls-1" d="M124.329,0H8.275A8.286,8.286,0,0,0,0,8.275V97.808a8.286,8.286,0,0,0,8.275,8.275H38.531a64.945,64.945,0,0,0,5.833,5.847c3.69,3.385,7.874,7.222,7.453,9.918-.273,1.76-2.7,3.782-6.838,5.7a2.653,2.653,0,0,0,1.114,5.06H86.511a2.653,2.653,0,0,0,1.114-5.06c-4.137-1.914-6.566-3.936-6.839-5.7-.419-2.7,3.763-6.533,7.453-9.918a65.11,65.11,0,0,0,5.834-5.847h30.256a8.286,8.286,0,0,0,8.275-8.275V8.275A8.286,8.286,0,0,0,124.329,0ZM8.275,5.3H124.329a2.974,2.974,0,0,1,2.97,2.971V81.549H5.3V8.275A2.974,2.974,0,0,1,8.275,5.3ZM84.654,108.02c-4.9,4.494-9.967,9.141-9.109,14.643a8.9,8.9,0,0,0,2.339,4.635H54.72a8.913,8.913,0,0,0,2.339-4.635c.857-5.5-4.211-10.149-9.109-14.643-.7-.641-1.4-1.289-2.084-1.938h40.87C86.051,106.731,85.353,107.379,84.654,108.02Zm39.675-7.242H8.275A2.974,2.974,0,0,1,5.3,97.808V86.854H127.3V97.808A2.974,2.974,0,0,1,124.329,100.779Zm0,0" transform="translate(549.197 7292.076)"/>
+        </g>
+        <g id="Grupo_700" data-name="Grupo 700">
+          <path id="Caminho_370" data-name="Caminho 370" class="cls-1" d="M205.951,117.806a2.519,2.519,0,0,0,2.2,0,46.767,46.767,0,0,0,26.167-41.812V72.78a2.515,2.515,0,0,0-2.515-2.515c-12.162,0-14.6-3.3-14.6-8.623a2.515,2.515,0,0,0-2.515-2.515H199.418a2.515,2.515,0,0,0-2.514,2.515c0,5.323-2.444,8.623-14.606,8.623a2.514,2.514,0,0,0-2.514,2.515v3.213A46.768,46.768,0,0,0,205.951,117.806ZM184.814,75.268c6.076-.171,15.56-1.456,16.948-11.112H212.34c1.387,9.657,10.872,10.941,16.948,11.112v.725a41.72,41.72,0,0,1-22.237,36.734,41.721,41.721,0,0,1-22.236-36.734Zm0,0" transform="translate(408.448 7244.655)"/>
+          <path id="Caminho_371" data-name="Caminho 371" class="cls-2" d="M256.926,177.219a2.507,2.507,0,0,0,1.778-.737l15.12-15.12a2.514,2.514,0,1,0-3.556-3.556l-13.342,13.343-6.22-6.22a2.514,2.514,0,0,0-3.556,3.556l8,8A2.507,2.507,0,0,0,256.926,177.219Zm0,0" transform="translate(355.011 7168.132)"/>
+        </g>
+      </g>
+      <text id="Monitoração" class="cls-3" transform="translate(930 6913)"><tspan x="0" y="0">Monitoração</tspan></text>
+    </g>
+    <g id="Grupo_1074" data-name="Grupo 1074" transform="translate(-775.197 -6846.076)">
+      <g id="Grupo_1072" data-name="Grupo 1072">
+        <path id="P" class="cls-4" d="M11.5,23a11.121,11.121,0,0,1-8.121-3.378A11.117,11.117,0,0,1,0,11.5,11.122,11.122,0,0,1,3.378,3.378,11.122,11.122,0,0,1,11.5,0a11,11,0,0,1,8.1,3.4A11,11,0,0,1,23,11.5a11.118,11.118,0,0,1-3.378,8.122A11.122,11.122,0,0,1,11.5,23Zm0-21.467A9.645,9.645,0,0,0,4.456,4.456,9.642,9.642,0,0,0,1.533,11.5a9.642,9.642,0,0,0,2.923,7.044A9.645,9.645,0,0,0,11.5,21.467a9.636,9.636,0,0,0,7.043-2.923A9.639,9.639,0,0,0,21.467,11.5a9.639,9.639,0,0,0-2.924-7.044A9.636,9.636,0,0,0,11.5,1.533Zm0,16.867a.737.737,0,0,1-.766-.767V12.267H5.366a.767.767,0,1,1,0-1.535h5.367V5.367a.767.767,0,1,1,1.533,0v5.366h5.367a.767.767,0,1,1,0,1.535H12.266v5.366a.737.737,0,0,1-.767.767Z" transform="translate(1288 7064)"/>
+        <path id="O" class="cls-5" d="M11.651,23.3a11.268,11.268,0,0,1-8.228-3.423A11.268,11.268,0,0,1,0,11.651a11.269,11.269,0,0,1,3.423-8.23A11.268,11.268,0,0,1,11.651,0a11.15,11.15,0,0,1,8.206,3.446,11.149,11.149,0,0,1,3.446,8.2,11.267,11.267,0,0,1-3.423,8.228A11.268,11.268,0,0,1,11.651,23.3Zm0-21.75A9.779,9.779,0,0,0,4.515,4.513a9.775,9.775,0,0,0-2.961,7.138,9.769,9.769,0,0,0,2.961,7.136,9.775,9.775,0,0,0,7.137,2.961,9.764,9.764,0,0,0,7.136-2.961,9.765,9.765,0,0,0,2.963-7.136,9.77,9.77,0,0,0-2.963-7.138A9.767,9.767,0,0,0,11.651,1.552Zm6.215,10.876H5.438a.778.778,0,1,1,0-1.555H17.866a.778.778,0,1,1,0,1.555Z" transform="translate(1288.472 7124.268)"/>
+      </g>
+      <g id="Grupo_1073" data-name="Grupo 1073">
+        <line id="Linha_264" data-name="Linha 264" class="cls-6" x2="413.88" transform="translate(775.776 7076.279)"/>
+        <line id="Linha_268" data-name="Linha 268" class="cls-6" x2="413.88" transform="translate(775.776 7136.279)"/>
+        <line id="Linha_269" data-name="Linha 269" class="cls-6" x2="413.88" transform="translate(775.776 7196.279)"/>
+        <line id="Linha_270" data-name="Linha 270" class="cls-6" x2="413.88" transform="translate(775.776 7256.279)"/>
+        <line id="Linha_271" data-name="Linha 271" class="cls-6" x2="413.88" transform="translate(775.776 7316.279)"/>
+        <line id="Linha_272" data-name="Linha 272" class="cls-6" x2="413.88" transform="translate(775.776 7376.279)"/>
+        <line id="Linha_273" data-name="Linha 273" class="cls-6" x2="413.88" transform="translate(775.776 7436.279)"/>
+        <line id="Linha_274" data-name="Linha 274" class="cls-6" x2="413.88" transform="translate(775.776 7496.279)"/>
+        <text id="Central_de_Monitoração_" data-name="Central de Monitoração " class="cls-7" transform="translate(775.537 7060.321)"><tspan x="0" y="0">Central de Monitoração </tspan></text>
+        <text id="Telesserviços" class="cls-7" transform="translate(775.537 7120.321)"><tspan x="0" y="0">Telesserviços</tspan></text>
+        <text id="Canais" class="cls-7" transform="translate(775.537 7180.321)"><tspan x="0" y="0">Canais</tspan></text>
+        <text id="AA" class="cls-7" transform="translate(775.537 7240.321)"><tspan x="0" y="0">AA</tspan></text>
+        <text id="SIMGA" class="cls-7" transform="translate(775.537 7300.321)"><tspan x="0" y="0">SIMGA</tspan></text>
+        <text id="Telecom" class="cls-7" transform="translate(775.537 7360.321)"><tspan x="0" y="0">Telecom</tspan></text>
+        <text id="Infra" class="cls-7" transform="translate(775.537 7420.321)"><tspan x="0" y="0">Infra</tspan></text>
+        <text id="Processos" class="cls-7" transform="translate(775.537 7480.321)"><tspan x="0" y="0">Processos</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

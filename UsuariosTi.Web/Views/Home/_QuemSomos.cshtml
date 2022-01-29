@@ -1,0 +1,261 @@
+﻿
+@model UsuariosTi.Business.ViewModels.Home.QuemSomos.QuemSomosViewModel
+@{
+    var auxQuebraQuem = 0;
+}
+<style>
+    @@-moz-document url-prefix() {
+        .quemSomosImg {
+            background: url(/imagens/QuemSomos/quem-somos2.jpg);
+            background-size: 100% 100%;
+            width: 100%;
+        }
+
+        .Explicativa-Quem-Somos {
+            background: #079e81;
+            opacity: 1;
+            box-shadow: -6px 5px 5px rgba(50, 50, 50, 0.77);
+            width: 6.6%;
+            height: 96px;
+            position: absolute;
+            z-index: 150;
+            vertical-align: top;
+            margin-left: 246px;
+            margin-top: -275px;
+            /*left:-30px;*/
+        }
+
+        .Explicativa-Quem-Somos-2 {
+            background: #079e81 0% 0% no-repeat padding-box;
+            opacity: 1;
+            box-shadow: 9px 5px 5px rgba(50, 50, 50, 0.77);
+            width: 33%;
+            height: 96px;
+            display: block;
+            z-index: 151;
+            position: absolute;
+            transform: skew(35deg);
+            margin-left: 300px;
+            margin-top: -275px;
+            /* left: -30px;*/
+        }
+
+        .textoex {
+            font-weight: 500;
+            font-size: 16px;
+            color: black;
+            margin-left: -115px;
+            text-align: left;
+            transform-origin: right;
+            z-index: 152;
+            position: absolute;
+            margin-top: -275px;
+            left: 382px;
+        }
+
+        .botao-quem-somos {
+            background: #ff9100 0% 0% no-repeat padding-box;
+            border-radius: 5px;
+            opacity: 1;
+            position: center;
+            z-index: 05;
+            font-size: 17px;
+            color: white;
+            text-align: center;
+            box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+            height: 75px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circulo {
+            border-radius: 50%;
+            height: 50px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            margin-top: -50px;
+        }
+
+        .circulo-herdeiros-teste {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            /*position: absolute;*/
+            margin-top: -26%;
+        }
+    }
+    .quemSomosImg {
+        background: url(/imagens/QuemSomos/quem-somos2.jpg);
+        background-size: 100% 100%;
+        width: 100%;
+    }
+
+    .Explicativa-Quem-Somos {
+        background: #079e81;
+        opacity: 1;
+        box-shadow: -6px 5px 5px rgba(50, 50, 50, 0.77);
+        width: 6.6%;
+        height: 96px;
+        position: absolute;
+        z-index: 150;
+        vertical-align: top;
+        margin-left: 246px;
+        margin-top: -240px;
+        /*left:-30px;*/
+    }
+
+    .Explicativa-Quem-Somos-2 {
+        background: #079e81 0% 0% no-repeat padding-box;
+        opacity: 1;
+        box-shadow: 9px 5px 5px rgba(50, 50, 50, 0.77);
+        width: 34%;
+        height: 96px;
+        display: block;
+        z-index: 151;
+        position: absolute;
+        transform: skew(35deg);
+        margin-left: 300px;
+        margin-top: -240px;
+        /* left: -30px;*/
+    }
+
+    .textoex {
+        font-weight: 500;
+        font-size: 16px;
+        color: black;
+        margin-left: -115px;
+        text-align: left;
+        transform-origin: right;
+        z-index: 152;
+        position: absolute;
+        margin-top: -240px;
+        left: 382px;
+    }
+    .botao-quem-somos {
+        background: #ff9100 0% 0% no-repeat padding-box;
+        border-radius: 5px;
+        opacity: 1;
+        position: center;
+        z-index: 05;
+        font-size: 17px;
+        color: white;
+        text-align: center;
+        box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+        height: 75px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circulo {
+        border-radius: 50%;
+        height: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top: -50px;
+    }
+    .circulo-herdeiros-teste {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        /*position: absolute;*/
+        margin-top: -26%;
+    }
+</style>
+
+<section id="pag-quemSomos" class="quemSomosImg">
+
+    <div class="row" style="padding-top:28%;">
+        <div class="col-12">
+            <div class="Explicativa-Quem-Somos ">
+            </div>
+            <div class="Explicativa-Quem-Somos-2">
+
+            </div>
+            <div class="textoex" style="text-align: justify;">
+                A GEAUS é a Gerência Nacional Atendimento Usuários TI, vinculada à  <br />
+                DESER/SUSER, responsável por disponibilizar serviços e soluções de TI para <br />
+                todas unidades CAIXA e parceiros lotéricos, com foco no atendimento e na <br />
+                experiência do usuário.
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-left:25%; margin-top:-5%;">
+        @foreach (var item in Model.ListaQuemSomos)
+        {
+
+            if (item.T075_CO_CORDENACAO == 1)
+            {
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-3" @*onclick="AbrirModalNossoTime(@item.T075_CO_CORDENACAO);"*@ style="cursor:pointer;">
+                            <a asp-action="NossoTime">
+                                <div class=" botao-quem-somos row" style="width: 95%; margin-left: -27%; margin-bottom:18%">
+                                    <div class="col-12">
+                                        <div class="circulo">
+                                            <img src="~/imagensHomologadas/IconeCoordenacao1.png" width="50" />
+                                        </div>
+                                    </div>
+                                    <div class="col-12" style="margin-top:-32px;">@item.T075_NOME_BOTAO</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+
+                <div style="margin-bottom: 5%;width:38%;min-width:30%;max-width:38%;margin-right:5%;margin-top: 20px">
+                    <div class="row">
+                        @if (auxQuebraQuem == 0)
+                        {
+                            auxQuebraQuem = 1;
+                            <div class="col-3"></div>
+                        }
+                        else
+                        {
+                            auxQuebraQuem = 0;
+                        }
+                        <div class="col-8 botao-quem-somos row" onclick="AbrirModalNossoTime(@item.T075_CO_CORDENACAO);" style="cursor:pointer;margin-top: -10px; margin-left: -20%;">
+                            @*<div class="circulo-herdeiros-teste row" style="margin-left: 355px">*@
+                            <div class="col-12">
+                                <div class="circulo">
+                                    <img src="@Html.Raw($"/imagensHomologadas/IconeCoordenacao{item.T075_CO_CORDENACAO}.png")" width="52" />
+                                </div>
+                            </div>
+                            <div class="col-12" style="margin-top:-32px;">@item.T075_NOME_BOTAO</div>
+                        </div>
+                        @*</div>*@
+                    </div>
+                </div>
+
+            }
+        }
+
+    </div>
+
+</section>
+
+
+
+
+
+<script>
+    function AbrirModalNossoTime(idModal) {
+        $('#divModal').html('');
+        //Carregando();
+        $.post('/home/ChamarModaisDetalhamentoQuemSomos', { idModal: idModal }, function (retorno) {
+            $('#divModal').html(retorno);
+        }).done(function () {
+            $('#modalQuemSomos').modal('show');
+            /*   Carregado();*/
+        });
+    }
+</script>
+

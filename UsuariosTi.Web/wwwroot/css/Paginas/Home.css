@@ -1,0 +1,83 @@
+﻿.home {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.modal-header .close{
+    margin-top: -15px !important;
+}
+
+.imgs-somos-caixa {
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
+    z-index: 30;
+    width: 100%;
+}
+
+.texto-formatacao {
+    z-index: 30;
+    position: absolute;
+    font-size: 25pt;
+    color: #fff;
+}
+
+.texto-formatacao-carousel {
+    width: 600px;
+    z-index: 30;
+    position: absolute;
+    font-size: 25pt;
+    color: #fff;
+}
+
+.texto-bem-vindo {
+    font-size: 35pt;
+    color: #fff;
+    border-right: 2px solid #fff;
+    padding-right: 5px;
+    height: 220px;
+    line-height: 200px;
+}
+
+.texto-voce-aqui {
+    font-size: 32pt;
+    color: #fff;
+}
+
+.btn-home-acesse-dicas {
+    width: auto;
+    height: 40px;
+    border-radius: 10px;
+
+   
+}
+
+#MenuPainelAdministrativo {
+    position: absolute;
+    background: #fff;
+    width: 220px;
+    height: 200px;
+    top: 15%;
+    right: -250px;
+    z-index: 1000;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    transition: all .2s linear;
+}
+
+#MenuPainelAdministrativo span:hover {
+    letter-spacing: 1px;
+    color: #ff6a00 !important;
+}
+
+#MenuPainelAdministrativo.active {
+        right: 10px;
+}
+

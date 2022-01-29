@@ -1,0 +1,27 @@
+﻿<div style="margin-top: 10px;">
+    <form id="formCards" asp-action="SalvarCards" asp-controller="Home" method="Post">
+        <input type="hidden" id="txtIDCards" />
+        <input type="hidden" id="txtPositivoCards" />
+        <input type="hidden" id="txtNegativoCards" />
+        <input type="hidden" id="txtVisualizacaoCards" />
+        <input type="hidden" id="txtEditarCards" />
+
+        <div class="form-group">
+            <label>Título</label><small class="caracteresCards" style="margin-left: 20px;"></small>
+            <input class="form-control" name="TituloCards" id="txtTituloCards" />
+        </div>
+
+        <div class="form-group">
+            <label id="lblInserir">Inserir imagem</label><small> Dimensão: 484x612 pixels | Formato: *.PNG/*.JPG | Tamanho: 1mb</small>           
+            <input type="file" class="form-control-file" id="FileCards" accept="image/png, image/jpeg" data-max-size="1000000">
+        </div>
+        <div class="form-group">
+            <label id="lblInserir">Anexar arquivo para download</label>@*<small> Dimensão: 484x612 pixels | Formato: *.PNG/*.JPG | Tamanho: 1mb</small>*@          
+            <input type="file" class="form-control-file" id="FileDownloadCards">
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-success" id="btnSalvarCards">Salvar <i class="fa fa-check"></i> </button>
+        </div>
+    </form>
+</div>

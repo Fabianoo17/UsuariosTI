@@ -1,0 +1,485 @@
+﻿
+@{
+    Layout = null;
+    var user = this.GetUserCustom();
+}
+
+<style>
+
+    #modalConfigUltimasAcoes .modal-content {
+        background: #ededed;
+        min-width: 60%;
+        min-height: 500px;
+        width: 1000px;
+    }
+
+    .icones {
+        color: #ff9000;
+        font-size: 3rem;
+    }
+
+    .boxcontato {
+        padding-top: 20px;
+        border-right: 2px solid #808080;
+    }
+
+    .boxespaco {
+        margin-top: 20px;
+    }
+
+    .textoContato {
+        font-size: 1.5rem;
+        color: #808080;
+        padding-left: 30px;
+        margin-top: 8px;
+    }
+
+        .textoContato a {
+            color: #ff9000 !important;
+        }
+
+    .textoForm {
+        font-size: 1.5rem;
+        color: #808080;
+        margin-top: 8px;
+    }
+</style>
+<div class="modal fade" id="modalConfigUltimasAcoes" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Configurações de Últimas Ações</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="dvListUltimasAcoes">
+                    <div class="col-12">
+                        <button class="btn btn-success" id="btnAddUltimasAcoes">Adicionar <i class="fa fa-plus"></i></button>
+                    </div>
+                    <div class="col-12">
+                        @await Html.PartialAsync("_ListUltimasAcoes")
+                    </div>
+                </div>
+
+                <div class="dvDadosUltimasAcoes" style="display: none;">
+                    <div class="col-12">
+                        <button class="btn btn-default" id="btnVoltarUltimasAcoes"><i class="fa fa-arrow-left"></i> Voltar</button>
+                    </div>
+                    <div class="col-12">
+                        @await Html.PartialAsync("_FormUltimasAcoes")
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/dataTables/datatables.min.js"></script>
+<script>
+
+
+    function ListarUltimasAcoes() {
+
+        $("#tableUltimasAcoes tbody").empty();
+        //$("#tableUltimasAcoes").DataTable().clear();
+        $("#tableUltimasAcoes").DataTable().destroy();
+
+        $.ajax({
+            url: "/Home/ListarUltimasAcoes",
+            type: 'POST',
+            beforeSend: function () {
+                //blockUI('');
+            }
+        }).done(function (data) {
+            console.log(data);
+
+            var cols = "";
+
+            if (data.length == 0) {
+                cols += "<tr>";
+                cols += "<td colspan=5 style='text-align: center; font-weight: bold;font-size:16px;'>Nenhum Registro Encontrado2</td>";
+                cols += "</tr>";
+                $("#tableUltimasAcoes tbody").empty();
+                $("#tableUltimasAcoes tbody").append(cols);
+            } else {
+
+                var tabela = $("#tableUltimasAcoes").DataTable(
+                    {
+                        paging: true,
+                        ordering: false,
+                        searching: true,
+                        lengthChange: false,
+                        fnInitComplete: function () {
+                            $('#tableUltimasAcoes').show();
+                            $('.overlay').hide();
+                        },
+                        columnDefs: [
+                            { "width": "10%", "targets": 0 },
+                            { "width": "20%", "targets": 1 },
+                            { "width": "50%", "targets": 2 },
+                            { "width": "20%", "targets": 3 },
+                            { "width": "10%", "targets": 4 },
+                            { "width": "10%", "targets": 5 },
+                        ],
+                        language: {
+                            "sEmptyTable": "Nenhum registro encontrado",
+                            "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+                            "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                            "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+                            "sInfoPostFix": "",
+                            "sInfoThousands": ".",
+                            "sLengthMenu": "_MENU_ resultados por página",
+                            "sLoadingRecords": "Carregando...",
+                            "sProcessing": "Processando...",
+                            "sZeroRecords": "Nenhum registro encontrado",
+                            "sSearch": "Pesquisar",
+                            "oPaginate": {
+                                "sNext": "Próximo",
+                                "sPrevious": "Anterior",
+                                "sFirst": "Primeiro",
+                                "sLast": "Último"
+                            },
+                            "oAria": {
+                                "sSortAscending": ": Ordenar colunas de forma ascendente",
+                                "sSortDescending": ": Ordenar colunas de forma descendente"
+                            }
+                        }
+                    }
+                );
+                tabela.clear().draw();
+
+                for (var i = 0; i < data.length; i++) {
+
+                    var botaoEditar = "<center><a class='btn bg-primary btn-sm' data-toggle='tooltip' data-id=" + data[i].id + " title='Editar' onclick='editarUltimasAcoes(this);'><i class='fas fa-edit' style='color: #ffffff;'></i></a></center>";
+                    var botaoExcluir = "<center><a class='btn bg-danger btn-sm' data-toggle='tooltip' data-id=" + data[i].id + " title='Excluir' onclick='excluirUltimasAcoes(this);'><i class='fas fa-trash' style='color: #ffffff;'></i></a></center>";
+
+                    var dvTitulo = "<div style='margin-top: 5px;'>" + data[i].titulo + "</div>";
+                    var dvArquivo = "<div style='margin-top: 5px;'>" + data[i].no_Imagem + "</div>";
+                    var dvData = "<div style='margin-top: 5px;'>" + moment(data[i].data).format('DD/MM/YYYY') + "</div>";
+                    var dvResumo = "<div style='margin-top: 5px;'>" + data[i].resumo + "</div>";
+                    var dvUsuario = "<div style='margin-top: 5px;'></div>";
+
+                    if (data[i].matricula !== null && data[i].nome !== null) {
+                        dvUsuario = "<div style='margin-top: 5px;'>" + data[i].matricula + "/" + data[i].nome + "</div>";
+                    }
+
+                    tabela.row.add([dvData, dvArquivo, dvTitulo, dvUsuario, botaoEditar, botaoExcluir]).draw(false);
+                }
+            }
+
+
+        }).fail(function (error) {
+            //erroAjax(error, function () { });
+        });
+    }
+
+    function tamanhoArquivoUA() {
+        var isOk = true;
+        $('input[type=file][data-max-size]').each(function () {
+            if (typeof this.files[0] !== 'undefined') {
+                var fileInput = $('#File');
+                var maxSize = fileInput.data('max-size');
+                size = this.files[0].size;
+                isOk = maxSize > size;
+                console.log(maxSize);
+                console.log(size);
+                return isOk;
+            }
+        });
+
+        return isOk;
+    }
+
+    function salvarUltimasAcoes() {
+
+        if ($("#txtTituloUltimasAcoes").val() === '') {
+            fnMensagem('Digite o título do card.', 'warning');
+            return;
+        }
+
+        if ($("#txtResumoUltimasAcoes").val() === '') {
+            fnMensagem('Digite o texto do resumo.', 'warning');
+            return;
+        }
+
+        if ($("#txtTextoUltimasAcoes").val() === '') {
+            fnMensagem('Digite o texto.', 'warning');
+            return;
+        }
+
+        if ($("#txtEditarUA").val() === 'salvar') {
+            if ($("#File").val() === '') {
+                fnMensagem('Selecione uma imagem, campo obrigatório.', 'warning');
+                return;
+            }
+        }
+
+        if (tamanhoArquivoUA() != true) {
+            fnMensagem('Tamanho do arquivo maior do que o esperado', 'warning');
+            return;
+        }
+
+        //btnSalvarHistorico.attr('disabled', 'disabled');
+
+        var $form = $('#formUltimasAcoes');
+        var fdata = new FormData();
+
+        var fileInput = $('#File')[0];
+        var file = fileInput.files[0];
+        fdata.append("ID", $("#txtIDUltimasAcoes").val());
+        fdata.append("Titulo", $("#txtTituloUltimasAcoes").val());
+        fdata.append("Caminho", $("#txtCaminhoUltimasAcoes").val());
+        fdata.append("Video", $("#selInseriUltimasAcoes").val());
+        fdata.append("Resumo", $("#txtResumoUltimasAcoes").val());
+        fdata.append("Texto", $("#txtTextoUltimasAcoes").val());
+        fdata.append("Positivo", $("#txtPositivoUltimasAcoes").val());
+        fdata.append("Negativo", $("#txtNegativoUltimasAcoes").val());
+        fdata.append("Visualizacao", $("#txtVisualizacaoUltimasAcoes").val());
+        fdata.append("No_Imagem", $("#txtNoImagem").val());
+        fdata.append("File", file);
+
+        $.ajax({
+            url: $form.attr('action'),
+            type: 'POST',
+            data: fdata,            
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                //console.log(data);
+
+                fnMensagem('Operação realizada com sucesso!', 'success');
+
+                ListarUltimasAcoes();
+                $(".dvListUltimasAcoes").show();
+                $(".dvDadosUltimasAcoes").hide();
+            }
+        });
+
+    }
+
+    function editarUltimasAcoes(el) {
+        var $elemento = $(el);
+        var dID = $elemento.attr('data-id');
+        //console.log(dID);
+
+        $("#File").val('');
+
+        $.ajax({
+            url: "/Home/EditarUltimasAcoes",
+            type: 'POST',
+            data: { id: dID },
+            success: function (data) {
+                console.log(data);
+
+                $(".dvListUltimasAcoes").hide();
+                $(".dvDadosUltimasAcoes").show();
+
+                $("#txtEditarUA").val('editar');
+                $("#txtIDUltimasAcoes").val(data.id);
+                $("#txtTituloUltimasAcoes").val(data.titulo);
+                $("#txtCaminhoUltimasAcoes").val(data.caminho)
+
+                if (data.video == false) {
+                    $("#selInseriUltimasAcoes").val("false")
+                } else {
+                    $("#selInseriUltimasAcoes").val("true")
+                }
+
+                $("#txtResumoUltimasAcoes").val(data.resumo);
+                $("#txtTextoUltimasAcoes").val(data.texto);
+                $("#txtPositivoUltimasAcoes").val(data.positivo);
+                $("#txtNegativoUltimasAcoes").val(data.negativo);
+                $("#txtVisualizacaoUltimasAcoes").val(data.visualizacao);
+                $("#txtNoImagem").val(data.no_Imagem);
+            }
+        });
+
+    }
+
+    function excluirUltimasAcoes(el) {
+        var $elemento = $(el),
+            dID = $elemento.attr('data-id');
+
+        var texto = "Essa operação não poderá ser desfeita.";
+
+        Swal.fire({
+            title: 'Deseja realmente excluir?',
+            html: texto,
+            type: 'warning',
+            showCancelButton: true,
+            showConfirmButton: true,
+            focusCancel: true,
+            confirmButtonColor: '#dc3545',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Sim, excluir',
+            cancelButtonText: 'Cancelar'
+        }).then(function (result) {
+            if (result.value) {
+                $.ajax({
+                    dataType: 'json',
+                    type: 'DELETE',
+                    url: "/Home/DeletarUltimasAcoes",
+                    data: { id: dID },
+                    beforeSend: function () {
+                        //blockUI('');
+                    }
+                }).done(function (data) {
+
+                    fnMensagem('Operação realizada com sucesso!', 'success');
+
+                    ListarUltimasAcoes();
+                    $(".dvListUltimasAcoes").show();
+                    $(".dvDadosUltimasAcoes").hide();
+
+                }).fail(function (error) {
+                    //erroAjax(error, function () { });
+                });
+            }
+        });
+    }
+
+    function fnMensagem(texto, icon) {
+        Swal.fire({
+            title: texto,
+            html: '',
+            type: icon,
+            timer: 3000,
+            showCancelButton: false,
+            showConfirmButton: false,
+            focusCancel: true,
+            confirmButtonColor: '#dc3545',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Sim',
+            cancelButtonText: 'Cancelar'
+        }).then(function (result) {
+
+        });
+    }
+
+    $(function () {
+
+        $(document).on("input", "#txtResumoUltimasAcoes", function () {
+            var limite = 300;
+            var informativo = "caracteres restantes.";
+            var caracteresDigitados = $(this).val().length;
+            var caracteresRestantes = limite - caracteresDigitados;
+
+            if (caracteresRestantes <= 0) {
+                var comentario = $("textarea[name=ResumoUltimasAcoes]").val();
+                $("textarea[name=ResumoUltimasAcoes]").val(comentario.substr(0, limite));
+                $(".caracteres").text("0 " + informativo);
+            } else {
+                $(".caracteres").text(caracteresRestantes + " " + informativo);
+            }
+        });
+
+        $(document).on("input", "#txtTituloUltimasAcoes", function () {
+            var limiteAcoes = 45;
+            var informativoAcoes = "caracteres restantes.";
+            var caracteresDigitadosAcoes = $(this).val().length;
+            var caracteresRestantesAcoes = limiteAcoes - caracteresDigitadosAcoes;
+
+            if (caracteresRestantesAcoes <= 0) {
+                var comentario = $("input[name=TituloUltimasAcoes]").val();
+                $("input[name=TituloUltimasAcoes]").val(comentario.substr(0, limiteAcoes));
+                $(".caracteresAcoes").text("0 " + informativoAcoes);
+            } else {
+                $(".caracteresAcoes").text(caracteresRestantesAcoes + " " + informativoAcoes);
+            }
+        });
+
+        $(document).on("input", "#txtTextoUltimasAcoes", function () {
+            var limiteTexto = 1500;
+            var informativoTexto = "caracteres restantes.";
+            var caracteresDigitadosTexto = $(this).val().length;
+            var caracteresRestantesTexto = limiteTexto - caracteresDigitadosTexto;
+
+            if (caracteresRestantesTexto <= 0) {
+                var comentario = $("textarea[name=TextoUltimasAcoes]").val();
+                $("textarea[name=TextoUltimasAcoes]").val(comentario.substr(0, limiteTexto));
+                $(".caracteresTexto").text("0 " + informativoTexto);
+            } else {
+                $(".caracteresTexto").text(caracteresRestantesTexto + " " + informativoTexto);
+            }
+        });
+
+        $("#btnSalvarUltimasAcoes").click(salvarUltimasAcoes);
+
+        $("#btnAddUltimasAcoes").click(function () {
+            $(".dvListUltimasAcoes").hide();
+            $(".dvDadosUltimasAcoes").show();
+
+            $("#txtEditarUA").val('salvar');
+            $("#txtIDUltimasAcoes").val('');
+            $("#txtTituloUltimasAcoes").val('');
+            $("#selInseriUltimasAcoes").val('false');
+            $("#AnexoDescricao").val(' - Dimensão: 670x385 pixels | Formato: *.PNG/*.JPG | Tamanho: 1mb');
+            $("#txtResumoUltimasAcoes").val('');
+            $("#txtTextoUltimasAcoes").val('');
+            $("#File").val('');
+            $(".caracteresAcoes").html('');
+            $(".caracteres").html('');
+            $(".caracteresTexto").html('');
+
+        });
+
+        $("#btnVoltarUltimasAcoes").click(function () {
+            $(".dvListUltimasAcoes").show();
+            $(".dvDadosUltimasAcoes").hide();
+        });
+
+        $("#selInseriUltimasAcoes").change(function () {
+
+            if ($("#selInseriUltimasAcoes").val() == "true") {
+                $("#lblInserir").html('Inserir vídeo');
+                $("#AnexoDescricao").html(' - Dimensão: 640x360 | Formato: *.MP4/*.AVI/ | Tamanho: 50mb');
+                $("#File").attr("accept", "video/mp4, video/avi");
+                $("#File").attr("data-max-size", "50000000");
+            } else {
+                $("#lblInserir").html('Inserir imagem');
+                $("#AnexoDescricao").html(' - Dimensão: 670x385 pixels | Formato: *.PNG/*.JPG | Tamanho: 1mb');
+                $("#File").attr("accept", "image/png, image/jpeg");
+                $("#File").attr("data-max-size", "1000000");
+            }
+
+        });
+
+        //$('.datatable').DataTable({
+        //    paging: true,
+        //    ordering: false,
+        //    searching: true,
+        //    lengthChange: false,
+        //    fnInitComplete: function () {
+        //        $('#tableUltimasAcoes').show();
+        //        $('.overlay').hide();
+        //    },
+        //    language: {
+        //        "sEmptyTable": "Nenhum registro encontrado",
+        //        "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+        //        "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+        //        "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+        //        "sInfoPostFix": "",
+        //        "sInfoThousands": ".",
+        //        "sLengthMenu": "_MENU_ resultados por página",
+        //        "sLoadingRecords": "Carregando...",
+        //        "sProcessing": "Processando...",
+        //        "sZeroRecords": "Nenhum registro encontrado",
+        //        "sSearch": "Pesquisar",
+        //        "oPaginate": {
+        //            "sNext": "Próximo",
+        //            "sPrevious": "Anterior",
+        //            "sFirst": "Primeiro",
+        //            "sLast": "Último"
+        //        },
+        //        "oAria": {
+        //            "sSortAscending": ": Ordenar colunas de forma ascendente",
+        //            "sSortDescending": ": Ordenar colunas de forma descendente"
+        //        }
+        //    }
+        //});
+    });
+</script>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="141" height="36.78" viewBox="0 0 141 36.78">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0092ed;
+        font-size: 12px;
+        font-family: FuturaBT-Medium, Futura;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        fill: #545871;
+        font-size: 14px;
+        font-family: FuturaBT-Book, Futura;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1328" data-name="Grupo 1328" transform="translate(-465 -1687)">
+    <text id="CIAUS_MN" data-name="CIAUS/MN" class="cls-1" transform="translate(508.8 1720.78)"><tspan x="0" y="0">CIAUS/MN</tspan></text>
+    <text id="Jalber_Uchoa_da_Costa" data-name="Jalber Uchoa da Costa" class="cls-2" transform="translate(465 1700)"><tspan x="0" y="0">Jalber Uchoa da Costa</tspan></text>
+  </g>
+</svg>

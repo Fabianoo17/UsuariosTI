@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="545.775" height="411.962" viewBox="0 0 545.775 411.962">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #3e3e3e;
+      }
+
+      .cls-2 {
+        fill: #919191;
+      }
+
+      .cls-3 {
+        fill: #696969;
+        font-size: 15px;
+      }
+
+      .cls-3, .cls-5, .cls-6, .cls-9 {
+        font-family: Futura-Bold, Futura;
+        font-weight: 700;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #c3c3c3;
+      }
+
+      .cls-5 {
+        fill: #18d6d4;
+        font-size: 20px;
+      }
+
+      .cls-6 {
+        fill: #127a9c;
+        font-size: 45px;
+      }
+
+      .cls-7 {
+        fill: #eb822d;
+      }
+
+      .cls-8 {
+        fill: #00b260;
+      }
+
+      .cls-9 {
+        fill: #fff;
+        font-size: 22px;
+      }
+
+      .cls-10 {
+        filter: url(#Retângulo_4);
+      }
+    </style>
+    <filter id="Retângulo_4" x="0" y="341.962" width="256" height="70" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_1197" data-name="Grupo 1197" transform="translate(-766 -7586.038)">
+    <g id="Grupo_1077" data-name="Grupo 1077">
+      <path id="P" class="cls-1" d="M11.5,23a11.121,11.121,0,0,1-8.121-3.378A11.117,11.117,0,0,1,0,11.5,11.122,11.122,0,0,1,3.378,3.378,11.122,11.122,0,0,1,11.5,0a11,11,0,0,1,8.1,3.4A11,11,0,0,1,23,11.5a11.118,11.118,0,0,1-3.378,8.122A11.122,11.122,0,0,1,11.5,23Zm0-21.467A9.645,9.645,0,0,0,4.456,4.456,9.642,9.642,0,0,0,1.533,11.5a9.642,9.642,0,0,0,2.923,7.044A9.645,9.645,0,0,0,11.5,21.467a9.636,9.636,0,0,0,7.043-2.923A9.639,9.639,0,0,0,21.467,11.5a9.639,9.639,0,0,0-2.924-7.044A9.636,9.636,0,0,0,11.5,1.533Zm0,16.867a.737.737,0,0,1-.766-.767V12.267H5.366a.767.767,0,1,1,0-1.535h5.367V5.367a.767.767,0,1,1,1.533,0v5.366h5.367a.767.767,0,1,1,0,1.535H12.266v5.366a.737.737,0,0,1-.767.767Z" transform="translate(1288 7805)"/>
+      <path id="O" class="cls-2" d="M11.651,23.3a11.268,11.268,0,0,1-8.228-3.423A11.268,11.268,0,0,1,0,11.651a11.269,11.269,0,0,1,3.423-8.23A11.268,11.268,0,0,1,11.651,0a11.15,11.15,0,0,1,8.206,3.446,11.149,11.149,0,0,1,3.446,8.2,11.267,11.267,0,0,1-3.423,8.228A11.268,11.268,0,0,1,11.651,23.3Zm0-21.75A9.779,9.779,0,0,0,4.515,4.513a9.775,9.775,0,0,0-2.961,7.138,9.769,9.769,0,0,0,2.961,7.136,9.775,9.775,0,0,0,7.137,2.961,9.764,9.764,0,0,0,7.136-2.961,9.765,9.765,0,0,0,2.963-7.136,9.77,9.77,0,0,0-2.963-7.138A9.767,9.767,0,0,0,11.651,1.552Zm6.215,10.876H5.438a.778.778,0,1,1,0-1.555H17.866a.778.778,0,1,1,0,1.555Z" transform="translate(1288.472 7865.268)"/>
+      <g id="Grupo_1076" data-name="Grupo 1076">
+        <text id="Tenha_acesso_ao_nosso_game_de_capacitação_dedique-se_aos_estudos_para_avançar_nas_fases_e_desbravar_novos_desafios_profissionais." data-name="Tenha acesso ao nosso game de capacitação, dedique-se aos estudos para avançar nas fases e desbravar novos desafios profissionais." class="cls-3" transform="translate(775 7832.355)"><tspan x="0" y="12">Tenha acesso ao nosso game de capacitação, dedique-se </tspan><tspan x="0" y="32">aos estudos para avançar nas fases e desbravar novos </tspan><tspan x="0" y="52">desafios profissionais.</tspan></text>
+        <line id="Linha_267" data-name="Linha 267" class="cls-4" x2="413.88" transform="translate(775.776 7814.279)"/>
+        <text id="Plano_de_Capacitação_Cetec" data-name="Plano de Capacitação Cetec" class="cls-5" transform="translate(775.537 7798.321)"><tspan x="0" y="0">Plano de Capacitação Cetec</tspan></text>
+      </g>
+    </g>
+    <g id="Grupo_712" data-name="Grupo 712" transform="translate(0 165)">
+      <text id="Game_Capacitação" data-name="Game
+Capacitação" class="cls-6" transform="translate(930 7498)"><tspan x="0" y="0">Game</tspan><tspan x="0" y="49">Capacitação</tspan></text>
+      <g id="Grupo_711" data-name="Grupo 711">
+        <g id="Grupo_710" data-name="Grupo 710">
+          <path id="Caminho_475" data-name="Caminho 475" class="cls-7" d="M160.866,276.366h-33.5V261.138A9.147,9.147,0,0,0,118.229,252H87.775a9.147,9.147,0,0,0-9.136,9.136v3.046h-33.5A9.147,9.147,0,0,0,36,273.32v54.819a3.045,3.045,0,0,0,3.045,3.045H166.957A3.045,3.045,0,0,0,170,328.139V285.5A9.147,9.147,0,0,0,160.866,276.366Zm-39.591,48.727H84.729v-7.615a3.045,3.045,0,0,0-6.091,0v7.615H42.093V273.32a3.049,3.049,0,0,1,3.045-3.045h33.5V290.07a3.045,3.045,0,0,0,6.091,0V261.138a3.049,3.049,0,0,1,3.045-3.045h30.455a3.049,3.049,0,0,1,3.045,3.045Zm42.636,0H127.366V282.457h33.5a3.049,3.049,0,0,1,3.045,3.045Z" transform="translate(738.998 7245.782)"/>
+          <path id="Caminho_476" data-name="Caminho 476" class="cls-7" d="M382.758,381.139A9.1,9.1,0,0,0,366.73,375.2a3.046,3.046,0,1,0,4.632,3.955,3.029,3.029,0,1,1,4.394,4.166,3.046,3.046,0,0,0,.424,4.688,4.576,4.576,0,0,1-2.53,8.359,4.467,4.467,0,0,1-2.746-.934,3.046,3.046,0,0,0-3.714,4.828,10.506,10.506,0,0,0,6.461,2.2,10.667,10.667,0,0,0,8.232-17.4,9.125,9.125,0,0,0,.876-3.922Z" transform="translate(509.499 7162.326)"/>
+          <path id="Caminho_477" data-name="Caminho 477" class="cls-7" d="M101.229,356.354H93.891c.671-.617,1.511-1.277,2.492-2.034,3.483-2.687,7.817-6.032,7.891-12.332a9.759,9.759,0,0,0-7.2-9.717,8.86,8.86,0,0,0-10.191,4.758,3.046,3.046,0,1,0,5.381,2.854,2.784,2.784,0,0,1,3.3-1.709,3.638,3.638,0,0,1,2.611,3.744c-.037,3.125-2.11,4.949-5.521,7.581-3.122,2.409-6.66,5.139-6.66,9.9a3.045,3.045,0,0,0,3.045,3.045h12.181a3.045,3.045,0,1,0,0-6.091Z" transform="translate(704.225 7190.157)"/>
+          <path id="Caminho_478" data-name="Caminho 478" class="cls-7" d="M244.712,316.366h-.331V295.049a3.045,3.045,0,0,0-4.568-2.637l-3.376,1.949a3.046,3.046,0,0,0,1.854,5.665v16.34h-.331a3.045,3.045,0,0,0,0,6.091h6.753a3.045,3.045,0,0,0,0-6.091Z" transform="translate(600.664 7217.963)"/>
+        </g>
+        <g id="Grupo_709" data-name="Grupo 709">
+          <path id="Caminho_479" data-name="Caminho 479" class="cls-8" d="M164.729,58.705,163.2,70.346a7.818,7.818,0,0,0,.659,4.922,7.893,7.893,0,0,0,10.549,3.64L185.115,73.7l11,5.24a7.891,7.891,0,0,0,11.2-8.209l-1.65-11.805,8.127-8.572a7.891,7.891,0,0,0-4.1-13.468l-11.731-2.078-5.816-10.7v0a7.876,7.876,0,0,0-13.867.062l-5.6,10.514L160.9,36.871a7.882,7.882,0,0,0-4.443,13.252ZM160.89,43.366a1.775,1.775,0,0,1,.971-.48l.1-.017L175.237,40.4a3.046,3.046,0,0,0,2.132-1.562l6.29-11.808a1.786,1.786,0,0,1,3.143-.015L193.316,39a3.045,3.045,0,0,0,2.145,1.544l13.183,2.335a1.8,1.8,0,0,1,.921,3.087q-.068.063-.132.131l-9.192,9.7a3.045,3.045,0,0,0-.806,2.517l1.852,13.253a1.8,1.8,0,0,1-2.55,1.872l-12.325-5.872a3.045,3.045,0,0,0-2.643.011l-12.024,5.853a1.8,1.8,0,0,1-2.407-.83,1.782,1.782,0,0,1-.145-1.148q.022-.109.037-.219l1.73-13.191a3.045,3.045,0,0,0-.827-2.51l-9.29-9.636a1.791,1.791,0,0,1,.049-2.531Z" transform="translate(656.762 7407.134)"/>
+          <path id="Caminho_480" data-name="Caminho 480" class="cls-8" d="M96.024,5.684l12.022,6.941a3.045,3.045,0,1,0,3.045-5.275L99.069.409a3.045,3.045,0,0,0-3.045,5.275Z" transform="translate(698.315 7421.038)"/>
+          <path id="Caminho_481" data-name="Caminho 481" class="cls-8" d="M63.7,120.073a3.122,3.122,0,0,0,.443-.032l13.737-2A3.046,3.046,0,1,0,77,112.015l-13.737,2a3.046,3.046,0,0,0,.435,6.06Z" transform="translate(721.852 7343.159)"/>
+          <path id="Caminho_482" data-name="Caminho 482" class="cls-8" d="M114.9,197.36l-9.815,9.815a3.046,3.046,0,1,0,4.307,4.307l9.816-9.816a3.046,3.046,0,1,0-4.307-4.307Z" transform="translate(691.573 7284.403)"/>
+          <path id="Caminho_483" data-name="Caminho 483" class="cls-8" d="M361.076,13.033a3.033,3.033,0,0,0,1.52-.409l12.022-6.941A3.045,3.045,0,1,0,371.572.409L359.551,7.349a3.046,3.046,0,0,0,1.525,5.683Z" transform="translate(515.044 7421.038)"/>
+          <path id="Caminho_484" data-name="Caminho 484" class="cls-8" d="M386.272,114.59a3.046,3.046,0,0,0,2.575,3.452l13.737,2a3.046,3.046,0,0,0,.877-6.028l-13.737-2A3.047,3.047,0,0,0,386.272,114.59Z" transform="translate(495.424 7343.159)"/>
+          <path id="Caminho_485" data-name="Caminho 485" class="cls-8" d="M356.47,197.36a3.046,3.046,0,0,0,0,4.307l9.816,9.815a3.046,3.046,0,1,0,4.307-4.307l-9.815-9.816a3.046,3.046,0,0,0-4.307,0Z" transform="translate(516.747 7284.403)"/>
+        </g>
+      </g>
+    </g>
+    <g id="Grupo_1078" data-name="Grupo 1078">
+      <g class="cls-10" transform="matrix(1, 0, 0, 1, 766, 7586.04)">
+        <rect id="Retângulo_4-2" data-name="Retângulo 4" class="cls-8" width="238" height="52" rx="26" transform="translate(9 347.96)"/>
+      </g>
+      <text id="Acessar_aqui" data-name="Acessar aqui" class="cls-9" transform="translate(894 7966)"><tspan x="-70.893" y="0">Acessar aqui</tspan></text>
+    </g>
+  </g>
+</svg>

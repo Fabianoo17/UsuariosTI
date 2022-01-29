@@ -1,0 +1,136 @@
+﻿@model UsuariosTi.Business.ViewModels.ViewModelHome
+
+@{
+    ViewData["Title"] = "_Abrangencia";
+    Layout = null;
+    
+    var agenciaPas = Model.ListaAbrangencia.FirstOrDefault(x => x.ID_ORDENACAO == 3);
+    var unidadeLoterica = Model.ListaAbrangencia.FirstOrDefault(x => x.ID_ORDENACAO == 12);
+    var unidadesAdm = Model.ListaAbrangencia.FirstOrDefault(x => x.ID_ORDENACAO == 5);
+    var usuarios = Model.ListaAbrangencia.FirstOrDefault(x => x.ID_ORDENACAO == 1);
+    var agenciaBarco = Model.ListaAbrangencia.FirstOrDefault(x => x.ID_ORDENACAO == 10);
+    var unidadesItinerantes = Model.ListaAbrangencia.FirstOrDefault(x => x.ID_ORDENACAO == 11);
+    var pae = Model.ListaAbrangencia.FirstOrDefault(x => x.ID_ORDENACAO == 6);
+    var estacaoFinanceira = Model.ListaAbrangencia.FirstOrDefault(x => x.ID_ORDENACAO == 9);
+    var EstacoesNotebooks = Model.ListaAbrangencia.FirstOrDefault(x => x.ID_ORDENACAO == 2);
+}
+
+<style>
+    .img {
+        background-image: url('~/imagens/retangulo-backgroung.png');
+        height: 448px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: #fff;
+    }
+</style>
+<div class="col-12 ">
+    <div style="height: 448px; " class="row ">
+        <div style="z-index:1;" class="col-3">
+
+            <img style="z-index:1; margin-top:70px; margin-left:58px;" src="~/imagens/svg/abragencia/sessao/Pin-icon.svg" />
+            <img style="z-index:1; margin-top:70px; margin-left:10px;" src="~/imagens/svg/abragencia/sessao/Titulo-Abrangência.svg" />
+            <img style="z-index:1; margin-top:33%; margin-left:100px;" src="~/imagens/svg/abragencia/sessao/Seta.svg" />
+
+        </div>
+        <div style="z-index:1; padding-left:0px; padding-right:0px; " class="col-9">
+
+            @*<img style="z-index:1; width:100%; margin-top:115px; margin-left:-2px;" class="" src="~/imagens/svg/abragencia/grafico-circulos/Grafico-circulos.svg" />*@
+
+            <svg style="z-index:1; width:110%; margin-top:26px; margin-left:-114px;" xmlns="http://www.w3.org/2000/svg" height="400" viewBox="0 0 1080 400">
+                <defs>
+
+                </defs>
+                <g id="Grupo_1288" data-name="Grupo 1288" transform="translate(-440.5 -1000)">
+                    <line id="Shape_34" data-name="Shape 34" class="cls-1-grafico" x1="1216" transform="translate(439.5 1164.415)" />
+                    <line id="Linha_387" data-name="Linha 387" class="cls-3-grafico" y2="24" transform="translate(697.5 1164.5)" />
+                    <line id="Linha_388" data-name="Linha 388" class="cls-3-grafico" y2="24" transform="translate(960.5 1164.5)" />
+                    <line id="Linha_389" data-name="Linha 389" class="cls-3-grafico" y2="24" transform="translate(1209.5 1164.5)" />
+                    <line id="Linha_390" data-name="Linha 390" class="cls-3-grafico" y2="24" transform="translate(1430.5 1164.5)" />
+                    <g id="Ellipse_13_copy_4" data-name="Ellipse 13 copy 4" class="cls-2-grafico" transform="translate(606.177 1098) rotate(90)">
+                        <circle class="cls-4-grafico" cx="66.088" cy="66.088" r="@agenciaPas.raio" />
+                        <circle class="cls-5-grafico" cx="66.088" cy="66.088" r="@(agenciaPas.raio + 1)" />
+                    </g>
+
+                    <g id="Ellipse_13_copy_4-2" data-name="Ellipse 13 copy 4" class="cls-2-grafico" transform="translate(881.308 1121) rotate(90)">
+                        <circle class="cls-4-grafico" cx="44.654" cy="44.654" r="@unidadesAdm.raio" />
+                        <circle class="cls-5-grafico" cx="44.654" cy="44.654" r="@(unidadesAdm.raio + 1)" />
+                    </g>
+
+                    <g id="Ellipse_13_copy_4-3" data-name="Ellipse 13 copy 4" class="cls-2-grafico" transform="translate(1119.308 1130) rotate(90)">
+                        <circle class="cls-4-grafico" cx="35.654" cy="35.654" r="@agenciaBarco.raio" />
+                        <circle class="cls-5-grafico" cx="35.654" cy="35.654" r="@(agenciaBarco.raio + 1)" />
+                    </g>
+
+                    <g id="Ellipse_13_copy_4-4" data-name="Ellipse 13 copy 4" class="cls-2-grafico" transform="translate(1352.308 1136) rotate(90)">
+                        <circle class="cls-4-grafico" cx="29.654" cy="29.654" r="@pae.raio" />
+                        <circle class="cls-5-grafico" cx="29.654" cy="29.654" r="@(pae.raio + 1)" />
+                    </g>
+
+                    <g id="Ellipse_13_copy_4-4" data-name="Ellipse 13 copy 4" class="cls-2-grafico" transform="translate(1552.308 1136) rotate(90)">
+                        <circle class="cls-4-grafico" cx="29.654" cy="29.654" r="@estacaoFinanceira.raio" />
+                        <circle class="cls-5-grafico" cx="29.654" cy="29.654" r="@(estacaoFinanceira.raio + 1)" />
+                    </g>
+
+                    <g id="Ellipse_13_copy_4-5" data-name="Ellipse 13 copy 4" class="cls-2-grafico" transform="translate(751.308 1195) rotate(90)">
+                        <circle class="cls-4-grafico" cx="50" cy="53.654" r="@unidadeLoterica.raio" />
+                        <circle class="cls-5-grafico" cx="50" cy="53.654" r="@(unidadeLoterica.raio + 1)" />
+                    </g>
+
+                    <g id="Ellipse_13_copy_4-6" data-name="Ellipse 13 copy 4" class="cls-2-grafico" transform="translate(1013.308 1209) rotate(90)">
+                        <circle class="cls-4-grafico" cx="30" cy="53.654" r="@usuarios.raio" />
+                        <circle class="cls-5-grafico" cx="30" cy="53.654" r="@(usuarios.raio + 1)" />
+                    </g>
+
+                    <g id="Ellipse_13_copy_4-7" data-name="Ellipse 13 copy 4" class="cls-2-grafico" transform="translate(1263.308 1185) rotate(90)">
+                        <circle class="cls-4-grafico" cx="60" cy="53.654" r="@EstacoesNotebooks.raio" />
+                        <circle class="cls-5-grafico" cx="60" cy="53.654" r="@(EstacoesNotebooks.raio + 1)" />
+                    </g>
+
+                    <g id="Ellipse_13_copy_4-7" data-name="Ellipse 13 copy 4" class="cls-2-grafico" transform="translate(1488.308 1160) rotate(90)">
+                        <circle class="cls-4-grafico" cx="60" cy="53.654" r="@unidadesItinerantes.raio" />
+                        <circle class="cls-5-grafico" cx="60" cy="53.654" r="@(unidadesItinerantes.raio + 1)" />
+                    </g>
+
+
+                    <text id="Agencia" data-name="Agência e PA’s" class="span-abrangencia" transform="translate(606.177 1098)"><tspan x="-132.568" y="@(agenciaPas.QTD.Length * -2)">Agência e PA’s</tspan></text>
+                    <text id="Agencia" data-name="numero Agência e PA’s" class="span-numero" transform="translate(606.177 1098)"><tspan x="@(agenciaPas.variacao + -68)" y="77"> @agenciaPas.QTD </tspan></text>
+
+                    <text id="Agencia" data-name="Administrativas" class="span-abrangencia" transform="translate(881.308 1098)"><tspan x="-152.568" y="@(unidadesAdm.QTD.Length * -3)">Unidades Administrativas</tspan></text>
+                    <text id="Agencia" data-name="Administrativas" class="span-numero" transform="translate(881.308 1121)"><tspan x="@(unidadesAdm.variacao + -46)" y="54"> @unidadesAdm.QTD </tspan></text>
+
+                    <text id="Agencia" data-name="Superintendencia" class="span-abrangencia" transform="translate(1119.308 1098)"><tspan x="-95.568" y="@(agenciaBarco.QTD.Length * -13)">Agência Barco</tspan></text>
+                    <text id="Agencia" data-name="Superintendencia" class="span-numero" transform="translate(1119.308 1130)"><tspan x="@(agenciaBarco.variacao + -37)" y="45"> @agenciaBarco.QTD </tspan></text>
+
+
+                    <text id="Agencia" data-name="Superintendencia" class="span-abrangencia" transform="translate(1352.308 1120)"><tspan x="-100" y="@(pae.QTD.Length * -13)">PAE, SNC, SAA</tspan><tspan x="-85.568" y="@(pae.QTD.Length * -13 + 20)">e Quiosques</tspan></text>
+                    <text id="Agencia" data-name="Superintendencia" class="span-numero" transform="translate(1352.308 1136)"><tspan x="@(pae.variacao + -33)" y="39"> @pae.QTD </tspan></text>
+
+
+                    <text id="Agencia" data-name="Superintendencia" class="span-abrangencia" transform="translate(1495.308 1135)"><tspan x="-75" y="@(estacaoFinanceira.QTD.Length * -13)">Estações Financeiras</tspan></text>
+                    <text id="Agencia" data-name="Superintendencia" class="span-numero" transform="translate(1552.308 1136)"><tspan x="@(estacaoFinanceira.variacao + -33)" y="39"> @estacaoFinanceira.QTD </tspan></text>
+
+                    <text id="Estações_ET_EF_Notebooks_e_Servidores" data-name="" class="span-abrangencia" transform="translate(1250.308 1190)"><tspan x="-142.568" y="@(EstacoesNotebooks.QTD.Length * 22)">Estações de Trabalho</tspan> <tspan x="-102.568" y="@(EstacoesNotebooks.QTD.Length * 22+20)"> e Notebooks</tspan></text>
+                    <text id="Estações_ET_EF_Notebooks_e_Servidores" data-name="" class="span-numero" transform="translate(1263.308 1185)"><tspan x="@(EstacoesNotebooks.variacao + -56)" y="70"> @EstacoesNotebooks.QTD </tspan></text>
+
+                    <text id="Estações_ET_EF_Notebooks_e_Servidores" data-name="" class="span-abrangencia" transform="translate(1500.308 1280)"><tspan x="-102.568" y="@(unidadesItinerantes.QTD.Length * 22)">Unidades</tspan><tspan x="-106.568" y="@(unidadesItinerantes.QTD.Length * 22+20)">Itinerantes</tspan></text>
+                    <text id="Estações_ET_EF_Notebooks_e_Servidores" data-name="" class="span-numero" transform="translate(1488.308 1160)"><tspan x="@(unidadesItinerantes.variacao + -56)" y="70"> @unidadesItinerantes.QTD </tspan></text>
+
+
+
+                    <text id="pag-numeros" data-name="" class="span-abrangencia" transform="translate(751.308 1190)"><tspan x="-132.568" y="@(unidadeLoterica.QTD.Length * 25)">Unidade Lotéricas</tspan></text>
+                    <text id="Lotericas" data-name="" class="span-numero" transform="translate(751.308 1195)"><tspan x="@(unidadeLoterica.variacao + -56)" y="60"> @unidadeLoterica.QTD </tspan></text>
+
+                    <text id="Lotericas" data-name="" class="span-abrangencia" transform="translate(960.308 1130)"><tspan x="-90.568" y="@(usuarios.QTD.Length * 30)">Usuários Atendidos</tspan></text>
+                    <text id="Lotericas" data-name="" class="span-numero" transform="translate(1013.308 1205)"><tspan x="@(usuarios.variacao + -56)" y="42"> @usuarios.QTD </tspan></text>
+                </g>
+            </svg>
+
+        </div>
+        <img style="width:100%; position:absolute; z-index:0" src="~/imagens/retangulo-backgroung.png" />
+    </div>
+</div>
+
+

@@ -1,0 +1,177 @@
+﻿@model UsuariosTi.Business.ViewModels.Home.OndeEstamos.T077_UNIDADES_VINCULOViewModel
+
+<style>
+    @@-moz-document url-prefix() {
+        .ondeEstamosImg {
+            display: grid;
+            width: 100.2%;
+            height: 113vh;
+            background: url(../../imagens/OndeEstamos/OndeEstamos2.jpg) no-repeat bottom center scroll;
+            background-size: auto;
+            background-size: cover;
+            margin-right: 0px;
+            margin-bottom: -2px;
+            margin-left: -2px;
+            overflow: hidden;
+            z-index: 1;
+            position: relative;
+        }
+
+        .TituloOndeEstamos {
+            position: absolute;
+            font-family: 'futurabt-medium';
+            font-size: 3rem;
+            color: #079e81;
+            margin: 200px 0px 0px 230px;
+        }
+
+        #dvBotaoAcesseAgora {
+            margin: 30px 0px 0px 0px;
+        }
+
+        #ImgMapa {
+            margin: 150px 0px 0px 150px;
+        }
+
+        #dvTexto {
+            margin: 310px 0px 0px 230px;
+            text-align: justify !important;
+        }
+    }
+
+    .ondeEstamosImg {
+        display: grid;
+        width: 100.2%;
+        height: 113vh;
+        background: url(../../imagens/OndeEstamos/OndeEstamos2.jpg) no-repeat bottom center scroll;
+        background-size: auto;
+        background-size: cover;
+        margin-right: 0px;
+        margin-bottom: -2px;
+        margin-left: -2px;
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+    }
+
+    .TituloOndeEstamos {
+        position: absolute;
+        font-family: 'futurabt-medium';
+        font-size: 3rem;
+        color: #079e81;
+        margin: 200px 0px 0px 230px;
+    }
+
+    #dvBotaoAcesseAgora {
+        margin: 30px 0px 0px 0px;
+    }
+
+    #ImgMapa {
+        margin: 150px 0px 0px 150px;
+    }
+
+    #dvTexto {
+        margin: 310px 0px 0px 230px;
+        text-align: justify !important;
+    }
+
+    .btnVoltar_onde_estamos {
+        color: #079e81 !important;
+        font-size: 23px;
+        padding-left: 500px;
+        margin-top: -50px;
+        float: right;
+    }
+
+        .btnVoltar_onde_estamos:hover {
+            color: #079e81 !important;
+            font-weight: bold;
+            padding-left: 500px;
+            margin-top: -50px;
+            font-size: 23px;
+        }
+</style>
+
+
+
+<div id="pag-ondeEstamosInt" class="ondeEstamosImg" style="padding-bottom: 0px;padding-top: 0px;">
+
+
+    <div class="col-md-12 row">
+
+        <div class="col-md-6">
+            <div class="TituloOndeEstamos"><span>@Model.T077_SG_FILIAL</span></div>
+            <div id="dvTexto">
+                <span class="texto-formatacao" style="
+                                                  color: orange !important;
+                                                  font-size: 17pt;
+                                                  ">
+                    @Model.Texto
+                </span>
+                <div id="dvBotaoAcesseAgora ">
+                    <a href="@Model.Link" target="_blank" class="btn mt-2 shadow " style="background-color: #079e81 !important; color: #ffffff !important; font-family: 'Tw Cen MT'; font-size: 20px !important; margin-top:10px; ">Visite Agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+            <div id="ImgMapa">
+                <div class="row btnVoltar_onde_estamos">
+
+                    <a href="javascript:history.back()" style="cursor: pointer;">Voltar</a>
+                </div>
+
+                @{
+
+                    var imagem = "~/imagens/OndeEstamos/MapaGEAUS.png";
+
+                    switch (Model.T077_SG_FILIAL)
+                    {
+                        case "CIAUS/PO":
+                            <img src="~/imagens/OndeEstamos/mapa6.png" style="width:100%;" />
+                            break;
+                        case "CIAUS/SP":
+                            <img src="~/imagens/OndeEstamos/mapa5.png" style="width:100%;" />
+                            break;
+                        case "CIAUS/RE":
+                            <img src="~/imagens/OndeEstamos/mapa4.png" style="width:100%;" />
+                            break;
+                        case "CIAUS/RJ":
+                            <img src="~/imagens/OndeEstamos/mapa7.png" style="width:100%;" />
+                            break;
+                        case "CIAUS/MN":
+                            <img src="~/imagens/OndeEstamos/mapa1.png" style="width:100%;" />
+                            break;
+                        case "CIAUS/BR":
+                            <img src="~/imagens/OndeEstamos/mapa8.png" style="width:100%;" />
+                            break;
+                        case "CIAUS/GO":
+                            <img src="~/imagens/OndeEstamos/mapa2.png" style="width:100%;" />
+                            break;
+                        case "CIAUS/BH":
+                            <img src="~/imagens/OndeEstamos/mapa3.png" style="width:100%;" />
+                            break;
+                        case "CEAUS":
+                            <img src="~/imagens/OndeEstamos/mapacompleto.jpg" style="width:100%;" />
+                            break;
+
+                        default:
+                            <img src="~/imagens/OndeEstamos/MapaGEAUS.png" style="width:100%;" />
+                            break;
+                    }
+
+                }
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+

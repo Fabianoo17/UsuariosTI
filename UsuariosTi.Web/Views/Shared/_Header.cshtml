@@ -1,0 +1,21 @@
+﻿@{
+    var user = this.GetUserCustom();
+}
+
+<header class="main-header">
+    <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top" style="height:60px">
+        <div class="d-flex">
+            <div class="contact-info mr-auto" style="position: absolute; top: 5px; margin-left: 120px; align-content: center">
+                <img src="~/imagens/logo-lg.png" style="width: 125px; align-items: center; margin-top: 10px" />
+            </div>
+            <div class="title.head" style="position: absolute; top: 5px; margin-left: 250px; align-content: center">
+                <span class="hidden-xs" style="font-size: 30pt !important; line-height: 40px !important;color:#fff;margin-left: 20px; ">|</span>
+                <span class="hidden-xs" style="font-size: 13pt !important; line-height: 22px !important;color:white; margin-left: 15px;font-weight: unset">GEAUS - GN Atendimento Usuários TI </span>
+
+            </div>
+            <div class="social-links" style="right: 35px;position: absolute; top: 35%;">
+                <span class="hidden-xs" style="font-size: 12pt !important; line-height: 22px  !important;color:#fff"><i class="far fa-user-circle"></i>&nbsp; @user.Nome </span>
+            </div>
+        </div>
+    </div>
+</header>

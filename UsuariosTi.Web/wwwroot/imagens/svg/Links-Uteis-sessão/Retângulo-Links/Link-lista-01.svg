@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="226" height="235" viewBox="0 0 226 235">
+  <defs>
+    <style>
+      .cls-1 {
+      fill: #0092ed;
+      font-size: 20px;
+      font-family: Futura Lt BT, Futura;
+      font-weight: 300;
+      }
+
+      .cls-2 {
+      fill: none;
+      stroke: #dadbe6;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1332" data-name="Grupo 1332" transform="translate(-447 -2141)">
+    <text id="Unlimited_Storage_P" data-name="Unlimited Storage, P" class="cls-1" transform="translate(448 2141)"><tspan x="0" y="19">Abertura de chamados</tspan></text>
+    <text id="Unlimited_Storage_P-2" data-name="Unlimited Storage, P" class="cls-1" transform="translate(448 2223)"><tspan x="0" y="19">Indicadores Gerti</tspan></text>
+    <text id="Unlimited_Storage_P-3" data-name="Unlimited Storage, P" class="cls-1" transform="translate(448 2182)"><tspan x="0" y="19">Info canais</tspan></text>
+    <text id="Unlimited_Storage_P-4" data-name="Unlimited Storage, P" class="cls-1" transform="translate(448 2264)"><tspan x="0" y="19">Painel de gestão da VITEC</tspan></text>
+    <text id="Unlimited_Storage_P-5" data-name="Unlimited Storage, P" class="cls-1" transform="translate(448 2307)"><tspan x="0" y="19">Portal da CETEC</tspan></text>
+    <text id="Unlimited_Storage_P-6" data-name="Unlimited Storage, P" class="cls-1" transform="translate(448 2350)"><tspan x="0" y="19">Integra mais</tspan></text>
+    <line id="Linha_350" data-name="Linha 350" class="cls-2" x2="204" transform="translate(448.5 2173.5)"/>
+    <line id="Linha_351" data-name="Linha 351" class="cls-2" x2="204" transform="translate(448.5 2214.5)"/>
+    <line id="Linha_352" data-name="Linha 352" class="cls-2" x2="204" transform="translate(448.5 2255.5)"/>
+    <line id="Linha_353" data-name="Linha 353" class="cls-2" x2="204" transform="translate(448.5 2298.5)"/>
+    <line id="Linha_354" data-name="Linha 354" class="cls-2" x2="204" transform="translate(448.5 2341.5)"/>
+  </g>
+</svg>

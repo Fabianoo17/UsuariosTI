@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="91" height="20" viewBox="0 0 91 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff7600;
+        font-size: 18px;
+        font-family: Futura-Bold, Futura;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <text id="Gerência" class="cls-1"><tspan x="4.012" y="14">Gerência</tspan></text>
+</svg>

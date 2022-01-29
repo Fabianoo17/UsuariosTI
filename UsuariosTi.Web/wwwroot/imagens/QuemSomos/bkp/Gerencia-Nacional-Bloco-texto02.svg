@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="303" height="361" viewBox="0 0 303 361">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5d5d5d;
+        font-size: 20px;
+        font-family: FuturaBT-Light, Futura;
+        font-weight: 300;
+      }
+
+      .cls-2 {
+        fill: #ff7200;
+        opacity: 0.737;
+      }
+
+      .cls-3 {
+        fill: #00b260;
+      }
+
+      .cls-4, .cls-6, .cls-8 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-5 {
+        fill: #fff;
+        font-size: 17px;
+        font-family: Futura-Bold, Futura;
+        font-weight: 700;
+      }
+
+      .cls-6, .cls-7 {
+        stroke: #aaa;
+      }
+
+      .cls-6, .cls-8 {
+        stroke-width: 4px;
+      }
+
+      .cls-7 {
+        fill: #b5b5b5;
+      }
+
+      .cls-8 {
+        stroke: #eb822d;
+      }
+
+      .cls-9 {
+        filter: url(#Retângulo_522);
+      }
+    </style>
+    <filter id="Retângulo_522" x="0" y="5" width="303" height="110" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Componente_15_2" data-name="Componente 15 – 2" transform="translate(9)">
+    <text id="Responsável_pela_estratégia_de_suporte_infraestrutura_tecnológica_e_disponibilidade_de_canais_e_pela_coordenação_de_processos_e_rotinas_TIC_no_ambiente_descentralizado." data-name="Responsável pela estratégia de suporte, infraestrutura tecnológica e disponibilidade de canais e pela coordenação de processos e rotinas TIC no ambiente descentralizado." class="cls-1" transform="translate(0 160)"><tspan x="0" y="19">Responsável pela estratégia de </tspan><tspan x="0" y="49">suporte, infraestrutura tecnológica </tspan><tspan x="0" y="79">e disponibilidade de canais e </tspan><tspan x="0" y="109">pela coordenação de processos e </tspan><tspan x="0" y="139">rotinas TIC no ambiente </tspan><tspan x="0" y="169">descentralizado.</tspan></text>
+    <g id="Grupo_585" data-name="Grupo 585" transform="translate(-141 -2364)">
+      <rect id="Retângulo_521" data-name="Retângulo 521" class="cls-2" width="74" height="11" transform="translate(141 2364)"/>
+      <g class="cls-9" transform="matrix(1, 0, 0, 1, 132, 2364)">
+        <rect id="Retângulo_522-2" data-name="Retângulo 522" class="cls-3" width="285" height="92" transform="translate(9 11)"/>
+      </g>
+      <g id="Grupo_582" data-name="Grupo 582">
+        <path id="Caminho_372" data-name="Caminho 372" class="cls-4" d="M52.776,27.888A24.888,24.888,0,1,1,27.888,3,24.888,24.888,0,0,1,52.776,27.888Z" transform="translate(161.912 2393)"/>
+        <path id="Caminho_373" data-name="Caminho 373" class="cls-4" d="M12,18l9.955,9.955L31.911,18" transform="translate(167.845 2402.888)"/>
+        <path id="Caminho_374" data-name="Caminho 374" class="cls-4" d="M18,12V31.911" transform="translate(171.801 2398.933)"/>
+      </g>
+      <text id="Gerência_nacional" data-name="Gerência nacional" class="cls-5" transform="translate(236 2426)"><tspan x="0" y="0">Gerência nacional</tspan></text>
+    </g>
+    <g id="Grupo_584" data-name="Grupo 584" transform="translate(-141 -2364)">
+      <line id="Linha_234" data-name="Linha 234" class="cls-6" x2="33" transform="translate(141.5 2717.5)"/>
+      <path id="Caminho_421" data-name="Caminho 421" class="cls-7" d="M0,0H284.5" transform="translate(141.5 2724.5)"/>
+    </g>
+    <g id="Grupo_583" data-name="Grupo 583" transform="translate(-141 -2364)">
+      <line id="Linha_235" data-name="Linha 235" class="cls-8" x2="33" transform="translate(141.5 2504.5)"/>
+      <path id="Caminho_422" data-name="Caminho 422" class="cls-7" d="M0,0H284.5" transform="translate(141.5 2497.5)"/>
+    </g>
+  </g>
+</svg>

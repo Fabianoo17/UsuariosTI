@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="165" height="38" viewBox="0 0 165 38">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-size: 25px;
+        font-family: Futura Bk BT, Futura;
+      }
+    </style>
+  </defs>
+  <text id="Abrangência" class="cls-1" transform="translate(1)"><tspan x="0" y="15">Nossos </tspan>
+	  <tspan x="0" y="37">Números</tspan>
+  </text>
+</svg>

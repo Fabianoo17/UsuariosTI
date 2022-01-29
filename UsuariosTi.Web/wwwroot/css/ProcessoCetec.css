@@ -1,0 +1,110 @@
+﻿.box-index-cetec-dentro-da-meta {
+    height: 300px;
+    border: 1px solid #00891f;
+    margin-top: 10px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#00891f 10%, #32ab4d);
+}
+
+.box-index-cetec-fora-da-meta {
+    height: 300px;
+    border: 1px solid #d31e2f;
+    margin-top: 10px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#d31e2f 10%, #e04b59);
+}
+
+.box-index-cetec-sem-validacao {
+    height: 300px;
+    border: 1px solid #838383;
+    margin-top: 10px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#838383 10%, #bbbbbb);
+}
+
+.box-index-dentro-da-meta {
+    height: 140px;
+    border: 1px solid #00891f;
+    margin-top: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#00891f 10%, #32ab4d);
+}
+
+.box-index-fora-da-meta {
+    height: 140px;
+    border: 1px solid #e04b59;
+    margin-top: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#d31e2f 10%, #e04b59);
+}
+
+.box-index-sem-validacao {
+    height: 140px;
+    border: 1px solid #838383;
+    margin-top: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#838383 10%, #bbbbbb);
+}
+
+.box-detalha-processo-periodo-acumulado {
+    height: 300px;
+    border: 1px solid #858585;
+    margin: 10px 35px 0 35px;
+    border-radius: 15px;
+    text-align: center;
+    color: #fff;
+    background-image: linear-gradient(#e1e1e1 10%, #858585);
+}
+
+.box-title-detalha-processo-periodo-acumulado {
+    
+    font-size: 24pt;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px
+}
+
+
+.metas-atendimentos {
+    font-size: 15pt;
+}
+.metas-atendimentos-indicadore {
+    font-size: 13pt;
+    font-style: italic;
+}
+
+.percentual-atingido-detalha-processo {
+    font-size: 26pt;
+}
+
+.texto-percentual-atingido {
+    font-size: 26pt;
+}
+
+.tituloDetalheIndicador {
+    font-size: 10pt;
+    padding-top: 5px;
+    font-style: italic;
+    display: table;
+}
+
+.tituloDetalheIndicadorCab {
+    font-size: 10pt;
+    font-style: italic;
+}
+
+
+.corCabeçalhoModal {
+    background-color: #045ba0;
+    color: #fff;
+    height: 45px;
+    padding: 10px;
+}

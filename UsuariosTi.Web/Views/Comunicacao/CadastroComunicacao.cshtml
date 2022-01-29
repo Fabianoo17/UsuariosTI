@@ -1,0 +1,169 @@
+﻿@model UsuariosTi.Business.Entities.T039_DESTAQUE
+@{
+    ViewData["Title"] = "Create";
+}
+
+<link href="~/Assets/Plugins/bootstrap_4.0.1/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
+
+@using (Html.BeginForm("CadastroComunicacao", "Comunicacao", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container" style="position: absolute;top: 8%;left: 15%;border: 1px solid #6c757d;border-radius: 10px;">
+        <div class="row" style="background-color: #6c757d; border-bottom: 1px solid #bfbfbf; padding: 10px; margin-bottom: 10px; color: #fff; border-top-left-radius: 10px;border-top-right-radius: 10px;font-size: 15pt;box-shadow: 0px 3px 5px #dcdcdc;">
+            <div class="col">
+                <label>Cadastrar Comunicação</label>
+            </div>
+        </div>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label class="control-label col-md-2">Titulo</label>
+                    <input type="text" class="form-control" asp-for="T039_TITULO" id="T039_TITULO" required="required" />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <label class="control-label col-md-2">Descrição</label>
+                    <textarea class="form-control" rows="3" asp-for="T039_DESCRICAO" id="T039_DESCRICAO" required="required"></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col">
+                    <label class="control-label col-6">Data Inicio Informe</label>
+                    <input type="text" class="form-control calendar" asp-for="T039_DT_INICIO" id="T039_DT_INICIO" required="required" />
+                </div>
+                <div class="form-group col">
+                    <label class="control-label col-6">Data Fim Informe</label>
+                    <input type="text" class="form-control calendar" asp-for="T039_DT_FIM" id="T039_DT_FIM" required="required" />
+                </div>
+            </div>
+
+            <div class="form-row" style="margin-bottom:-20px;">
+                <div class="form-group col">
+                    <label class="control-label">Imagem</label>
+                    <input type="file" class="form-control" name="anexo" id="anexo" required />
+                    @*<img id="img" style="width:100px" />*@
+                </div>
+                <div class="form-group col">
+                    <label class="control-label">Link</label>
+                    <input type="text" class="form-control" asp-for="T039_LINK" id="T039_LINK" />
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="checkbox" class="validaEmail" name="email" /> Enviar e-mail
+                    <input type="hidden" asp-for="T039_FLAG_EMAIL" value="@false" />
+                </div>
+            </div>
+
+            <div id="boxEmail" class="form-row" style="display:none;">
+                <div class="form-group col-12">
+                    <label class="control-label">Para</label>
+                    <input type="text" class="form-control" asp-for="T039_EMAILS" id="T039_LINK" placeholder="xxxxxxx@caixa.gov.br;" />
+                    <label style="font-size: 8pt; font-style: italic;">Separação de Email por ";". Exemplo:   xxxxxxx@caixa.gov.br;xxxxxxx@caixa.gov.br;</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-12">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary float-right" />
+                    <a class="btn btn-secondary float-left" asp-action="ListaComunicacao" style="color:#fff !important;">Voltar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+@section Scripts {
+    <script src="~/Assets/Plugins/bootstrap-filestyle/bootstrap-filestyle.min.js"></script>
+    <script>
+        $(function () {
+
+            $('.calendar').daterangepicker({
+                "locale": {
+                    "format": "DD/MM/YYYY",
+                    "separator": " - ",
+                    "applyLabel": "Aplicar",
+                    "cancelLabel": "Cancelar",
+                    "daysOfWeek": [
+                        "Dom",
+                        "Seg",
+                        "Ter",
+                        "Qua",
+                        "Qui",
+                        "Sex",
+                        "Sab"
+                    ],
+                    "monthNames": [
+                        "Janeiro",
+                        "Fevereiro",
+                        "Março",
+                        "Abril",
+                        "Maio",
+                        "Junho",
+                        "Julho",
+                        "Agosto",
+                        "Setembro",
+                        "Outubro",
+                        "Novembro",
+                        "Dezembro"
+                    ],
+                    "firstDay": 1
+                },
+                singleDatePicker: true,
+                autoUpdateInput: true,
+                drops: "up"
+
+            });
+
+
+            $('#anexo').filestyle({
+                buttonText: 'Arquivo',
+                buttonName: 'btn-primary'
+            });
+
+            $('#toggleIcon').click(function () {
+                var fs = $('#T039_IMAGEM');
+                if (fs.filestyle('icon'))
+                    fs.filestyle('icon', false);
+                else
+                    fs.filestyle('icon', true);
+            });
+            $(".buttonText").text("Arquivo");
+
+            $("#anexo").change(function (index, valor) {
+                var input = document.getElementById("anexo");
+                var fReader = new FileReader();
+                fReader.readAsDataURL(input.files[0]);
+                fReader.onloadend = function (event) {
+                    var img = document.getElementById("img");
+                    img.src = event.target.result;
+                }
+            })
+
+            $(".validaEmail").change(function () {
+                if ($(this).prop("checked")) {
+                    $("#boxEmail").css("display", "block");
+                    $("#T039_FLAG_EMAIL").val(true);
+
+                } else {
+                    $("#boxEmail").css("display", "none");
+                    $("#T039_EMAILS").val("");
+                    $("#T039_FLAG_EMAIL").val(false);
+                }
+            });
+
+
+        })
+
+
+
+    </script>
+}

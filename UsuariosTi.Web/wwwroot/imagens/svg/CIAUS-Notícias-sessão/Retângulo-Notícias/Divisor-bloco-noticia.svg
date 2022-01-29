@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5" height="375.5" viewBox="0 0 5 375.5">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #cecece;
+      }
+
+      .cls-2 {
+        stroke: #eb822d;
+        stroke-width: 5px;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1343" data-name="Grupo 1343" transform="translate(-716 -2772)">
+    <line id="Linha_364" data-name="Linha 364" class="cls-1" y2="375.5" transform="translate(720.5 2772)"/>
+    <line id="Linha_373" data-name="Linha 373" class="cls-2" y2="66" transform="translate(718.5 2809.5)"/>
+  </g>
+</svg>

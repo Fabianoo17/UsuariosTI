@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="203.308" viewBox="0 0 1080 203.308">
+  <defs>
+    <style>
+      .cls-1, .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #fff;
+      }
+
+      .cls-2 {
+        fill: #00a7ff;
+        stroke-width: 2px;
+        opacity: 0.9;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1288" data-name="Grupo 1288" transform="translate(-360.5 -1096)">
+    <line id="Shape_34" data-name="Shape 34" class="cls-1" x1="1080" transform="translate(360.5 1164.415)"/>
+    
+    <g id="Ellipse_13_copy_4" data-name="Ellipse 13 copy 4" class="cls-2" transform="translate(606.177 1098) rotate(90)">
+
+      <circle class="cls-4" cx="66.088" cy="66.088" r="66.088"/>
+
+      <circle class="cls-5" cx="66.088" cy="66.088" r="67.088"/>
+
+    </g>
+    <text id="Abrangência" class="font-bold text-white" transform="translate(606.177 1098)">
+      <tspan x="-120" y="70">@numeroTeste</tspan>
+    </text>
+
+
+    <g id="Ellipse_13_copy_4-2" data-name="Ellipse 13 copy 4" class="cls-2" transform="translate(881.308 1121) rotate(90)">
+      <circle class="cls-4" cx="44.654" cy="44.654" r="44.654"/>
+      <circle class="cls-5" cx="44.654" cy="44.654" r="45.654"/>
+    </g>
+    <g id="Ellipse_13_copy_4-3" data-name="Ellipse 13 copy 4" class="cls-2" transform="translate(1119.308 1130) rotate(90)">
+      <circle class="cls-4" cx="35.654" cy="35.654" r="35.654"/>
+      <circle class="cls-5" cx="35.654" cy="35.654" r="36.654"/>
+    </g>
+    <g id="Ellipse_13_copy_4-4" data-name="Ellipse 13 copy 4" class="cls-2" transform="translate(1352.308 1136) rotate(90)">
+      <circle class="cls-4" cx="29.654" cy="29.654" r="29.654"/>
+      <circle class="cls-5" cx="29.654" cy="29.654" r="30.654"/>
+    </g>
+    <g id="Ellipse_13_copy_4-5" data-name="Ellipse 13 copy 4" class="cls-2" transform="translate(751.308 1190) rotate(90)">
+      <circle class="cls-4" cx="53.654" cy="53.654" r="53.654"/>
+      <circle class="cls-5" cx="53.654" cy="53.654" r="54.654"/>
+    </g>
+    <g id="Ellipse_13_copy_4-6" data-name="Ellipse 13 copy 4" class="cls-2" transform="translate(1013.308 1190) rotate(90)">
+      <circle class="cls-4" cx="53.654" cy="53.654" r="53.654"/>
+      <circle class="cls-5" cx="53.654" cy="53.654" r="54.654"/>
+    </g>
+    <g id="Ellipse_13_copy_4-7" data-name="Ellipse 13 copy 4" class="cls-2" transform="translate(1263.308 1190) rotate(90)">
+      <circle class="cls-4" cx="53.654" cy="53.654" r="53.654"/>
+      <circle class="cls-5" cx="53.654" cy="53.654" r="54.654"/>
+    </g>
+    <line id="Linha_387" data-name="Linha 387" class="cls-3" y2="24" transform="translate(697.5 1164.5)"/>
+    <line id="Linha_388" data-name="Linha 388" class="cls-3" y2="24" transform="translate(960.5 1164.5)"/>
+    <line id="Linha_389" data-name="Linha 389" class="cls-3" y2="24" transform="translate(1209.5 1164.5)"/>
+
+  </g>
+</svg>

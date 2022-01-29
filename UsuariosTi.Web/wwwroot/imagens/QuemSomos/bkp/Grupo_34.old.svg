@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1257" height="256" viewBox="0 0 1257 256">
+  <defs>
+    <filter id="Retângulo_535" x="620" y="65" width="637" height="191" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_834" data-name="Grupo 834" transform="translate(10022 -1542)">
+    <g id="Grupo_832" data-name="Grupo 832" transform="translate(-10086 520)">
+      <g id="Grupo_594" data-name="Grupo 594">
+        <g transform="matrix(1, 0, 0, 1, 64, 1022)" filter="url(#Retângulo_535)">
+          <rect id="Retângulo_535-2" data-name="Retângulo 535" width="619" height="173" transform="translate(629 71)" fill="#6f6f6f" opacity="0.8"/>
+        </g>
+        <rect id="Retângulo_530" data-name="Retângulo 530" width="10" height="75" transform="translate(693 1093)" fill="#44beb1"/>
+      </g>
+      <text id="Canais_Infraestrutura_de_TI_Telecomunicações_Atendimentos_nas_unidades_CAIXA_e_canais_parceiros_nacionalmente." data-name="Canais, Infraestrutura de TI, Telecomunicações, Atendimentos nas unidades CAIXA e canais parceiros nacionalmente." transform="translate(732 1137)" fill="#fff" font-size="25" font-family="FuturaBT-Medium, Futura" font-weight="500"><tspan x="0" y="24">Canais, Infraestrutura de TI, Telecomunicações, </tspan><tspan x="0" y="54">Atendimentos nas unidades CAIXA e canais </tspan><tspan x="0" y="84">parceiros nacionalmente.</tspan></text>
+    </g>
+    <text id="É_responsável_pela_gestão_estratégica_da_sustentação_dos_serviços_de:" data-name="É responsável pela gestão estratégica
+da sustentação dos serviços de:" transform="translate(-9395 1543)" fill="#5d5d5d" font-size="18" font-family="FuturaBT-Book, Futura"><tspan x="0" y="17">É responsável pela </tspan><tspan y="17" font-family="FuturaBT-Medium, Futura" font-weight="500">gestão estratégica</tspan><tspan font-family="FuturaBT-Medium, Futura" font-weight="500"><tspan x="0" y="39">da sustentação dos serviços de:</tspan></tspan></text>
+    <g id="Grupo_831" data-name="Grupo 831" transform="translate(-10086 520)">
+      <line id="Linha_229" data-name="Linha 229" y2="239" transform="translate(631 1027.5)" fill="none" stroke="#919191" stroke-width="1"/>
+      <line id="Linha_230" data-name="Linha 230" y2="18" transform="translate(633.5 1027.5)" fill="none" stroke="#127a9c" stroke-width="3"/>
+    </g>
+    <g id="Grupo_833" data-name="Grupo 833" transform="translate(-686 15)">
+      <g id="Grupo_521" data-name="Grupo 521" transform="translate(-9336 1575)">
+        <g id="Elipse_175" data-name="Elipse 175" fill="none" stroke="#148b92" stroke-width="2">
+          <circle cx="66" cy="66" r="66" stroke="none"/>
+          <circle cx="66" cy="66" r="65" fill="none"/>
+        </g>
+        <path id="Caminho_359" data-name="Caminho 359" d="M53.244,43.365a9.581,9.581,0,0,1,2.467,6.422v7.005a9.59,9.59,0,0,1-9.591,9.591H11.591A9.59,9.59,0,0,1,2,56.793V49.787a9.581,9.581,0,0,1,2.467-6.422H3.918a1.918,1.918,0,1,1,0-3.836h6.376l7.834-4.374A15.345,15.345,0,1,1,44.2,24.183c0,.326-.012.652-.031.974l2.06-2.118a11.509,11.509,0,1,1,18.964,0l.015.015L72.173,30.2a9.581,9.581,0,0,1,2.72,6.691v2.636h1.918a1.918,1.918,0,0,1,0,3.836ZM47.42,39.529H71.057V36.893a5.769,5.769,0,0,0-1.631-4.017L62.521,25.79a11.513,11.513,0,0,1-13.612,0L42,32.876a15.5,15.5,0,0,0-1.128,1.212,2.111,2.111,0,0,0-.506,1.5Zm-2.287,3.119L36.2,37.66a15.371,15.371,0,0,1-14.69,0l-12.726,7.1a5.753,5.753,0,0,0-2.95,5.026v7.005a5.757,5.757,0,0,0,5.755,5.755H46.12a5.757,5.757,0,0,0,5.755-5.755V49.787a5.753,5.753,0,0,0-2.95-5.026L46.4,43.35A1.914,1.914,0,0,1,45.134,42.648ZM28.856,35.692a11.51,11.51,0,1,0-11.51-11.51A11.509,11.509,0,0,0,28.856,35.692Zm26.856-11.51a7.673,7.673,0,1,0-7.673-7.673A7.671,7.671,0,0,0,55.711,24.183Z" transform="translate(26.52 33.75)" fill="#eb822d"/>
+      </g>
+      <line id="Linha_221" data-name="Linha 221" x2="38.864" transform="translate(-8845.624 1692.538)" fill="none" stroke="#eb822d" stroke-width="5"/>
+      <text id="Gerência_Nacional_Atendimento_Usuários_TI" data-name="Gerência Nacional
+Atendimento Usuários TI" transform="translate(-9178 1633)" fill="#137d9b" font-size="33" font-family="FuturaBT-Medium, Futura" font-weight="500"><tspan x="0" y="0">Gerência Nacional</tspan><tspan x="0" y="39">Atendimento Usuários TI</tspan></text>
+    </g>
+  </g>
+</svg>

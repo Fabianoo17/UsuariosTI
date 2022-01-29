@@ -1,0 +1,98 @@
+﻿.box-index-cetec-dentro-da-meta {
+    height: 340px;
+    border: 1px solid #00891f;
+    margin: 10px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#00891f 10%, #32ab4d);
+}
+
+.box-index-cetec-fora-da-meta {
+    height: 340px;
+    border: 1px solid #d31e2f;
+    margin: 10px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#d31e2f 10%, #e04b59);
+}
+
+.box-index-cetec-sem-validacao {
+    height: 340px;
+    border: 1px solid #838383;
+    margin: 10px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#838383 10%, #bbbbbb);
+}
+
+.box-index-dentro-da-meta {
+    height: 160px;
+    border: 1px solid #00891f;
+    margin: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#00891f 10%, #32ab4d);
+}
+
+.box-index-fora-da-meta {
+    height: 160px;
+    border: 1px solid #e04b59;
+    margin: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#d31e2f 10%, #e04b59);
+}
+
+.box-index-sem-validacao {
+    height: 160px;
+    border: 1px solid #838383;
+    margin: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#838383 10%, #bbbbbb);
+}
+
+
+
+
+
+.box-title-index-cetec {
+    background-color: #1e52ae;
+    font-size: 35pt;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px
+}
+
+.box-title-index-atendimento {
+    background-color: #c69505;
+    font-size: 20pt;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-left: 15px;
+}
+
+.metas-atendimentos {
+    font-size: 15pt;
+}
+
+.metas-atendimentos-fonts {
+    font-size: 13pt;
+}
+
+.texto-percentual-atingido-cetec {
+    font-size: 40pt;
+    font-weight: bold;
+}
+
+.texto-percentual-atingido {
+    font-size: 35pt;
+    font-weight:bold;
+}
+
+.texto-percentual-atingido-fonts {
+    font-size: 27pt;
+    font-weight: bold;
+}

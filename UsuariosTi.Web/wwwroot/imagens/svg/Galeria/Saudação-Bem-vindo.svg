@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="925" height="31" viewBox="0 0 925 31">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-size: 26px;
+        font-family: FuturaBT-Medium, Futura;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        font-family: FuturaBT-Book, Futura;
+        font-weight: 400;
+      }
+    </style>
+  </defs>
+  <text id="Bem-vindo_Leonardo_à_centralizadora_regional_de_serviços_a_usuários_de_TI_-_AM" data-name="Bem-vindo @nome à centralizadora regional de serviços a usuários de TI - AM" class="cls-1" transform="translate(0 25)"><tspan x="0" y="0">Bem-vindo Leonardo</tspan><tspan class="cls-2" y="0" xml:space="preserve"> à centralizadora regional de serviços a usuários de TI - AM</tspan></text>
+</svg>

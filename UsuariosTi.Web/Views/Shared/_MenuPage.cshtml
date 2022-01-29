@@ -1,0 +1,95 @@
+﻿@using UsuariosTi.App.Helpers;
+@{
+    bool acessoGestor = this.CustomAuthorize(new[] { EPerfil.Administrador });
+
+}
+
+<style>
+  
+</style>
+
+<header id="header" class="fixed-top" style="position: absolute !important;top: 0 !important;">
+    <div class="col-md-12 row">
+        <div class="col-md-9">
+            <div class="container d-flex align-items-center" style="margin-top: 23px; margin-left: 28px">
+                <nav class="nav-menu d-none d-lg-block">
+                    <ul style="color:#fff !important;">
+
+                        <li><a style="margin-left: 65px; margin-top: 20px; font-family: 'futurabt-medium' !important; font-size: 17px; font-weight: unset !important;cursor:pointer;" onclick="goTo('#pag-quemSomos', 900);">Quem Somos</a></li>
+                        <li><a style="margin-top: 20px; font-family: 'futurabt-medium' !important; font-size: 17px; font-weight: unset !important;cursor:pointer;" onclick="goTo('#pag-ondeEstamos', 900);">Onde Estamos</a></li>
+                        <li><a style="margin-top: 20px; font-family: 'futurabt-medium' !important; font-size: 17px; font-weight: unset !important;cursor:pointer;" onclick="goTo('#pag-acessoRapido', 900);">Acesso Rápido</a></li>
+                        <li><a style="margin-top: 20px; font-family: 'futurabt-medium' !important; font-size: 17px; font-weight: unset !important;cursor:pointer;" onclick="goTo('#pag-dicasTI', 900);">Dicas TI</a></li>
+                        <li><a style="margin-top: 20px; font-family: 'futurabt-medium' !important; font-size: 17px; font-weight: unset !important;cursor:pointer;" onclick="goTo('#pag-catalogo', 900);">Catálogo de Serviços</a></li>
+                        <li><a style="margin-top: 20px; font-family: 'futurabt-medium' !important; font-size: 17px; font-weight: unset !important;cursor:pointer;" onclick="goTo('#pag-ultimasAcoes', 900);">Últimas Ações</a></li>
+                        <li><a style="margin-top: 20px; font-family: 'futurabt-medium' !important; font-size: 17px; font-weight: unset !important;cursor:pointer;" onclick="goTo('#pag-numeros', 900);">Nossos Números</a></li>
+                    </ul>
+                </nav><!-- .nav-menu só pra commit -->
+
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div style="color: #fff; margin-top: 45px; font-size: 3rem; text-align: right;">
+                <span style="color: #fff; cursor: pointer;" data-toggle="modal" data-target="#modalContato" title="Fale Conosco"><i class="fas fa-headphones"></i></span>
+                <span onclick="painelAdministrativo()" style="color: #fff; cursor: pointer;" title="Manutenção"><i id="icPainel" class="fas fa-cog"></i></span>
+            </div>
+        </div>
+
+    </div>
+</header><!-- End Header -->
+
+<div id="MenuPainelAdministrativo">
+    <span id="EditarCarousel" onclick="Editar('carousel');" style="cursor: pointer;" data-toggle="modal" data-target="#modalConfigCarousel" title="Editar Carousel">Editar Carrossel</span>
+    <hr size="1" />
+    <span id="EditarCards" onclick="Editar('cards');" style="cursor: pointer;" data-toggle="modal" data-target="#modalConfigCards" title="Editar Cards">Editar Cards</span>
+    <hr size="1" />
+   <span id="EditarUltimasAcoes" onclick="Editar('acoes');" style="cursor: pointer;" data-toggle="modal" data-target="#modalConfigUltimasAcoes" title="Editar Últimas Ações">Editar Últimas Ações</span>
+</div>
+
+<script>
+    function goTo(element, speed) {
+        var top = $(element).offset().top;
+        $("html,body").animate({ scrollTop: top }, speed);
+    }
+
+    function painelAdministrativo() {
+        if ($("#MenuPainelAdministrativo").hasClass("active")) {
+            $("#MenuPainelAdministrativo").removeClass("active");
+            $("#icPainel").removeClass("fa-times");
+            $("#icPainel").addClass("fa-cog");
+            $("#icPainel").attr("color", "#fff");
+        } else {
+            $("#MenuPainelAdministrativo").addClass("active");
+            $("#icPainel").removeClass("fa-cog");
+            $("#icPainel").addClass("fa-times");
+            $("#icPainel").attr("color", "#ff0000");
+        }        
+    }
+
+    function Editar(menu) {
+        $("#MenuPainelAdministrativo").removeClass("active");
+        $("#icPainel").removeClass("fa-times");
+        $("#icPainel").addClass("fa-cog");
+        $("#icPainel").attr("color", "#fff");
+
+        if (menu === 'carousel') {
+            ListarCarousel();
+        } else if (menu === 'cards') {
+            ListarDicasTI();
+        } else if (menu === 'acoes') {
+            ListarUltimasAcoes();
+        }
+
+        $(".dvListCarousel").show();
+        $(".dvDadosCarousel").hide();
+        $(".dvListCards").show();
+        $(".dvDadosCards").hide();
+        $(".dvListUltimasAcoes").show();
+        $(".dvDadosUltimasAcoes").hide();
+
+    }
+</script>
+
+@Html.Partial("ModalContato")
+@Html.Partial("ModalConfigUltimasAcoes")
+@Html.Partial("ModalConfigCards")
+@Html.Partial("ModalConfigCarousel")

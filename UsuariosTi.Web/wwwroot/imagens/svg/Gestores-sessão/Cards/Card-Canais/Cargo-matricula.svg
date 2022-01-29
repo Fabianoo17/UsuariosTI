@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54.333" height="38.82" viewBox="0 0 54.333 38.82">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #545871;
+        font-size: 12px;
+        font-family: FuturaBT-Light, Futura;
+        font-weight: 300;
+      }
+
+      .cls-2 {
+        fill: #ff7600;
+        font-size: 17px;
+        font-family: FuturaBT-Medium, Futura;
+        font-weight: 500;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1315" data-name="Grupo 1315" transform="translate(-1093 -1587.18)">
+    <text id="c000000" class="cls-1" transform="translate(1093 1623)"><tspan x="0" y="0">c000000</tspan></text>
+    <text id="Canais" class="cls-2" transform="translate(1093.333 1603.18)"><tspan x="0" y="0">Canais</tspan></text>
+  </g>
+</svg>

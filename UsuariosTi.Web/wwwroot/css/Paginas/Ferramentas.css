@@ -1,0 +1,48 @@
+﻿.pag-ferramentas {
+    background-image: url('../../imagens/ferramentas/tela_fundo.png');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.botao-acessar-aqui-game {
+    background: #00B260 0% 0% no-repeat padding-box;
+    border-radius: 100px;
+    font-size: 20px;
+    color: #fff;
+    padding: 8px 40px;
+    font-weight: bold;
+}
+
+    .botao-acessar-aqui-game:hover {
+        background: #00894a 0% 0% no-repeat padding-box;
+    }
+
+.border-bottom-gray {
+    border-bottom: 1px solid #c9c9c9;
+}
+
+
+.fonte-ferramentas {
+    color: #18D6D4;
+    font-size: 22px;
+    font-family: 'futurabt-medium';
+}
+
+@font-face {
+    font-family: 'futurabt-light';
+    src: url('../../fonts/futura/futurabt-light.woff') format('woff');
+}
+@font-face {
+    font-family: 'futurabt-medium';
+    src: url('../../fonts/futura/futurabt-medium.woff') format('woff');
+}
+@font-face {
+    font-family: 'futurabt-book';
+    src: url('../../fonts/futura/futurabt-book.woff') format('woff');
+}
+.curso-linha:hover{
+    text-decoration:underline;
+    color:#00908f;
+}

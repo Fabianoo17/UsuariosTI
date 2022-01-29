@@ -1,0 +1,135 @@
+﻿<link href="~/Assets/Themes/BlizLand/vendo/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/Assets/Themes/BlizLand/css/style.css" rel="stylesheet" />
+<link href="~/Assets/Themes/BlizLand/vendo/icofont/icofont.min.css" rel="stylesheet" />
+<link href="~/css/site.css" asp-append-version="true" rel="stylesheet" />
+<link href="~/css/UsuariosTi.css" asp-append-version="true" rel="stylesheet" />
+
+
+@await Html.PartialAsync("_Home")
+@*@await Html.PartialAsync("_QuemSomos")*@
+@await Html.PartialAsync("_Abrangencia")
+@await Html.PartialAsync("_Estrutura")
+@*@await Html.PartialAsync("_ProdutosServicos")*@
+@await Html.PartialAsync("_Resultados")
+@*@await Html.PartialAsync("_PowerBI")*@
+@await Html.PartialAsync("_Ferramentas")
+@*@await Html.PartialAsync("_PortalRh")*@
+@*@await Html.PartialAsync("_DicasTi")*@
+@await Html.PartialAsync("_Comunicacao")
+
+@*
+    Menu Blizz -
+    _Home -
+    _QuemSomos -
+    _Numeros -
+    _Estrutura - OK
+    _ProdutosServicos -
+    _Resultados -
+    _PowerBI -
+    _Ferramentas - OK
+    _Comunicacao -
+*@
+
+<span onclick="topFunction()" id="btn-topo" title="Topo da Página">
+    <i class="fas fa-chevron-circle-up"></i>
+</span>
+
+@section scripts{
+
+    <script src="~/Assets/Themes/BlizLand/js/main.js"></script>
+    <script type="text/javascript">
+        //var mybutton = document.getElementById("btn-topo");
+        window.onscroll = function () { scrollFunction() };
+
+        $(document).ready(function () {
+            if (getParameterByName("pagina")) {
+                removeParam("pagina");
+                $("#href-produtos-servicos").trigger('click');
+            }
+            $('.carousel').carousel();
+        });
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("btn-topo").style.display = "block";
+            } else {
+                document.getElementById("btn-topo").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        $("#href-pag-quem-somos").on("click", function () {
+            $("#pag-quem-somos").attr("tabindex", -1).focus();
+        });
+
+        $("#href-pag-numeros").on("click", function () {
+            $("#pag-numeros").attr("tabindex", -1).focus();
+        });
+
+        $("#href-pag-estrutura").on("click", function () {
+            $("#pag-estrutura").attr("tabindex", -1).focus();
+        });
+
+        $("#href-pag-resultados").on("click", function () {
+            $("#pag-resultados").attr("tabindex", -1).focus();
+        });
+
+        $("#href-power-bi").on("click", function () {
+            $("#pag-power-bi").attr("tabindex", -1).focus();
+        });
+
+        $("#href-produtos-servicos").on("click", function () {
+            $("#pag-produtos-servicos").attr("tabindex", -1).focus();
+        });
+
+        $("#href-portalRh").on("click", function () {
+            $("#pag-portalRh").attr("tabindex", -1).focus();
+        });
+
+        $("#href-dicasTi").on("click", function () {
+            $("#pag-dicasTi").attr("tabindex", -1).focus();
+        });
+
+        $("#href-ferramentas").on("click", function () {
+            $("#pag-ferramentas").attr("tabindex", -1).focus();
+        });
+
+        $("#href-cominicacao").on("click", function () {
+            $("#pag-cominicacao").attr("tabindex", -1).focus();
+        });
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        function removeParam(parameter) {
+            var url = document.location.href;
+            var urlparts = url.split('?');
+
+            if (urlparts.length >= 2) {
+                var urlBase = urlparts.shift();
+                var queryString = urlparts.join("?");
+
+                var prefix = encodeURIComponent(parameter) + '=';
+                var pars = queryString.split(/[&;]/g);
+                for (var i = pars.length; i-- > 0;)
+                    if (pars[i].lastIndexOf(prefix, 0) !== -1)
+                        pars.splice(i, 1);
+                url = urlBase + '?' + pars.join('&');
+                window.history.pushState('', document.title, url);
+            }
+
+            return url;
+        }
+    </script>
+}

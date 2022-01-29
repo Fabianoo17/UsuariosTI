@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="34" viewBox="0 0 1440 34">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #545871;
+        font-size: 16px;
+        font-family: FuturaBT-Book, Futura;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1279" data-name="Grupo 1279" transform="translate(0 -55)">
+    <rect id="Retângulo_1635" data-name="Retângulo 1635" class="cls-1" width="1440" height="34" transform="translate(0 55)"/>
+    <text id="Início" class="cls-2" transform="translate(128 79)"><tspan x="0" y="0">Início</tspan></text>
+    <text id="Abrangência" class="cls-2" transform="translate(187 79)"><tspan x="0" y="0">Abrangência</tspan></text>
+    <text id="Gestores" class="cls-2" transform="translate(300 79)"><tspan x="0" y="0">Gestores</tspan></text>
+    <text id="Links_úteis" data-name="Links úteis" class="cls-2" transform="translate(384 79)"><tspan x="0" y="0">Links úteis</tspan></text>
+    <text id="Notícias" class="cls-2" transform="translate(479 79)"><tspan x="0" y="0">Notícias</tspan></text>
+    <text id="Adm_portal" data-name="Adm portal" class="cls-2" transform="translate(558 79)"><tspan x="0" y="0">Adm portal</tspan></text>
+  </g>
+</svg>

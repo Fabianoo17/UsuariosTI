@@ -1,0 +1,80 @@
+﻿@*@model UsuariosTi.Business.ViewModels.ViewModelHome
+    @{
+        var processoCetec = Model.VW003_PERCENTUAL_RESULTADO_DESEMPENHO_CETECs.FirstOrDefault(x => x.ID_PROCESSO == 1);
+    }
+    <section id="pag-resultados" class="pag-resultados section-bg" style="padding-bottom: 0px;padding-top: 0px;">*@
+@*<div class="row" style="height:75%">
+        <div class="col-md-12" style="padding: 5% 10%">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="~/imagens/Resultados/ICONE_TITULO.png" style="width:75%;" />
+                </div>
+                <div class="col-md-7" style="padding-left: 0px;padding-right: 0px;display: flex;align-items: center;">
+                    <img src="~/imagens/Resultados/ICONE_LINHA_TITULO.png" style="width: 100%;" />
+                </div>
+                <div class="col-md-2" style="padding-left: -10px;padding-right: 10px;display: flex;align-items: center;">
+                    <select class="form-control">
+                        <option value="">GEAUS</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" style="margin-top:5%;">
+
+                <div class="col-md-3" style="padding-right: 5%;">
+                    <div class="circulo-percentual-consolidado">@processoCetec.IND_PROCESSO</div>
+
+                    <div class="row" style="background: #FFFFFF 0% 0% no-repeat padding-box;border-radius: 9px;opacity: 0.85;height:400px;padding:15px;">
+                        <div class="col-md-12" style="text-align:center;padding: 13px">
+                            <label style="font-size: 13pt;color: #127A9C;">Índice Consolidado</label>
+                        </div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-9" style="text-align:right;border-bottom:1px solid;height:20px;">
+
+                        </div>
+                        <div class="col-md-12">
+                            <div style="bottom: 0;left:30%;position: absolute;font-size:11pt;text-align:center;">
+                                <i class="fas fa-chevron-up" style="font-size:15pt;color:#009cd0"></i> <br />
+                                <label style="color:#127A9C;">Acumulado / Ano</label> <br />
+                                <label>@processoCetec.META_PROCESSO %</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        @foreach (var item in Model.VW003_PERCENTUAL_RESULTADO_DESEMPENHO_CETECs.Where(x => x.ID_PROCESSO != 1).OrderBy(x => x.NO_PROCESSO))
+                        {
+                            var classeCirculoPercentual = item.IND_PROCESSO == null ? "circulo-percentual-neutro" :
+                                                          item.IND_PROCESSO >= item.META_PROCESSO ? "circulo-percentual-sucess" : "circulo-percentual-error";
+                            var classeValidaIconesPercentual = item.IND_PROCESSO == null ? "color-neutro" :
+                                                          item.IND_PROCESSO >= item.META_PROCESSO ? "color-sucess" : "color-error";
+                            var percentual = item.IND_PROCESSO == null ? "---" : Convert.ToString(item.IND_PROCESSO);
+                            <div class="col-md-4 resultado-espaco-box">
+                                <div class="@classeCirculoPercentual">
+                                    <label style="font-size: 20pt;">@percentual </label><br />
+                                    <span style="font-size: 13pt;">@item.META_PROCESSO</span>
+                                </div>
+
+                                <div class="row" style="background: #FFFFFF 0% 0% no-repeat padding-box;border-radius: 9px;opacity: 0.85;height:180px;padding:15px;">
+                                    <div class="col-md-12" style="text-align:center;padding: 13px">
+                                        <label style="font-size: 13pt;color: #127A9C;position: absolute;left: 30%;text-align: right;">@item.NO_PROCESSO</label>
+                                    </div>
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-9" style="text-align:right;border-bottom:1px solid;height:20px;">
+                                        <i class="fas fa-window-minimize @classeValidaIconesPercentual"></i>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div style="bottom: 0;right:5%;position: absolute;font-size:15pt;text-align:center;">
+                                            <i class="fas fa-chevron-down @classeValidaIconesPercentual"></i> <br />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+@*</section>*@

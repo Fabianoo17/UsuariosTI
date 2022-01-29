@@ -1,0 +1,604 @@
+﻿@model List<UsuariosTi.Business.Entities.T076_NOSSO_TIME>
+@{
+    Layout = null;
+    var auxpaginas = 0;
+    var qtdPaginas = 0;
+    var qtdRegistros = 0;
+}
+
+<style>
+    @@-moz-document url-prefix() {
+
+
+        a {
+            text-decoration: none;
+        }
+
+        .imagemNossoTimeModal {
+            width: 100vw;
+            height: 100vh;
+            background: url('/imagensHomologadas/modalnossotimepag2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: none;
+            border: 0px;
+        }
+
+        .botao-nosso-time {
+            background: white 0% 0% no-repeat padding-box;
+            border-radius: 5px;
+            opacity: 1;
+            position: center;
+            font-size: 10px;
+            color: black;
+            text-align: center;
+            box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+            height: 100px;
+            text-align: center;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .botao-nosso-time2 {
+            background: white 0% 0% no-repeat padding-box;
+            border-radius: 5px;
+            opacity: 1;
+            position: center;
+            font-size: 10px;
+            color: black;
+            text-align: center;
+            box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+            height: 100px;
+            text-align: center;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 90px;
+            margin-left: 25px;
+            float: left;
+        }
+
+        .circulo-superior-nosso-time {
+            border-radius: 50%;
+            position: absolute;
+            margin-top: -8%;
+            width: 95px;
+            height: 90px;
+            background-color: gray;
+        }
+
+        .circulo-inferior-nosso-time {
+            border-radius: 50%;
+            position: absolute;
+            margin-top: 7%;
+            width: 50px;
+            height: 50px;
+        }
+
+        body {
+            margin: 0px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+            background: url('/imagensHomologadas/modalnossotimepag2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .quadrocinza {
+            float: left;
+            width: 380px;
+            height: 1010px;
+            background-color: rgba(17, 15, 17, 0.65);
+            margin-left: 10px;
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        .TituloGeaus {
+            background-color: rgba(17, 15, 17, 0.45);
+            border-radius: 12px 12px 0px 0px;
+            height: 30px;
+            text-align: center;
+            color: #FFFFFF;
+            font-family: 'verdana' !important;
+            padding-top: 5px;
+        }
+
+        .logoNossoTime {
+            float: left;
+        }
+
+        .btnVoltar {
+            float: right;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+            .btnVoltar a {
+                color: #ffffff;
+            }
+    }
+    a {
+        text-decoration: none;
+    }
+
+    .imagemNossoTimeModal {
+        width: 100vw;
+        height: 100vh;
+        background: url('/imagensHomologadas/modalnossotimepag2.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: none;
+        border: 0px;
+    }
+
+    .botao-nosso-time {
+        background: white 0% 0% no-repeat padding-box;
+        border-radius: 5px;
+        opacity: 1;
+        position: center;
+        font-size: 10px;
+        color: black;
+        text-align: center;
+        box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+        height: 100px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .botao-nosso-time2 {
+        background: white 0% 0% no-repeat padding-box;
+        border-radius: 5px;
+        opacity: 1;
+        position: center;
+        font-size: 10px;
+        color: black;
+        text-align: center;
+        box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+        height: 100px;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 90px;
+        margin-left: 25px;
+        float: left;
+    }
+
+    .circulo-superior-nosso-time {
+        border-radius: 50%;
+        position: absolute;
+        margin-top: -8%;
+        width: 95px;
+        height: 90px;
+        background-color: gray;
+    }
+
+    .circulo-inferior-nosso-time {
+        border-radius: 50%;
+        position: absolute;
+        margin-top: 7%;
+        width: 50px;
+        height: 50px;
+
+    }
+
+    body {
+        margin: 0px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+        background: url('/imagensHomologadas/modalnossotimepag2.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .quadrocinza {
+        float: left;
+        width: 380px;
+        height: 1010px;
+        background-color: rgba(17, 15, 17, 0.65);
+        margin-left: 10px;
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    .TituloGeaus {
+        background-color: rgba(17, 15, 17, 0.45);
+        border-radius: 12px 12px 0px 0px;
+        height: 30px;
+        text-align: center;
+        color: #FFFFFF;
+        font-family: 'verdana' !important;
+        padding-top: 5px;
+    }
+
+    .logoNossoTime {
+        float: left;
+    }
+
+    .btnVoltar {
+        float: right;
+        padding: 20px;
+        font-weight: bold;
+    }
+
+        .btnVoltar a {
+            color: #ffffff;
+        }
+
+</style>
+
+<section id="pag-quemSomos" class="imagemNossoTimeModal1">
+    <div class="container ">
+        <div class="col-md-12" style="height: 100px;">
+            <div class="col-md-6 logoNossoTime">
+                <img src="~/imagensHomologadas/nossotimetitulo.jpg" style="width: 20%; margin-left: 30px; margin-top: 10px;" />
+            </div>
+            <div class="col-md-6 btnVoltar">
+                <a asp-action="Index" asp-controller="Home" class="btn ">Voltar</a>
+            </div>
+        </div>
+
+        <div class="col-md-12" style="text-align: center !important;">
+            <div>
+                <div class=" botao-nosso-time" style="width: 10%;">
+                    <div class="circulo-superior-nosso-time">
+                        @if (Model[0].T076_FOTO != null && !string.IsNullOrEmpty(Convert.ToBase64String(Model[0].T076_FOTO)))
+                        {
+                            <img width="95" height="90" style="border-radius: 50%" src="data:image/png;base64, @Convert.ToBase64String(Model[0].T076_FOTO)" />
+                        }
+
+                        else
+                        {
+                            <img width="95" height="90" style="border-radius: 50%" src="~/imagens/QuemSomos/usuario.png" />
+
+                        }
+
+                    </div>
+                    <div class="col-9" style="padding-top: 20px">
+                        @Model[0].T076_NOME<br />
+                        @Model[0].T076_CARGO
+                    </div>
+
+                    <div class="circulo-inferior-nosso-time" style="cursor:pointer;" onclick="window.open('@Html.Raw($"https://teams.microsoft.com/l/chat/0/0?users={Model[0].T076_MATRICULA}@corp.caixa.gov.br")')">
+                        <img src="/imagens/Icones/icone teams.png" width="40" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 row" style="margin-top: 50px;">
+            <div class="col-md-3 quadrocinza">
+                <div class="TituloGeaus"><span>GEAUS01 - Experiência do Usuário</span></div>
+                @foreach (var item in Model.ToList())
+                {
+                    if (item.T076_GERENCIA == "GEAUS01 - Experiência do Usuário")
+                    {
+                        if (qtdRegistros == 0)
+                        {
+                            <div class="col-md-12" style="text-align: center; margin-top: 30px;">
+                                <div class="botao-nosso-time" style="width: 40%;">
+                                    <div class="circulo-superior-nosso-time">
+                                        @if (item.T076_FOTO != null && !string.IsNullOrEmpty(Convert.ToBase64String(item.T076_FOTO)))
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="data:image/png;base64, @Convert.ToBase64String(item.T076_FOTO)" />
+                                        }
+
+                                        else
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="~/imagens/QuemSomos/usuario.png" />
+
+                                        }
+
+                                    </div>
+                                    <div class="col-9" style="padding-top: 20px">
+                                        @item.T076_NOME<br />
+                                        @item.T076_CARGO
+                                    </div>
+
+                                    <div class="circulo-inferior-nosso-time" style="cursor:pointer;" onclick="window.open('@Html.Raw($"https://teams.microsoft.com/l/chat/0/0?users={item.T076_MATRICULA}@corp.caixa.gov.br")')">
+                                        <img src="/imagens/Icones/icone teams.png" width="40" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            @*<div class="col-md-12" style="margin-top: 40px;">*@
+                            if (qtdRegistros == 1)
+                            {
+                                @Html.Raw("<div class='container'>")
+                                @Html.Raw("<div class='row'>")
+                            }
+                            <div class="col-md-6" style="margin-top: 20px;">
+                                <div class="botao-nosso-time2" style="width: 40%;">
+                                    <div class="circulo-superior-nosso-time">
+                                        @if (item.T076_FOTO != null && !string.IsNullOrEmpty(Convert.ToBase64String(item.T076_FOTO)))
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="data:image/png;base64, @Convert.ToBase64String(item.T076_FOTO)" />
+                                        }
+
+                                        else
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="~/imagens/QuemSomos/usuario.png" />
+
+                                        }
+
+                                    </div>
+                                    <div class="col-9" style="padding-top: 20px">
+                                        @item.T076_NOME<br />
+                                        @item.T076_CARGO
+                                    </div>
+
+                                    <div class="circulo-inferior-nosso-time" style="cursor:pointer;" onclick="window.open('@Html.Raw($"https://teams.microsoft.com/l/chat/0/0?users={item.T076_MATRICULA}@corp.caixa.gov.br")')">
+                                        <img src="/imagens/Icones/icone teams.png" width="40" />
+                                    </div>
+                                </div>
+                            </div>
+                            @*</div>*@
+                        }
+                        qtdRegistros++;
+                    }
+                }
+                @Html.Raw("</div>")
+                @Html.Raw("</div>")
+            </div>
+            <div class="col-md-3 quadrocinza">
+                <div class="TituloGeaus"><span>GEAUS02 - Service Desk de TI</span></div>
+                @{ qtdRegistros = 0;}
+                @foreach (var item in Model.ToList())
+                {
+                    if (item.T076_GERENCIA == "GEAUS02 - Service Desk de TI")
+                    {
+                        if (qtdRegistros == 0)
+                        {
+                            <div class="col-md-12" style="text-align: center; margin-top: 30px;">
+                                <div class="botao-nosso-time" style="width: 40%;">
+                                    <div class="circulo-superior-nosso-time">
+                                        @if (item.T076_FOTO != null && !string.IsNullOrEmpty(Convert.ToBase64String(item.T076_FOTO)))
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="data:image/png;base64, @Convert.ToBase64String(item.T076_FOTO)" />
+                                        }
+
+                                        else
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="~/imagens/QuemSomos/usuario.png" />
+
+                                        }
+
+                                    </div>
+                                    <div class="col-9" style="padding-top: 20px">
+                                        @item.T076_NOME<br />
+                                        @item.T076_CARGO
+                                    </div>
+
+                                    <div class="circulo-inferior-nosso-time" style="cursor:pointer;" onclick="window.open('@Html.Raw($"https://teams.microsoft.com/l/chat/0/0?users={item.T076_MATRICULA}@corp.caixa.gov.br")')">
+                                        <img src="/imagens/Icones/icone teams.png" width="40" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            @*<div class="col-md-12" style="margin-top: 40px;">*@
+                            if (qtdRegistros == 1)
+                            {
+                                @Html.Raw("<div class='container'>")
+                                @Html.Raw("<div class='row'>")
+                            }
+                            <div class="col-md-6" style="margin-top: 20px;">
+                                <div class="botao-nosso-time2" style="width: 40%;">
+                                    <div class="circulo-superior-nosso-time">
+                                        @if (item.T076_FOTO != null && !string.IsNullOrEmpty(Convert.ToBase64String(item.T076_FOTO)))
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="data:image/png;base64, @Convert.ToBase64String(item.T076_FOTO)" />
+                                        }
+
+                                        else
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="~/imagens/QuemSomos/usuario.png" />
+
+                                        }
+
+                                    </div>
+                                    <div class="col-9" style="padding-top: 20px">
+                                        @item.T076_NOME<br />
+                                        @item.T076_CARGO
+                                    </div>
+
+                                    <div class="circulo-inferior-nosso-time" style="cursor:pointer;" onclick="window.open('@Html.Raw($"https://teams.microsoft.com/l/chat/0/0?users={item.T076_MATRICULA}@corp.caixa.gov.br")')">
+                                        <img src="/imagens/Icones/icone teams.png" width="40" />
+                                    </div>
+                                </div>
+                            </div>
+                            @*</div>*@
+                        }
+                        qtdRegistros++;
+                    }
+                }
+                @Html.Raw("</div>")
+                @Html.Raw("</div>")
+            </div>
+            <div class="col-md-3 quadrocinza">
+                <div class="TituloGeaus"><span>GEAUS03 - Colaboração e Softwares</span></div>
+                @{ qtdRegistros = 0;}
+                @foreach (var item in Model.ToList())
+                {
+                    if (item.T076_GERENCIA == "GEAUS03 - Colaboração e Softwares")
+                    {
+                        if (qtdRegistros == 0)
+                        {
+                            <div class="col-md-12" style="text-align: center; margin-top: 30px;">
+                                <div class="botao-nosso-time" style="width: 40%;">
+                                    <div class="circulo-superior-nosso-time">
+                                        @if (item.T076_FOTO != null && !string.IsNullOrEmpty(Convert.ToBase64String(item.T076_FOTO)))
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="data:image/png;base64, @Convert.ToBase64String(item.T076_FOTO)" />
+                                        }
+
+                                        else
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="~/imagens/QuemSomos/usuario.png" />
+
+                                        }
+
+                                    </div>
+                                    <div class="col-9" style="padding-top: 20px">
+                                        @item.T076_NOME<br />
+                                        @item.T076_CARGO
+                                    </div>
+
+                                    <div class="circulo-inferior-nosso-time" style="cursor:pointer;" onclick="window.open('@Html.Raw($"https://teams.microsoft.com/l/chat/0/0?users={item.T076_MATRICULA}@corp.caixa.gov.br")')">
+                                        <img src="/imagens/Icones/icone teams.png" width="40" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            @*<div class="col-md-12" style="margin-top: 40px;">*@
+                            if (qtdRegistros == 1)
+                            {
+                                @Html.Raw("<div class='container'>")
+                                @Html.Raw("<div class='row'>")
+                            }
+                            <div class="col-md-6" style="margin-top: 20px;">
+                                <div class="botao-nosso-time2" style="width: 40%;">
+                                    <div class="circulo-superior-nosso-time">
+                                        @if (item.T076_FOTO != null && !string.IsNullOrEmpty(Convert.ToBase64String(item.T076_FOTO)))
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="data:image/png;base64, @Convert.ToBase64String(item.T076_FOTO)" />
+                                        }
+
+                                        else
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="~/imagens/QuemSomos/usuario.png" />
+
+                                        }
+
+                                    </div>
+                                    <div class="col-9" style="padding-top: 20px">
+                                        @item.T076_NOME<br />
+                                        @item.T076_CARGO
+                                    </div>
+
+                                    <div class="circulo-inferior-nosso-time" style="cursor:pointer;" onclick="window.open('@Html.Raw($"https://teams.microsoft.com/l/chat/0/0?users={item.T076_MATRICULA}@corp.caixa.gov.br")')">
+                                        <img src="/imagens/Icones/icone teams.png" width="40" />
+                                    </div>
+                                </div>
+                            </div>
+                            @*</div>*@
+                        }
+                        qtdRegistros++;
+                    }
+                }
+                @Html.Raw("</div>")
+                @Html.Raw("</div>")
+            </div>
+            <div class="col-md-3 quadrocinza">
+                <div class="TituloGeaus"><span>GEAUS04 - Canais</span></div>
+                @{ qtdRegistros = 0;}
+                @foreach (var item in Model.ToList())
+                {
+                    if (item.T076_GERENCIA == "GEAUS04 - Canais")
+                    {
+                        if (qtdRegistros == 0)
+                        {
+                            <div class="col-md-12" style="text-align: center; margin-top: 30px;">
+                                <div class="botao-nosso-time" style="width: 40%;">
+                                    <div class="circulo-superior-nosso-time">
+                                        @if (item.T076_FOTO != null && !string.IsNullOrEmpty(Convert.ToBase64String(item.T076_FOTO)))
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="data:image/png;base64, @Convert.ToBase64String(item.T076_FOTO)" />
+                                        }
+
+                                        else
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="~/imagens/QuemSomos/usuario.png" />
+
+                                        }
+
+                                    </div>
+                                    <div class="col-9" style="padding-top: 20px">
+                                        @item.T076_NOME<br />
+                                        @item.T076_CARGO
+                                    </div>
+
+                                    <div class="circulo-inferior-nosso-time" style="cursor:pointer;" onclick="window.open('@Html.Raw($"https://teams.microsoft.com/l/chat/0/0?users={item.T076_MATRICULA}@corp.caixa.gov.br")')">
+                                        <img src="/imagens/Icones/icone teams.png" width="40" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            @*<div class="col-md-12" style="margin-top: 40px;">*@
+                            if (qtdRegistros == 1)
+                            {
+                                @Html.Raw("<div class='container'>")
+                                @Html.Raw("<div class='row'>")
+                            }
+                            <div class="col-md-6" style="margin-top: 20px;">
+                                <div class="botao-nosso-time2" style="width: 40%;">
+                                    <div class="circulo-superior-nosso-time">
+                                        @if (item.T076_FOTO != null && !string.IsNullOrEmpty(Convert.ToBase64String(item.T076_FOTO)))
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="data:image/png;base64, @Convert.ToBase64String(item.T076_FOTO)" />
+                                        }
+
+                                        else
+                                        {
+                                            <img width="95" height="90" style="border-radius: 50%" src="~/imagens/QuemSomos/usuario.png" />
+
+                                        }
+
+                                    </div>
+                                    <div class="col-9" style="padding-top: 20px">
+                                        @item.T076_NOME<br />
+                                        @item.T076_CARGO
+                                    </div>
+
+                                    <div class="circulo-inferior-nosso-time" style="cursor:pointer;" onclick="window.open('@Html.Raw($"https://teams.microsoft.com/l/chat/0/0?users={item.T076_MATRICULA}@corp.caixa.gov.br")')">
+                                        <img src="/imagens/Icones/icone teams.png" width="40" />
+                                    </div>
+                                </div>
+                            </div>
+                            @*</div>*@
+                        }
+                        qtdRegistros++;
+                    }
+                }
+                @Html.Raw("</div>")
+                @Html.Raw("</div>")
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<script>
+    @*var qtdPaginas = @Html.Raw(qtdPaginas);
+    var paginaAtual = 0;
+    function MudarPaginaNossoTime(pag) {
+        var paginaEsconder = paginaAtual;
+        paginaAtual = paginaAtual + pag;
+        if (paginaAtual == qtdPaginas) {
+            $('#btnAvancarFoto').css('display', 'none');
+        } else {
+            $('#btnAvancarFoto').css('display', 'block');
+        }
+
+        if (paginaAtual == 0) {
+            $('#btnVoltarFoto').css('display', 'none');
+        } else {
+            $('#btnVoltarFoto').css('display', 'block');
+        }
+        $('#divPaginaNossoTime' + paginaEsconder).fadeOut("slow", function () {
+            $('#divPaginaNossoTime' + paginaAtual).css('display', 'flex');
+        });
+    }*@
+</script>

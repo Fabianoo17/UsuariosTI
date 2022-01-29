@@ -1,0 +1,51 @@
+﻿@model UsuariosTi.Business.ViewModels.ViewModelComunicacao
+
+@{
+    ViewData["Title"] = "CarrosselComunicacao";
+    var first = Model.T039_DESTAQUEs.FirstOrDefault();
+}
+
+<div class="row" style="margin-top:80px;padding:0 15px;">
+    <div class="col-md-12">
+        <div class="row" style="padding:0 ">
+            @foreach (var item in Model.T039_DESTAQUEs)
+            {
+                <div class="col-md-3" onclick="detalhaComunicacao(@item.T039_DESTAQUE_ID)" style="border-radius: 10px 10px;cursor:pointer;padding: 0 30px;">
+                    <div class="row" style="border: 1px solid #e6e5e5;border-top-left-radius: 10px;border-top-right-radius: 10px;">
+                        <div class="col-md-12" style="padding: 0">
+                            <img src="data:image/png;base64, @Convert.ToBase64String(item.T039_IMAGEM)" style="height:175px;width:100%;border-top-left-radius:10px;border-top-right-radius:10px;" />
+                        </div>
+                    </div>
+                    <div class="row" style="background-color: #ababab;border-bottom-left-radius:10px;border-bottom-right-radius:10px;color:#fff;">
+                        <div class="col-md-12">
+                            <b style="font-size:13pt">@Html.Raw(item.T039_TITULO.Length <= 40 ? item.T039_TITULO : item.T039_TITULO.Substring(0, 40) + " ...")</b>
+                        </div>
+                        <div class="col-md-12">
+                            <i style="font-size:11pt"> @Html.Raw(item.T039_DESCRICAO.Length <= 40 ? item.T039_DESCRICAO : item.T039_DESCRICAO.Substring(0, 40) + " ...")</i>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+<div id="modal-body-comunicacao"></div>
+
+@section scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+        function detalhaComunicacao(idDestaque) {
+            $.post("/Comunicacao/DetalhaBlocosComunicacao", { idDestaque: idDestaque }, function (obj) {
+                $('#modal-body-comunicacao').innerHTML = "";
+                $('#modal-body-comunicacao').html(obj);
+                $('#modal-destaque').modal('show');
+            });
+        }
+    </script>
+}

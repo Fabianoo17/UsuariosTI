@@ -1,0 +1,87 @@
+﻿.pag-estrutura {
+    display: table;
+    width: 100%;
+    height: 102vh;
+    padding: 100px 0;
+    background: url('../imagens/estrutura/img_fundo.png') no-repeat bottom center scroll;
+    background-position: 30% 45%;
+    background-size: cover;
+    margin-right: 0px;
+    margin-left: 0px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.linha-horizontal {
+    border-left: 1px solid #dadada;
+    position: absolute;
+    top: 50%;
+    height: 450px;
+    left: 14%;
+}
+
+.linha-horizontal-menor {
+    border-left: 1px solid #dadada;
+    position: absolute;
+    top: 50%;
+    height: 250px;
+}
+
+.linha-vertial {
+    border: 1px solid #dadada;
+    position: absolute !important;
+    top: 70px;
+    margin-left: 36px;
+    width: 95%;
+}
+
+.texto-box-gerencia-nacional {
+    padding: 20% 10%;
+    color: #fff;
+    font-size: 12pt;
+}
+
+.texto-box-unidades {
+    color: #fff;
+    font-size: 8pt;
+}
+
+.box-principal {
+    background: transparent linear-gradient(180deg, #00B260 0%, #127A9C 100%) 0% 0% no-repeat padding-box;
+    height: 140px;
+    width: 98%;
+    color: #fff;
+    font-size: 15pt;
+    font-weight: bold;
+    padding: 6% 10%;
+    text-align: center;
+}
+
+.box-gerencia-nacional {
+    height: 120px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.box-unidades {
+    width: 100%;
+    z-index: 5;
+    padding: 0px 12px;
+    margin-bottom: 2px;
+}
+
+.box-ciaus {
+    width: 100%;
+    background: #00B260 0% 0% no-repeat padding-box;
+    height: 61px;
+    color: #fff;
+    font-size: 15pt;
+    font-weight: bold;
+    text-align: center;
+    line-height: 61px;
+    margin-bottom: 2px;
+}
+
+    .box-ciaus:hover {
+        background: #007640 0% 0% no-repeat padding-box;
+    }

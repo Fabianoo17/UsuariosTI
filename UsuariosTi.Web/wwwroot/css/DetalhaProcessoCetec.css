@@ -1,0 +1,81 @@
+﻿.box-index-cetec-dentro-da-meta {
+    height: 465px;
+    border: 1px solid #00891f;
+    margin-top: 10px;
+    padding: 40px 25px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#00891f 10%, #32ab4d);
+}
+
+.box-index-cetec-fora-da-meta {
+    height: 465px;
+    border: 1px solid #d31e2f;
+    margin-top: 10px;
+    padding: 40px 25px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#d31e2f 10%, #e04b59);
+}
+
+.box-index-cetec-sem-validacao {
+    height: 465px;
+    border: 1px solid #838383;
+    margin-top: 10px;
+    padding: 40px 25px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#838383 10%, #bbbbbb);
+}
+
+
+.box-index-dentro-da-meta {
+    height: 140px;
+    border: 1px solid #00891f;
+    margin-top: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#00891f 10%, #32ab4d);
+    text-align: left;
+    padding: 25px 25px;
+}
+
+.box-index-fora-da-meta {
+    height: 140px;
+    border: 1px solid #e04b59;
+    margin-top: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#d31e2f 10%, #e04b59);
+    text-align: left;
+    padding: 25px 25px;
+}
+
+.box-index-sem-validacao {
+    height: 140px;
+    border: 1px solid #838383;
+    margin-top: 10px;
+    border-radius: 15px;
+    color: #fff;
+    background-image: linear-gradient(#838383 10%, #bbbbbb);
+    text-align: left;
+    padding: 25px 25px;
+}
+
+.box-title-detalha-processo {
+    font-size: 12pt;
+}
+
+.texto-percentual {
+    font-size: 26pt;
+}
+
+
+.metas-atendimentos {
+    font-size: 15pt;
+}
+
+.percentual-atingido {
+    font-size: 40pt;
+
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="119" height="36.847" viewBox="0 0 119 36.847">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff7600;
+        font-size: 12px;
+        font-family: FuturaBT-Medium, Futura;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        fill: #545871;
+        font-size: 14px;
+        font-family: FuturaBT-Book, Futura;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1313" data-name="Grupo 1313" transform="translate(-900 -1688)">
+    <text id="CIAUS_MN" data-name="CIAUS/MN" class="cls-1" transform="translate(931.2 1721.847)"><tspan x="0" y="0">CIAUS/MN</tspan></text>
+    <text id="Lorem_Ipsum_lorem" data-name="Lorem Ipsum lorem" class="cls-2" transform="translate(900 1701)"><tspan x="0" y="0">Lorem Ipsum lorem</tspan></text>
+  </g>
+</svg>

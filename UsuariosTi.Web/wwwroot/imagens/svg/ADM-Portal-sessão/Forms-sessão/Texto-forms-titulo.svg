@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="25" viewBox="0 0 220 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8b8b8b;
+        font-size: 20px;
+        font-family: Futura Bk BT, Futura;
+      }
+    </style>
+  </defs>
+  <text id="Title" class="cls-1"><tspan x="4.123" y="19">Administração do portal</tspan></text>
+</svg>

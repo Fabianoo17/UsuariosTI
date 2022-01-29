@@ -1,0 +1,75 @@
+﻿@model UsuariosTi.Business.ViewModels.ViewModelComunicacao
+@{
+    ViewData["Title"] = "CarrosselComunicacao";
+    var first = Model.T039_DESTAQUEs.FirstOrDefault();
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<style>
+
+    .bg-carousel {
+        background-color: rgba(0, 0, 0, 0.34);
+    }
+</style>
+
+<div class="col-md-3"></div>
+<div class="col-md-6" style="margin-top: 10%;">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width:100%">
+        <!-- Indicators -->
+        @*<ol class="carousel-indicators">
+                @for (var i = 0; i < Model.T039_DESTAQUEs.Count(); i++)
+                {
+
+                    <li data-target="#carouselExampleBigIndicators" data-slide-to="@i" class="@(i == 0 ?"active":"")"></li>
+                }
+            </ol>*@
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" style="height: 30vw !important;">
+            @foreach (var item in Model.T039_DESTAQUEs)
+            {
+                <div class="item @(item == first ? "active" : "")" style="height: 50vw;position:relative;">
+                    <div class="row " style="margin-left:15px" id="">
+                        <div class="col-lg-12">
+                            <div class="wrapper wrapper-content animated fadeInUp">
+                                <div class="ibox">
+                                    <div class="ibox-content">
+                                        <img style="width:100%;height:30vw" alt="Alternate Text" src="data:image/png;base64, @Convert.ToBase64String(item.T039_IMAGEM)" />
+
+
+                                    </div>
+                                </div>
+
+                                <div class="carousel-caption" style="background-color:black;position:absolute;bottom:0;opacity:0.6;width:100%;left:-20px;">
+                                    <div style="margin-left:10px !important;">
+                                        <h4 style="margin-left:10px !important;margin-right:10px;">@item.T039_DESCRICAO</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            }
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+</div>
+<div class="col-md-3"></div>
+
+@section Scripts{
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+}

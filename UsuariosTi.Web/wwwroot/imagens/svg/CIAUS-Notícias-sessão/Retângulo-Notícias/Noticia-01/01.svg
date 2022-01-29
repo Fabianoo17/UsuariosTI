@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="66" height="66" viewBox="0 0 66 66">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #565f67;
+        font-size: 38px;
+        font-family: FuturaBT-Medium, Futura;
+        font-weight: 500;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #18d6d4;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1340" data-name="Grupo 1340" transform="translate(-449 -2809)">
+    <text id="_01" data-name="01" class="cls-1" transform="translate(459 2818)"><tspan x="0" y="37">01</tspan></text>
+    <g id="Elipse_182" data-name="Elipse 182" class="cls-2" transform="translate(449 2809)">
+      <circle class="cls-3" cx="33" cy="33" r="33"/>
+      <circle class="cls-4" cx="33" cy="33" r="32.5"/>
+    </g>
+  </g>
+</svg>

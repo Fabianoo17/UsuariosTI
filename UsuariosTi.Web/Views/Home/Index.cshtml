@@ -1,0 +1,89 @@
+﻿@model UsuariosTi.Business.ViewModels.Home.IndexViewModel
+
+
+<link href="~/Assets/Themes/BlizLand/vendo/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/Assets/Themes/BlizLand/css/style.css" rel="stylesheet" />
+<link href="~/Assets/Themes/BlizLand/vendo/icofont/icofont.min.css" rel="stylesheet" />
+<link href="~/css/site.css" asp-append-version="true" rel="stylesheet" />
+<link href="~/css/UsuariosTi.css" asp-append-version="true" rel="stylesheet" />
+
+<div style="display:block;" id="divconteudoprincipal">
+    <div id="divModal"></div>
+    @await Html.PartialAsync("_CarrousselComMenu", Model.ModelCarrossel)
+    @await Html.PartialAsync("_QuemSomos", Model.ModelQuemSomos)
+    @await Html.PartialAsync("_OndeEstamos")
+    @await Html.PartialAsync("_AcessoRapido")
+    @await Html.PartialAsync("~/Views/ReportagensTi/ReportagensTi.cshtml", Model.ModelDicasTi)
+    @await Html.PartialAsync("_Catalogo")
+    @await Html.PartialAsync("_UltimasAcoes", Model.ModelUltimasAcoes)
+    @await Html.PartialAsync("_Numeros", Model.ModelNumeros)
+</div>
+
+
+
+
+<span onclick="topFunction()" id="btn-topo" title="Topo da Página">
+    <i class="fas fa-chevron-circle-up"></i>
+</span>
+
+@section scripts{
+
+    <script src="~/Assets/Themes/BlizLand/js/main.js"></script>
+    <script type="text/javascript">
+        //var mybutton = document.getElementById("btn-topo");
+        window.onscroll = function () { scrollFunction() };
+
+        $(document).ready(function () {
+            if (getParameterByName("pagina")) {
+                removeParam("pagina");
+                $("#href-produtos-servicos").trigger('click');
+            }
+            $('.carousel').carousel();
+            /*setTimeout(function () { $("#divconteudoprincipal").css("display", "block"); }, 3000);*/
+        });
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("btn-topo").style.display = "block";
+            } else {
+                document.getElementById("btn-topo").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        function removeParam(parameter) {
+            var url = document.location.href;
+            var urlparts = url.split('?');
+
+            if (urlparts.length >= 2) {
+                var urlBase = urlparts.shift();
+                var queryString = urlparts.join("?");
+
+                var prefix = encodeURIComponent(parameter) + '=';
+                var pars = queryString.split(/[&;]/g);
+                for (var i = pars.length; i-- > 0;)
+                    if (pars[i].lastIndexOf(prefix, 0) !== -1)
+                        pars.splice(i, 1);
+                url = urlBase + '?' + pars.join('&');
+                window.history.pushState('', document.title, url);
+            }
+
+            return url;
+        }
+
+    </script>
+}

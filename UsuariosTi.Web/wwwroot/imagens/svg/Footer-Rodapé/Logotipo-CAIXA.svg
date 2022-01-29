@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="101.384" height="22.967" viewBox="0 0 101.384 22.967">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #ec660c;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1271" data-name="Grupo 1271" transform="translate(-132.066 -3922)">
+    <path id="Caminho_1641" data-name="Caminho 1641" class="cls-1" d="M563.822,382.511H555.68l-10.771,22.174h7.248l1.6-2.955h6.936l.525,2.955h7.15Zm-7.628,13.7,2.625-6.542.011-.028,1,6.57Z" transform="translate(-395.74 3539.955)"/>
+    <path id="Caminho_1642" data-name="Caminho 1642" class="cls-1" d="M588.432,404.686l3.12-22.174h7.2l-3.12,22.174Z" transform="translate(-412.424 3539.955)"/>
+    <path id="Caminho_1643" data-name="Caminho 1643" class="cls-1" d="M662.46,382.511h-8.141l-10.771,22.174H650.8l1.6-2.955h6.936l.525,2.955H667Zm-7.628,13.7,2.637-6.57,1,6.57Z" transform="translate(-433.553 3539.955)"/>
+    <path id="Caminho_1644" data-name="Caminho 1644" class="cls-1" d="M617.725,401.656h9.026l6.184,10.243h-9.026l-6.184-10.243Z" transform="translate(-423.653 3532.615)"/>
+    <path id="Caminho_1645" data-name="Caminho 1645" class="cls-2" d="M619.246,392.764h9.329l8.1-10.2h-9.329l-8.1,10.2Z" transform="translate(-424.236 3539.935)"/>
+    <path id="Caminho_1646" data-name="Caminho 1646" class="cls-2" d="M604.117,411.95h9.329l8.1-10.325H612.22l-8.1,10.325Z" transform="translate(-418.438 3532.627)"/>
+    <path id="Caminho_1647" data-name="Caminho 1647" class="cls-1" d="M609.573,382.362h8.707l5.965,10.325h-8.708l-5.965-10.325Z" transform="translate(-420.528 3540.012)"/>
+    <path id="Caminho_1648" data-name="Caminho 1648" class="cls-1" d="M534.491,383.016l-.693,6.521c-2.655-3.662-8.808-1.135-9.292,3.428-.614,5.791,5.308,7.142,8.531,3.731l-.7,6.536a15.493,15.493,0,0,1-2.83,1.088,11.55,11.55,0,0,1-2.767.4,10.746,10.746,0,0,1-3.142-.361,7.678,7.678,0,0,1-2.549-1.235,9.063,9.063,0,0,1-3.156-4.063,11.746,11.746,0,0,1-.64-5.6,13.725,13.725,0,0,1,1.271-4.583,13.3,13.3,0,0,1,2.764-3.78,11.75,11.75,0,0,1,3.629-2.464,11.452,11.452,0,0,1,4.264-.879,10.5,10.5,0,0,1,2.695.284,12.067,12.067,0,0,1,2.612.974Z" transform="translate(-385.107 3540.244)"/>
+  </g>
+</svg>

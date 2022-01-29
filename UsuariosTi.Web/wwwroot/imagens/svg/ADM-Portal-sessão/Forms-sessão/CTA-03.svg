@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="641.001" height="93" viewBox="0 0 641.001 93">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0092ed;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 16px;
+        font-family: Futura Md BT, Futura;
+        font-weight: 500;
+      }
+
+      .cls-3 {
+        filter: url(#Rectagle);
+      }
+    </style>
+    <filter id="Rectagle" x="0" y="0" width="626.001" height="93" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_1351" data-name="Grupo 1351" transform="translate(-419 -3658.5)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, 419, 3658.5)">
+      <rect id="Rectagle-2" data-name="Rectagle" class="cls-1" width="596.001" height="48" rx="6" transform="translate(22.5 19.5)"/>
+    </g>
+    <text id="Text" class="cls-2" transform="translate(639 3692)"><tspan x="1.402" y="15">Cadastro de telas iniciais</tspan></text>
+  </g>
+</svg>

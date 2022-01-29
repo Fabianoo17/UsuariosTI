@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="121" height="20" viewBox="0 0 121 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff7600;
+        font-size: 18px;
+        font-family: Futura-Bold, Futura;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+  <text id="Atendimento" class="cls-1"><tspan x="1.895" y="14">Atendimento</tspan></text>
+</svg>

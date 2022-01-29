@@ -1,0 +1,456 @@
+﻿@model UsuariosTi.Business.ViewModels.ViewModelPlantonistas
+
+@{
+    var listaPlantonistas = Model.Plantonistas.OrderBy(x => x.ORDENCAO).Select(x => new { x.NOME, x.CO_COORDENACAO_PLANTONISTA }).Distinct();
+    Layout = null;
+    var user = this.GetUserCustom();
+
+    bool acessoGestor = this.CustomAuthorize(new[] { EPerfil.Administrador, EPerfil.Editor });
+
+}
+
+@*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw==" crossorigin="anonymous" />*@
+<style>
+    .bg-blue-new {
+        background-color: #009bea;
+        color: white;
+    }
+
+    .bg-green-new {
+        background-color: #00b532;
+        color: white;
+    }
+
+    .div-numero {
+        color: #009bea
+    }
+
+    .nav, .tab-content {
+        color: black !important;
+    }
+
+    .box-plantonista {
+        font-family: Arial;
+        text-align: center;
+        font-size: 13px;
+        padding-right: 4px;
+        padding-left: 8px;
+    }
+    
+</style>
+<link href="~/Assets/Plugins/toastr/toastr.min.css" rel="stylesheet" />
+<!-- Nav tabs -->
+<div id="tabs">
+    <ul style="margin-top:2px" class="nav nav-tabs">
+
+        <li class="nav-item">
+            <a class="nav-link " onclick="carregarAdminPlantonistas()" data-toggle="tab" href="#home">Plantonistas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link menu1" data-toggle="tab" href="#menu1">Adicionar Plantonista</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link menu1" data-toggle="tab" href="#menu2">Datas</a>
+        </li>
+        @*<li style="text-align:right">
+                <button style="position:absolute;" onclick="PlantonistaSubmit()" class="btn btn-info btn-sm mt-1 ">Finalizar</button>
+            </li>*@
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content ">
+        <div class="tab-pane  active" id="home">
+            <div style=" margin-top:1px; text-align:right" class="col-12 bg-white">
+                <button onclick="PlantonistaSubmit()" style="" class="btn btn-info mt-1 ">Finalizar</button>
+                <div class="row" style="padding:60px; padding-top:0px; margin-top:-20px;">
+                    <div class="offset-2 col-10">
+                        <div class="row">
+                            @if (listaPlantonistas.Any())
+                            {
+
+                                @foreach (var item in listaPlantonistas)
+                                {
+                                    <div class="col-3  box-plantonista mt-5">
+                                        <div style="padding:5px;" class="shadow-box">
+                                            <div class="bg-blue-new text-bold  mt-2 rounded" style="height:45px; padding:8px; font-size:11px;">  @item.NOME</div>
+
+                                            <div style=" padding-bottom:5px; min-height:250px;">
+                                                @foreach (var plantao in Model.Plantonistas.Where(x => x.CO_COORDENACAO_PLANTONISTA == item.CO_COORDENACAO_PLANTONISTA))
+                                                {
+
+                                                    <input id="is-disabled" type="hidden" value="@Model.validaCoordenacao(item.CO_COORDENACAO_PLANTONISTA)" />
+                                                    <div class="row mt-1">
+                                                        <div class="col-5"><span class="bg-gray text-bold">&nbsp @plantao.DIA?.ToString("dd/MM/yyyy") &nbsp</span></div>
+                                                        <div style="text-align:left; font-size:12px;" class="col-7 ">
+
+                                                            <form>
+
+                                                                @*@if (Model.validaCoordenacao(item.CO_COORDENACAO_PLANTONISTA))*@
+                                                                @if (acessoGestor)
+                                                                {
+                                                                    <select onchange="submitEscalaPlantonista(this)" style="width:130px;" name="CO_PLANTONISTA" class="verificaDisabled" asp-for="@plantao.CO_PLANTONISTA">
+                                                                        <option>Selecione</option>
+                                                                        @foreach (var plantonista in Model.ListaPlantonistas.Where(x => x.CO_COORDENACAO == item.CO_COORDENACAO_PLANTONISTA).OrderBy(x => x.NOME_EXIBICAO).Distinct())
+                                                                        {
+                                                                            <option value="@plantonista.CO_PLANTONISTA">@plantonista.NOME_EXIBICAO.ToUpper()</option>
+                                                                        }
+                                                                        }
+
+
+                                                                    </select> }
+                                                                else
+                                                                { <select disabled onchange="submitEscalaPlantonista(this)" style="width:130px;" name="CO_PLANTONISTA" class="verificaDisabled" asp-for="@plantao.CO_PLANTONISTA">
+                                                                        <option>Selecione</option>
+                                                                        @foreach (var plantonista in Model.ListaPlantonistas.Where(x => x.CO_COORDENACAO == item.CO_COORDENACAO_PLANTONISTA))
+                                                                        {
+                                                                            <option value="@plantonista.CO_PLANTONISTA">@plantonista.NOME_EXIBICAO.ToUpper()</option>
+                                                                        }
+
+
+
+                                                                    </select>}
+                                                                <span asp-validation-for="@plantao.CO_PLANTONISTA" class="text-danger"></span>
+                                                                <input name="CO_COORDENACAO_PLANTONISTA" type="hidden" value="@plantao.CO_COORDENACAO_PLANTONISTA" />
+                                                                <input name="DIA" type="hidden" value="@plantao.DIA" />
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="text-center col-12 fonte-futura mt-4">
+                                    <p>Sem registros para o período.</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane container menu1 fade" id="menu1">
+            <div class="card-tools">
+
+            </div>
+            <div id="corpo-lista-plantonista">
+                
+                @Html.RenderPartialAsync("_ListaPlantonistas",Model);
+
+            </div>
+
+        </div>
+
+        <div class="tab-pane container fade" id="menu2">
+            <div class="col-6">
+                <label>Adicionar Data</label>
+                <div class="row">
+
+                    <div class="col-10">
+                        <input id="add-dia" type="text" class="datepicker form-control" />
+                    </div>
+                    <div class="col-1">
+                        <button type="button" onclick="AdicionarDiaPlantonista()" class="btn btn-success"><i class="fa fa-save"></i></button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="mt-3" id="menu2-body"></div>
+        </div>
+    </div>
+</div>
+<div style="color:black" class="modal fade fonte-futura" id="add-plantonista" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form id="FormStatusProjeto" class="modalSubmit" asp-action="AtualizarPlantonista">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Adicionar Plantonista</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+
+                        <div class="col-8 form-group">
+                            <label for="MAT">Plantonista:</label>
+                            <select name="MAT" class="form-control nome-diferente" asp-items="@ViewBag.DropdownUsuarios"></select>
+                            </br></br>
+                            <label for="CO_COORDENACAO">Coordenação:</label>
+                            <select name="CO_COORDENACAO" class="form-control" asp-items="@ViewBag.Coordenacao"></select>
+                            </br>
+                            <label asp-for="TEL_PESSOAL" class="control-label"> Telefone Pessoal: </label>
+                            <input asp-for="TEL_PESSOAL" id="campo-telefone" class="form-control" />
+                            <span asp-validation-for="TEL_PESSOAL" class="text-danger"></span>
+                            <input type="hidden" class="form-control" name="CGC_CENTRALIZADORA" value="@Model.Centralizadora" />
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <a style="color:white!important" onclick="submitModalPlantonista(this)" class="btn btn-info">Salvar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@*<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous"></script>*@
+
+
+<script>
+
+    $(document).ready(function () {
+
+        var ano = $("#Ano").val();
+        var mes = $("#Mes").val();
+
+        $("#campo-telefone").mask("(00) 00000-0000");
+        carregaListaDias();
+        $('.datepicker').datetimepicker({
+            format: 'DD/MM/YYYY',
+            locale: 'pt-BR',
+            minDate: new Date(ano, parseInt(mes) - 1, 1),
+            maxDate: new Date(ano, parseInt(mes), 0)
+        });
+
+    });
+
+    $(function () {
+
+        $('.nome-diferente').select2({
+
+            placeholder: "Buscar",
+            dropdownAutoWidth: false,
+            width: '100%',
+            language: 'pt-BR',
+            //matcher: matchStart,
+            minimumInputLength: 5,
+            dataType: 'json',
+            ajax: {
+                url: $('#url-pesquisar-usuarios').data('url'),
+                type: 'POST',
+                data: function (params) {
+                    var query = {
+                        matriculaOuNome: params.term
+                    }
+                    return query;
+                }
+            }
+        });
+
+    })
+    function carregaListaDias() {
+        var centralizadora = $('#Centralizadora').val();
+        var mes = $('#Mes').val();
+        var ano = $('#Ano').val();
+
+        $("#menu2-body").load("/Plantonistas/ListarDias?centralizadora=" + centralizadora + "&ano=" + ano + "&mes=" + mes);
+
+    }
+
+    function AtualizarPlantonista(element) {
+        $el = $(element)
+        $bloco = $el.parent().parent();
+
+        var formData = new FormData();
+
+        formData.append("CO_PLANTONISTA", $bloco.find(".co-plantonista").val());
+
+        formData.append("IS_ATIVO", $bloco.find(".is-ativo").is(':checked'));
+
+
+        $.ajax({
+            type: 'POST',
+            url: "/Plantonistas/AtualizarPlantonista",
+            data: formData,
+            contentType: false,
+            processData: false
+        }).done(function (data) {
+            
+            toastr.options = {
+                "progressBar": true,
+                "positionClass": "toast-bottom-right"
+
+            }
+            if (data.success) {
+
+                toastr.success("Plantonista Atualizado com sucesso!")
+            } else {
+                toastr.error("Ocorreu algum erro!")
+            }
+
+
+        })
+
+
+    };
+    function submitModalPlantonista(element) {
+
+        $el = $(element)
+        $bloco = $el.parent().parent().parent();
+
+        $.ajax({
+            type: 'POST',
+            url: "/Plantonistas/AdicionarPlantonista",
+            data: $bloco.serialize(),
+
+        }).done(function (data) {
+            
+            toastr.options = {
+                "progressBar": true,
+                "positionClass": "toast-bottom-right"
+
+            }
+            if (data.success) {
+
+                toastr.success("Plantonista Adicionado com sucesso!")
+            } else {
+                toastr.error("Ocorreu algum erro!")
+            }
+
+        }).done(function () {
+
+            AtualizarListaPlantonista();
+            $('#add-plantonista').modal('hide');
+
+
+        })
+
+    }
+
+    function AdicionarDiaPlantonista() {
+        var dia = $("#add-dia").val();
+        var centralizadora = $("#Centralizadora").val();
+
+
+        $.ajax({
+            type: 'POST',
+            url: "/Plantonistas/AdicionarDiaPlantonista",
+            data: { DIA: dia, UNIDADE: centralizadora },
+
+        }).done(function (data) {
+            
+            toastr.options = {
+                "progressBar": true,
+                "positionClass": "toast-bottom-right"
+
+            }
+            if (data.success) {
+
+                toastr.success("Dia adicionado com sucesso!")
+            } else {
+                toastr.error("Ocorreu algum erro!")
+            }
+
+        }).done(function () {
+
+            carregaListaDias();
+
+
+
+        })
+
+    }
+
+
+    function excluirDia(id) {
+        var dia = $("#add-dia").val();
+        var centralizadora = $("#Centralizadora").val();
+
+
+        $.ajax({
+            type: 'POST',
+            url: "/Plantonistas/ExcluirDiaPlantonista",
+            data: { id: id },
+
+        }).done(function (data) {
+     
+            toastr.options = {
+                "progressBar": true,
+                "positionClass": "toast-bottom-right"
+
+            }
+            if (data.success) {
+
+                toastr.success("Dia excluído com sucesso!")
+            } else {
+                toastr.error("Ocorreu algum erro!")
+            }
+
+        }).done(function () {
+
+            carregaListaDias();
+
+
+
+        })
+
+    }
+
+    function AtualizarListaPlantonista() {
+        var centralizadora = $('#Centralizadora').val();
+        $.ajax({
+            url: "/Plantonistas/ListaPlantonistas",
+            type: 'POST',
+            data: { centralizadora: centralizadora },
+            success: function (obj) {
+                $('#corpo-lista-plantonista').innerHTML = "";
+                $('#corpo-lista-plantonista').html(obj);
+                $('#MAT').val('');
+                $('#NOME-EXIBICAO').val('');
+                //$('#CO_COORDENACAO').val('');
+                //$('#TEL_PESSOAL').val('');
+            }
+        })
+
+
+    }
+
+
+    function submitEscalaPlantonista(element) {
+
+        $el = $(element)
+        $bloco = $el.parent();
+
+        $.ajax({
+            type: 'POST',
+            url: "/Plantonistas/AdicionarAtualizarEscala",
+            data: $bloco.serialize(),
+
+        }).done(function (data) {
+      
+            toastr.options = {
+                "progressBar": true,
+                "positionClass": "toast-bottom-right"
+
+            }
+            if (data.success) {
+
+                toastr.success("Escala Atualizada com sucesso!")
+            } else {
+                toastr.error("Ocorreu algum erro!")
+            }
+
+        }).done(function () {
+
+
+
+
+        })
+
+    }
+
+
+
+
+
+</script>
+
+
+
+
+

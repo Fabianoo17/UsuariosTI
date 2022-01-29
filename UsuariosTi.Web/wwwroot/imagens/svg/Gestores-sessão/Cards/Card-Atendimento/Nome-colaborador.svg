@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="36.914" viewBox="0 0 150 36.914">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff7600;
+        font-size: 12px;
+        font-family: FuturaBT-Medium, Futura;
+        font-weight: 500;
+      }
+
+      .cls-2 {
+        fill: #545871;
+        font-size: 14px;
+        font-family: FuturaBT-Book, Futura;
+      }
+    </style>
+  </defs>
+  <g id="Grupo_1322" data-name="Grupo 1322" transform="translate(-883 -1881)">
+    <text id="CIAUS_MN" data-name="CIAUS/MN" class="cls-1" transform="translate(931.2 1914.914)"><tspan x="0" y="0">CIAUS/MN</tspan></text>
+    <text id="Wilmar_Ferreira_Mourão" data-name="Wilmar Ferreira Mourão" class="cls-2" transform="translate(884 1894)"><tspan x="0" y="0">Wilmar Ferreira Mourão</tspan></text>
+  </g>
+</svg>

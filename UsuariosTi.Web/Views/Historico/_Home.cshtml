@@ -1,0 +1,90 @@
+﻿@{
+    var user = this.GetUserCustom();
+    var primeiroNome = user.Nome.ToLower().Split(" ");
+    //var nome = primeiroNome[0].Substring(0, 1).ToUpper() + primeiroNome[0].Substring(1);
+    //Alterei a maravilha da autenticação... Maravilha...
+    var nome = !String.IsNullOrEmpty(user.Nome) ? primeiroNome[0].Substring(0, 1).ToUpper() + primeiroNome[0].Substring(1) : "";
+
+
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="~/css/Paginas/Home.css" rel="stylesheet" asp-append-version="true" />
+
+@await Html.PartialAsync("_MenuPage")
+<section id="pag-home" class="home section-bg pb-0 pt-0">
+    <div class="row">
+        <div class="col-12">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <div class="carousel-inner">
+        <div class="item active">
+            <img src="~/imagens/Home/GALERIA_01.png" class="w-100 imgs-somos-caixa">
+            <span class="texto-formatacao" style="left:30%;top:25%;">Olá @nome,</span>
+            <span class="texto-formatacao" style="left:5%;top:45%;font-size: 17pt !important;">
+                Seja bem-vindo ao Portal Usuários TI! <br />
+                Este canal foi construído para <u>você</u>. <br />
+                Atuamos com foco na experiência do usuário, disponibilizando serviços e soluções de TI <br />
+                para todas as unidades CAIXA e parceiros lotéricos. </br>
+                <br />
+
+                Se você atua na GEAUS, acesse as <a id="href-ferramentas" href="#pag-ferramentas"><u>ferramentas</u></a> diretamente no canal da equipe.  <br />
+            </span>
+        </div>
+
+                @*<div class="item">
+                    @await Html.PartialAsync("_Abrangencia")
+
+                </div>*@
+
+                @*<div class="item">
+            <img src="~/imagens/Home/GALERIA_02.png" class="w-100 imgs-somos-caixa">
+            <img src="~/imagens/Home/GALERIA_02_TEXTO.png" class="texto-formatacao" style="left:35%;top:30%;" />
+        </div>*@
+
+        @*<div class="item">
+            <img src="~/imagens/Home/GALERIA_03.png" class="w-100 imgs-somos-caixa">
+            <img src="~/imagens/Home/GALERIA_03_TEXTO.png" class="texto-formatacao" style="left:35%;top:30%;" />
+        </div>*@
+
+                <div class="item">
+            <img src="~/imagens/Dicas_TI/Background-sessão.svg" class="w-100 imgs-somos-caixa" >
+            <span class="texto-formatacao" style="left:20%;top:40%;">
+                <div class="row">
+                    <div class="col-12 text-bem-vindo">
+                        Acesse aqui as dicas dos <br />
+                        usuários de TI e deixe sua <br />
+                        opinião. <br />
+                        @*<a asp-controller="ReportagensTi" asp-action="ListarReportagensTi" target="_blank"><span class="btn btn-info mt-2 btn-home-acesse-dicas">Acessar agora</span></a>*@
+                        <button class="btn btn-info mt-2 btn-home-acesse-dicas">Acessar agora</button>
+                    </div>
+                </div>
+            </span>
+        </div>
+            </div>
+
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Próximo</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
