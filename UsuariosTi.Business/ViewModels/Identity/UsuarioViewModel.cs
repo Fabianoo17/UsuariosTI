@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UsuariosTi.Business.ViewModels.Identity
+namespace Corretora.Business.ViewModels.Identity
 {
     public class UsuarioViewModel
     {

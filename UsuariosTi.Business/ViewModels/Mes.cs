@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UsuariosTi.Business.ViewModels
+namespace Corretora.Business.ViewModels
 {
     public enum Mes
     {

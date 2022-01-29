@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace UsuariosTi.Business.Entities
+namespace Corretora.Business.Entities
 {
     public class T002_PERFIL : Entity
     {

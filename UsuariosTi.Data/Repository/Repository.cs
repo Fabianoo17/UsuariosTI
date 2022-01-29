@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UsuariosTi.Business.Entities;
-using UsuariosTi.Business.Interfaces;
+using Corretora.Business.Entities;
+using Corretora.Business.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace UsuariosTi.Data.Repository
+namespace Corretora.Data.Repository
 {
     public abstract class Repository<TEntity> : IRepository<TEntity>, IDisposable where TEntity : Entity
     {
@@ -29,7 +29,7 @@ namespace UsuariosTi.Data.Repository
             }
 
             query = query.Where(expressionSeach);
-
+            //return new List<TEntity>();
             return query.ToList();
         }
 

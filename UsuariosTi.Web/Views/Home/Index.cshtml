@@ -1,22 +1,19 @@
-﻿@model UsuariosTi.Business.ViewModels.Home.IndexViewModel
+﻿@model Corretora.Business.ViewModels.Home.IndexViewModel
 
 
-<link href="~/Assets/Themes/BlizLand/vendo/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="~/Assets/Themes/BlizLand/css/style.css" rel="stylesheet" />
-<link href="~/Assets/Themes/BlizLand/vendo/icofont/icofont.min.css" rel="stylesheet" />
-<link href="~/css/site.css" asp-append-version="true" rel="stylesheet" />
-<link href="~/css/UsuariosTi.css" asp-append-version="true" rel="stylesheet" />
+
 
 <div style="display:block;" id="divconteudoprincipal">
     <div id="divModal"></div>
-    @await Html.PartialAsync("_CarrousselComMenu", Model.ModelCarrossel)
-    @await Html.PartialAsync("_QuemSomos", Model.ModelQuemSomos)
-    @await Html.PartialAsync("_OndeEstamos")
-    @await Html.PartialAsync("_AcessoRapido")
-    @await Html.PartialAsync("~/Views/ReportagensTi/ReportagensTi.cshtml", Model.ModelDicasTi)
-    @await Html.PartialAsync("_Catalogo")
-    @await Html.PartialAsync("_UltimasAcoes", Model.ModelUltimasAcoes)
-    @await Html.PartialAsync("_Numeros", Model.ModelNumeros)
+    @await Html.PartialAsync("_QuemSomos", null)
+    @await Html.PartialAsync("_NossosNumeros", null)
+    @*@await Html.PartialAsync("_CarrousselComMenu", null)
+        @await Html.PartialAsync("_OndeEstamos")
+        @await Html.PartialAsync("_AcessoRapido")
+        @await Html.PartialAsync("~/Views/ReportagensTi/ReportagensTi.cshtml", null)
+        @await Html.PartialAsync("_Catalogo")
+        @await Html.PartialAsync("_UltimasAcoes", null)
+        @await Html.PartialAsync("_Numeros", null)*@
 </div>
 
 

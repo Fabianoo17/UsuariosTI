@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Caching.Memory;
-using UsuariosTi.Business.Interfaces.Services;
+using Corretora.Business.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace UsuariosTi.App.Security
+namespace Corretora.App.Security
 {
     public class ClaimsLoader : IClaimsTransformation
     {
@@ -52,7 +52,8 @@ namespace UsuariosTi.App.Security
                 Regex rgx = new Regex(expressao);
                 return rgx.Replace(matriculaCompleta, "").ToUpper();
             }
-            return Environment.UserName.ToUpper();
+            var mat = Environment.UserName.ToUpper();
+            return mat;
             
         }
     }

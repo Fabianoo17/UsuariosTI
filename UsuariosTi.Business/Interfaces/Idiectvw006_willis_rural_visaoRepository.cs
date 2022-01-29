@@ -1,12 +1,13 @@
 ﻿using Corretora.Business.Entities;
+using Corretora.Business.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Corretora.Business.Interfaces
 {
-    public interface IVW000_USUARIORepository : IRepository<VW000_USUARIOS>
+    public interface Idiectvw006_willis_rural_visaoRepository : IRepository<diectvw006_willis_rural_visao>
     {
-        IEnumerable<VW000_USUARIOS> PesquisarUsuarios(string nomeOuMatricula);
+
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UsuariosTi.Business.Enum
+namespace Corretora.Business.Enum
 {
     public enum EnumTipoComentario
     {

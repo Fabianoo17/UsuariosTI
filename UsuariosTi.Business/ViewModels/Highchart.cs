@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace UsuariosTi.Business.ViewModels
+namespace Corretora.Business.ViewModels
 {
     public class Highchart
     {

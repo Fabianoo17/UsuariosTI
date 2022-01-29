@@ -1,6 +1,6 @@
-﻿using UsuariosTi.Business.Interfaces;
-using UsuariosTi.Business.Interfaces.Services;
-using UsuariosTi.Business.ViewModels.Identity;
+﻿using Corretora.Business.Interfaces;
+using Corretora.Business.Interfaces.Services;
+using Corretora.Business.ViewModels.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UsuariosTi.Business.Services
+namespace Corretora.Business.Services
 {
     public class UsuarioService : IUsuarioService
     {

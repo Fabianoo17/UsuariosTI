@@ -1,5 +1,5 @@
 ﻿
-namespace UsuariosTi.Business.ViewModels
+namespace Corretora.Business.ViewModels
 {
     public enum EPerfil
     {

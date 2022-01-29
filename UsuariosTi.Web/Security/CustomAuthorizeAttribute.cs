@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using UsuariosTi.Business.Security;
-using UsuariosTi.Business.ViewModels;
+using Corretora.Business.Security;
+using Corretora.Business.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace UsuariosTi.App.Security
+namespace Corretora.App.Security
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class CustomAuthorizeAttribute : AuthorizeAttribute, IAuthorizationFilter

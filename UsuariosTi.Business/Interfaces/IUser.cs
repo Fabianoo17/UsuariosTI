@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
 
-namespace UsuariosTi.Business.Interfaces
+namespace Corretora.Business.Interfaces
 {
     public interface IUser
     {

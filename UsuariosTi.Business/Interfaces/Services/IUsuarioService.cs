@@ -2,7 +2,7 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace UsuariosTi.Business.Interfaces.Services
+namespace Corretora.Business.Interfaces.Services
 {
     public interface IUsuarioService
     {

@@ -7,11 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.IISIntegration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using UsuariosTi.App.Security;
-using UsuariosTi.IoC;
-using UsuariosTi.Web.Helpers;
+using Corretora.App.Security;
+using Corretora.IoC;
+using Corretora.Web.Helpers;
 
-namespace UsuariosTi.App
+namespace Corretora.App
 {
     public class Startup
     {

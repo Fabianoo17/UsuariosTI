@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using UsuariosTi.Business.Interfaces;
-using UsuariosTi.Business.Security;
-using UsuariosTi.Business.ViewModels;
+using Corretora.Business.Interfaces;
+using Corretora.Business.Security;
+using Corretora.Business.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace UsuariosTi.App.Controllers
+namespace Corretora.App.Controllers
 {
     public abstract class MainController : Controller
     {

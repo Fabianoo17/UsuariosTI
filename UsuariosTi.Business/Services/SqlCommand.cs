@@ -1,4 +1,4 @@
-﻿namespace UsuariosTi.Business.Services
+﻿namespace Corretora.Business.Services
 {
     internal class SqlCommand
     {

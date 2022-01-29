@@ -3,7 +3,7 @@ using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
 
 
-namespace UsuariosTi.Business.Extensions
+namespace Corretora.Business.Extensions
 {
     public static class Util
     {

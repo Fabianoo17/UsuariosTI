@@ -8,9 +8,9 @@ using System.Text;
 
 namespace Corretora.Data.Repository
 {
-    public class T003_PERFIL_USUARIORepository : Repository<T003_PERFIL_USUARIO>, IT003_PERFIL_USUARIORepository
+    public class diectvw006_willis_rural_visaoRepository : Repository<diectvw006_willis_rural_visao>, Idiectvw006_willis_rural_visaoRepository
     {
-        public T003_PERFIL_USUARIORepository(CorretoraContext context) : base(context)
+        public diectvw006_willis_rural_visaoRepository(CorretoraContext context) : base(context)
         {
 
         }

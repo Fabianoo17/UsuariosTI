@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
-using UsuariosTi.Business.Interfaces;
+using Corretora.Business.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace UsuariosTi.Business.Extensions
+namespace Corretora.Business.Extensions
 {
     public class AspNetUser : IUser
     {

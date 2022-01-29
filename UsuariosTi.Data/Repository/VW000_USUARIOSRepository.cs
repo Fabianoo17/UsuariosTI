@@ -1,17 +1,17 @@
-﻿using UsuariosTi.Business.Entities;
-using UsuariosTi.Business.Interfaces;
-using UsuariosTi.Data.Context;
+﻿using Corretora.Business.Entities;
+using Corretora.Business.Interfaces;
+using Corretora.Data.Context;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace UsuariosTi.Data.Repository
+namespace Corretora.Data.Repository
 {
     public class VW000_USUARIOSRepository : Repository<VW000_USUARIOS>, IVW000_USUARIORepository
     {
-        public VW000_USUARIOSRepository(ServicoRegionaisContext context) : base(context)
+        public VW000_USUARIOSRepository(CorretoraContext context) : base(context)
         {
 
         }

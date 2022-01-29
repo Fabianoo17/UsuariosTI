@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using UsuariosTi.Business.Entities;
+using Corretora.Business.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace UsuariosTi.Data.Context
+namespace Corretora.Data.Context
 {
     public class UsuarioContext : DbContext
     {
@@ -20,7 +20,7 @@ namespace UsuariosTi.Data.Context
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", optional: true, reloadOnChange: true)
                 .Build();
-            var connection = configuration.GetConnectionString("IndicadoresConnection");
+            var connection = configuration.GetConnectionString("CorretoraConnection");
             optionsBuilder.UseSqlServer(connection);
 
             base.OnConfiguring(optionsBuilder);

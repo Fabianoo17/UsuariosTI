@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace UsuariosTi.Business.Entities
+namespace Corretora.Business.Entities
 {
     [Table("VW000_USUARIOS")]
     public class VW000_USUARIOS : Entity

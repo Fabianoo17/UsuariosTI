@@ -1,9 +1,9 @@
-﻿using UsuariosTi.Business.Entities;
+﻿using Corretora.Business.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace UsuariosTi.Business.Interfaces
+namespace Corretora.Business.Interfaces
 {
     public interface IRepository<TEntity> where TEntity : Entity
     {

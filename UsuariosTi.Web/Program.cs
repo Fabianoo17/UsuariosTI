@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace UsuariosTi.App
+namespace Corretora.App
 {
     public class Program
     {

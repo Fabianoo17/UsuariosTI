@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.DependencyInjection;
-using UsuariosTi.Business.Extensions;
-using UsuariosTi.Business.Interfaces;
-using UsuariosTi.Business.Security;
-using UsuariosTi.Business.ViewModels;
+using Corretora.Business.Extensions;
+using Corretora.Business.Interfaces;
+using Corretora.Business.Security;
+using Corretora.Business.ViewModels;
 using System.Security.Claims;
 
-namespace UsuariosTi.App.Extensions
+namespace Corretora.App.Extensions
 {
     public static class RazorPageExtension
     {

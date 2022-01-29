@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace UsuariosTi.Data.Procedure
+namespace Corretora.Data.Procedure
 {
     public class P082_RETRATO_TI_SERVICOS_REGIONAIS
     {

@@ -1,4 +1,4 @@
-namespace UsuariosTi.App.Models
+namespace Corretora.App.Models
 {
     public class ErrorViewModel
     {

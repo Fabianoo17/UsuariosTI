@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
-using UsuariosTi.Business.ViewModels;
+using Corretora.Business.ViewModels;
 using System;
 using System.Linq;
 using System.Security.Claims;
 
-namespace UsuariosTi.Business.Security
+namespace Corretora.Business.Security
 {
     public static class CustomAuthorizationHelper
     {

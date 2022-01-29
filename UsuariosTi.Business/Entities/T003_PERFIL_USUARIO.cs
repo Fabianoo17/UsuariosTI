@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace UsuariosTi.Business.Entities
+namespace Corretora.Business.Entities
 {
     public class T003_PERFIL_USUARIO : Entity
     {

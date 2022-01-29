@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UsuariosTi.Business.Entities.Identity
+namespace Corretora.Business.Entities.Identity
 {
     public class UsuarioAcesso : Entity
     {
